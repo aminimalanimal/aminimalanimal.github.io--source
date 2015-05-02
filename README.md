@@ -14,7 +14,7 @@ Task-runner: Gulp
 - your browser should automatically open the page
 
 ## File Structure
-The `dist` folder isn't uploaded in this repo—this contains only the source files. To see the output, check out [github -- aminimalanimal.github.io](https://github.com/aminimalanimal/aminimalanimal.github.io--source).
+The `dist` folder isn't uploaded in this repo—this contains only the source files. To see the output, check out [github -- aminimalanimal.github.io](https://github.com/aminimalanimal/aminimalanimal.github.io).
 
 Structure is currently:
 
