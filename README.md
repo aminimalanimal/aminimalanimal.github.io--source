@@ -1,9 +1,16 @@
-# aminimalanimal.github.io
-Personal portfolio project.
+# aminimalanimal.github.io--source
+
+This repo contains the source files for my github pages portfolio project.
+
+To view the site, check out [aminimalanimal.github.io](http://aminimalanimal.github.io)
+
+To view the source's output, go to [github - aminimalanimal.github.io--dist](https://github.com/aminimalanimal/aminimalanimal.github.io)
 
 ## Technologies Used
-Precompilers: jade, sass, coffeescript
-Task-runner: Gulp
+
+Precompilers: [jade](http://jade-lang.com), [Sass](http://sass-lang.com), [coffeescript](http://coffeescript.org)
+
+Task-runner: [Gulp](http://gulpjs.com)
 
 ## To run as dev
 - clone repo
