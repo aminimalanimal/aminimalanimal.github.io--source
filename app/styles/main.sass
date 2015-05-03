@@ -1,2 +1,73 @@
+// Variables
+
+// width of the asides
+$width_aside: 380px
+
+// The maximum readable width for content blocks
+$width_max_content: 35em
+
+// The amount of padding surrounding text content
+$padding_content: 3em
+
+
+html
+	box-sizing: border-box
+
+*, *:before, *:after
+	box-sizing: inherit
+
+
 h1
 	font-family: sans-serif
+
+
+// HERO section
+
+.section
+	display: flex
+	min-height: 80vh
+	flex-direction: row-reverse
+	justify-content: flex-end
+
+.section_hero
+	background: #aaf
+
+.hero_content
+	max-width: $width_max_content
+	padding: $padding_content
+
+.personal_information
+	align-self: flex-end
+	background: rgba(255,255,255,0.5)
+	margin: 0 0 0 10px
+	width: $width_aside
+
+.personal_information_content
+	align-self: center
+	max-width: $width_max_content
+	padding: $padding_content
+
+
+
+// section 2
+.section_2
+	background: #faa
+	display: flex
+	flex-direction: row
+	justify-content: flex-start
+	padding: 0 0 10em
+
+.something_2
+	align-self: flex-start
+	background: rgba(255,255,255,0.5)
+	margin: 0 0 0 10px
+	width: $width_aside
+
+.something_2_content
+	align-self: center
+	max-width: $width_max_content
+	padding: $padding_content
+
+.post_1_content
+	max-width: $width_max_content
+	padding: $padding_content
