@@ -31,12 +31,16 @@ Structure is currently:
 		├── scripts
 		├── styles
 		├── templates
-		└── bower_components
+		└── vendor
 	├── dist
 		├── index.html
 		├── scripts
 		├── styles
-		└── templates
+		├── templates
+		└── vendor
+	├── .bowerrc
+	├── .gitignore
+	├── bower.json
 	├── gulpfile.js
 	├── package.json
 	├── node_modules

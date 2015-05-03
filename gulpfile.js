@@ -22,13 +22,13 @@ var DIR_SOURCE_INDEX     = './app/index.jade';
 var DIR_SOURCE_TEMPLATES = './app/templates/*.jade';
 var DIR_SOURCE_STYLES    = ['./app/styles/*.sass', './app/styles/*.scss'];
 var DIR_SOURCE_SCRIPTS   = ['./app/scripts/*.coffee', './app/scripts/*.litcoffee'];
-var DIR_SOURCE_VENDOR    = './app/bower_components/**/*'
+var DIR_SOURCE_VENDOR    = './app/vendor/**/*';
 
 var DIR_BUILD_INDEX      = './dist';
 var DIR_BUILD_TEMPLATES  = './dist/templates';
 var DIR_BUILD_STYLES     = './dist/styles';
 var DIR_BUILD_SCRIPTS    = './dist/scripts';
-var DIR_BUILD_VENDOR     = './dist/bower_components'
+var DIR_BUILD_VENDOR     = './dist/vendor';
 
 
 // TASKS

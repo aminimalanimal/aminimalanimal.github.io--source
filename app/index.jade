@@ -9,10 +9,10 @@ html.no-js(lang="en")
 
 		link(rel="apple-touch-icon" href="apple-touch-icon.png")
 
-		//- link(rel="stylesheet" href="css/normalize.css")
+		link(rel="stylesheet" href="/vendor/normalize.css/normalize.css")
 		link(rel="stylesheet" href="/styles/main.css")
 
-		//- script(src="bower_components/modernizr/modernizr-2.8.3.min.js")
+		script(src="/vendor/modernizr/modernizr.js")
 
 	body
 		h1 new stuff
@@ -25,7 +25,7 @@ html.no-js(lang="en")
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
 		//- if suceeded in getting jQuery's version, do nothing. Otherwise, use ours.
 		script.
-			window.jQuery || document.write('<script src="/bower_components/jquery/dist/jquery.min.js"><\/script>')
+			window.jQuery || document.write('<script src="/vendor/jquery/dist/jquery.min.js"><\/script>')
 		//- load our script
 		script(src="/scripts/main.js")
 
