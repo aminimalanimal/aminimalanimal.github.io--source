@@ -22,11 +22,13 @@ var DIR_SOURCE_INDEX     = './app/index.jade';
 var DIR_SOURCE_TEMPLATES = './app/templates/*.jade';
 var DIR_SOURCE_STYLES    = ['./app/styles/*.sass', './app/styles/*.scss'];
 var DIR_SOURCE_SCRIPTS   = ['./app/scripts/*.coffee', './app/scripts/*.litcoffee'];
+var DIR_SOURCE_VENDOR    = './app/bower_components/**/*'
 
-var DIR_BUILD_INDEX     = './dist';
+var DIR_BUILD_INDEX      = './dist';
 var DIR_BUILD_TEMPLATES  = './dist/templates';
 var DIR_BUILD_STYLES     = './dist/styles';
 var DIR_BUILD_SCRIPTS    = './dist/scripts';
+var DIR_BUILD_VENDOR     = './dist/bower_components'
 
 
 // TASKS
@@ -70,8 +72,14 @@ gulp.task('coffee', function() {
     .pipe(gulp.dest(DIR_BUILD_SCRIPTS));
 });
 
+// Copy vendor scripts
+gulp.task('copy_vendor', function() {
+  return gulp.src(DIR_SOURCE_VENDOR)
+    .pipe(gulp.dest(DIR_BUILD_VENDOR));
+});
+
 // Serve
-gulp.task('serve', ['index', 'jade', 'sass', 'coffee'], function() {
+gulp.task('serve', ['index', 'jade', 'sass', 'coffee', 'copy_vendor'], function() {
   browserSync.init({
     server: {
       baseDir: DIR_BUILD_INDEX

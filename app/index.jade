@@ -10,9 +10,9 @@ html.no-js(lang="en")
 		link(rel="apple-touch-icon" href="apple-touch-icon.png")
 
 		//- link(rel="stylesheet" href="css/normalize.css")
-		link(rel="stylesheet" href="./styles/main.css")
+		link(rel="stylesheet" href="/styles/main.css")
 
-		//- script(src="js/vendor/modernizr-2.8.3.min.js")
+		//- script(src="bower_components/modernizr/modernizr-2.8.3.min.js")
 
 	body
 		h1 new stuff
@@ -22,12 +22,12 @@ html.no-js(lang="en")
 		//- SCRIPTS
 
 		//- get jQuery from google's library
-		script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
 		//- if suceeded in getting jQuery's version, do nothing. Otherwise, use ours.
-		script
-			window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')
+		script.
+			window.jQuery || document.write('<script src="/bower_components/jquery/dist/jquery.min.js"><\/script>')
 		//- load our script
-		script(src="js/main.js")
+		script(src="/scripts/main.js")
 
 		//- Google Analytics: change UA-XXXXX-X to be your site's ID.
 		//- script
