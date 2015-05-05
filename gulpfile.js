@@ -1,20 +1,23 @@
+"use strict";
+
 // REQUIRES
 // Gulp
-var gulp        = require('gulp');
-var gutil       = require('gutil');
+var gulp         = require('gulp');
+var gutil        = require('gutil');
 
 // Live Reloading
-var browserSync = require('browser-sync').create();
-var reload      = browserSync.reload;
+var browserSync  = require('browser-sync').create();
+var reload       = browserSync.reload;
 
 // Precompilers
-var jade        = require('gulp-jade');
-var sass        = require('gulp-sass');
-var coffee      = require('gulp-coffee');
-var sourcemaps  = require('gulp-sourcemaps');
+var jade         = require('gulp-jade');
+var sass         = require('gulp-sass');
+var coffee       = require('gulp-coffee');
+var autoprefixer = require('gulp-autoprefixer');
+var sourcemaps   = require('gulp-sourcemaps');
 
 // Watcher
-var watch       = require('gulp-watch');
+var watch        = require('gulp-watch');
 
 
 // DIRECTORY STRUCTURE
@@ -57,6 +60,10 @@ gulp.task('sass', function() {
     .pipe(sourcemaps.init())
     .pipe(sass({
       indentedSyntax: true
+    }))
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
     }))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(DIR_BUILD_STYLES));
