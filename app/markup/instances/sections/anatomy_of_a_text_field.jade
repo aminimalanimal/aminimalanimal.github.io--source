@@ -1,4 +1,22 @@
 section.anatomy
-	h3 Anatomy of a Text Field
+	h3 Anatomy of a full-featured text field
+	p (w/tooltip, disclosure, and error message containers)
 
-	p stuff
+	p Ideal structure without flexbox:
+
+	div.code_sample
+		div.field_container
+			div.label_container
+				label(for="input") label
+				button.tooltip info
+			div.input_container
+				input(
+					id="input"
+					type="text"
+					name="text"
+					aria-describedby="disclosure"
+					placeholder="input"
+					)
+				button.button_extra_feature button
+			div.error_message#error_message div.error_message
+			div.disclosure#disclosure div.disclosure
