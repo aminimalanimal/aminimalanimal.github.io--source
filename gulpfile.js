@@ -22,13 +22,13 @@ var watch        = require('gulp-watch');
 
 // DIRECTORY STRUCTURE
 var DIR_SOURCE_INDEX     = './app/index.jade';
-var DIR_SOURCE_TEMPLATES = './app/templates/*.jade';
+var DIR_SOURCE_PAGES     = './app/markup/instances/pages/*.jade';
 var DIR_SOURCE_STYLES    = ['./app/styles/*.sass', './app/styles/*.scss'];
 var DIR_SOURCE_SCRIPTS   = ['./app/scripts/*.coffee', './app/scripts/*.litcoffee'];
 var DIR_SOURCE_VENDOR    = './app/vendor/**/*';
 
 var DIR_BUILD_INDEX      = './dist';
-var DIR_BUILD_TEMPLATES  = './dist/templates';
+var DIR_BUILD_PAGES      = './dist/pages';
 var DIR_BUILD_STYLES     = './dist/styles';
 var DIR_BUILD_SCRIPTS    = './dist/scripts';
 var DIR_BUILD_VENDOR     = './dist/vendor';
@@ -47,11 +47,11 @@ gulp.task('index', function() {
 
 // Compile Jade
 gulp.task('jade', function() {
-  return gulp.src(DIR_SOURCE_TEMPLATES)
+  return gulp.src(DIR_SOURCE_PAGES)
     .pipe(jade({
       pretty: true
     }))
-    .pipe(gulp.dest(DIR_BUILD_TEMPLATES));
+    .pipe(gulp.dest(DIR_BUILD_PAGES));
 });
 
 // Compile Sass
@@ -94,7 +94,7 @@ gulp.task('serve', ['index', 'jade', 'sass', 'coffee', 'copy_vendor'], function(
   });
 
   gulp.watch(DIR_SOURCE_INDEX, ['index']).on('change', reload);
-  gulp.watch(DIR_SOURCE_TEMPLATES, ['jade']).on('change', reload);
+  gulp.watch(DIR_SOURCE_PAGES, ['jade']).on('change', reload);
   gulp.watch(DIR_SOURCE_STYLES, ['sass']).on('change', reload);
   gulp.watch(DIR_SOURCE_SCRIPTS, ['coffee']).on('change', reload);
 });

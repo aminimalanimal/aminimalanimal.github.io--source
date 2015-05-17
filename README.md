@@ -27,17 +27,28 @@ Structure is currently:
 
 	.
 	├── app
-		├── index.jade
-		├── scripts
-		├── styles
-		├── templates
-		└── vendor
+	|	├── index.jade
+	|	├── markup
+	|	|	├── instances
+	|	|	|	├── components
+	|	|	|	├── pages
+	|	|	|	└── sections
+	|	|	└── templates
+	|	|		├── components
+	|	|		├── pages
+	|	|		└── sections
+	|	├── scripts
+	|	├── styles
+	|	|	├── components
+	|	|	├── pages
+	|	|	└── sections
+	|	└── vendor
 	├── dist
-		├── index.html
-		├── scripts
-		├── styles
-		├── templates
-		└── vendor
+	|	├── index.html
+	|	├── pages
+	|	├── scripts
+	|	├── styles
+	|	└── vendor
 	├── .bowerrc
 	├── .gitignore
 	├── bower.json
