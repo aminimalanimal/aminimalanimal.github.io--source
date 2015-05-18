@@ -17,22 +17,29 @@ var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps   = require('gulp-sourcemaps');
 
 // Watcher
-var watch        = require('gulp-watch');
+require('gulp-watch');
 
 
 // DIRECTORY STRUCTURE
-var DIR_SOURCE_INDEX     = './app/index.jade';
-var DIR_SOURCE_MARKUP    = './app/markup/**/*.jade';
-var DIR_SOURCE_PAGES     = './app/markup/instances/pages/*.jade';
-var DIR_SOURCE_STYLES    = ['./app/styles/**/*.sass', './app/styles/*.scss'];
-var DIR_SOURCE_SCRIPTS   = ['./app/scripts/**/*.coffee', './app/scripts/*.litcoffee'];
-var DIR_SOURCE_VENDOR    = './app/vendor/**/*';
+var DIR_SOURCE_INDEX     = './app/index.jade',
+    DIR_BUILD_INDEX      = './dist',
+    DIR_WATCH_INDEX      = './app/index.jade';
 
-var DIR_BUILD_INDEX      = './dist';
-var DIR_BUILD_PAGES      = './dist/pages';
-var DIR_BUILD_STYLES     = './dist/styles';
-var DIR_BUILD_SCRIPTS    = './dist/scripts';
-var DIR_BUILD_VENDOR     = './dist/vendor';
+var DIR_SOURCE_MARKUP    = './app/markup/instances/pages/*.jade',
+    DIR_BUILD_MARKUP     = './dist/pages',
+    DIR_WATCH_MARKUP     = './app/markup/**/*.jade';
+
+var DIR_SOURCE_STYLES    = ['./app/styles/main.sass', './app/styles/*.scss'],
+    DIR_BUILD_STYLES     = './dist/styles',
+    DIR_WATCH_STYLES     = ['./app/styles/**/*.sass', './app/styles/*.scss'];
+
+var DIR_SOURCE_SCRIPTS   = ['./app/scripts/**/*.coffee', './app/scripts/*.litcoffee'],
+    DIR_BUILD_SCRIPTS    = './dist/scripts',
+    DIR_WATCH_SCRIPTS    = ['./app/scripts/**/*.coffee', './app/scripts/*.litcoffee'];
+
+var DIR_SOURCE_VENDOR    = './app/vendor/**/*',
+    DIR_BUILD_VENDOR     = './dist/vendor';
+
 
 
 // TASKS
@@ -48,11 +55,11 @@ gulp.task('index', function() {
 
 // Compile Jade
 gulp.task('jade', function() {
-  return gulp.src(DIR_SOURCE_PAGES)
+  return gulp.src(DIR_SOURCE_MARKUP)
     .pipe(jade({
       pretty: true
     }))
-    .pipe(gulp.dest(DIR_BUILD_PAGES));
+    .pipe(gulp.dest(DIR_BUILD_MARKUP));
 });
 
 // Compile Sass
@@ -94,10 +101,10 @@ gulp.task('serve', ['index', 'jade', 'sass', 'coffee', 'copy_vendor'], function(
     }
   });
 
-  gulp.watch(DIR_SOURCE_INDEX, ['index']).on('change', reload);
-  gulp.watch(DIR_SOURCE_MARKUP, ['jade']).on('change', reload);
-  gulp.watch(DIR_SOURCE_STYLES, ['sass']).on('change', reload);
-  gulp.watch(DIR_SOURCE_SCRIPTS, ['coffee']).on('change', reload);
+  gulp.watch(DIR_WATCH_INDEX, ['index']).on('change', reload);
+  gulp.watch(DIR_WATCH_MARKUP, ['index', 'jade']).on('change', reload);
+  gulp.watch(DIR_WATCH_STYLES, ['sass']).on('change', reload);
+  gulp.watch(DIR_WATCH_SCRIPTS, ['coffee']).on('change', reload);
 });
 
 // Default
