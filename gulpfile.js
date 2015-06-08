@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // REQUIRES
 // Gulp
@@ -18,6 +18,19 @@ var sourcemaps   = require('gulp-sourcemaps');
 
 // Watcher
 require('gulp-watch');
+
+
+// Jade Configuration
+
+// enables the use of a `+filter` mixin that accepts transformers for alternate types of code
+// var filter = require('jade-filters');
+
+// should include a variety of other code types
+// var transformers = require('transformers');
+
+var jadeConfiguration = {
+  pretty: '\t'
+};
 
 
 // DIRECTORY STRUCTURE
@@ -47,18 +60,14 @@ var DIR_SOURCE_VENDOR    = './app/vendor/**/*',
 // Compile Index
 gulp.task('index', function() {
   return gulp.src(DIR_SOURCE_INDEX)
-    .pipe(jade({
-      pretty: true
-    }))
+    .pipe(jade(jadeConfiguration))
     .pipe(gulp.dest(DIR_BUILD_INDEX));
 });
 
 // Compile Jade
 gulp.task('jade', function() {
   return gulp.src(DIR_SOURCE_MARKUP)
-    .pipe(jade({
-      pretty: true
-    }))
+    .pipe(jade(jadeConfiguration))
     .pipe(gulp.dest(DIR_BUILD_MARKUP));
 });
 
@@ -75,7 +84,6 @@ gulp.task('sass', function() {
     }))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(DIR_BUILD_STYLES));
-    // .pipe(reload({stream: true}));
 });
 
 // Compile Coffeescript

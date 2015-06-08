@@ -1,23 +1,81 @@
 // Flexbox renditions of Form Basics
 
-.section_code
+.basic_forms
 	background: $color_monokai-black
 	color: $color_monokai-white
 	padding: 2em
+	h3
+		font-size: 36px
+		margin: 0
+		line-height: 1
+	p
+		font-size: 12px
 
-.field_container
-	border: solid 1px $color_monokai-blue
-	max-width: 20em
+// .section_diagram
 
-.label_container
-	border: solid 1px $color_monokai-green
+section
+	border: solid 1px $color_monokai-black
 
-.label, .input, .button
-	background: $color_monokai-black
-	border: solid 1px $color_monokai-white
+.section_code
+	color: $color_monokai-white
+	pre
+		tab-size: 2
 
-.error_message
-	border: solid 1px $color_monokai-red
+// .section_example
 
-.disclosure
-	border: solid 1px $color_monokai-orange
+.example
+	background: $color_monokai-white
+
+	.field_container
+		border: solid 1px $color_monokai-blue
+		max-width: 20em
+
+	.label_container
+		border: solid 1px $color_monokai-green
+		margin: 4px
+		overflow: hidden
+
+	.input_container
+		border: solid 1px $color_monokai-green
+		margin: 4px
+		overflow: hidden
+		position: relative
+		.button
+			right: 8px
+			position: absolute
+			width: 100px
+
+		.input
+			padding-right: 100px
+			width: 100%
+
+	.label, .input, .button
+		background: $color_monokai-black
+		border: solid 1px $color_monokai-white
+		display: block
+		float: left
+		height: 40px
+		margin: 4px 0 4px 4px
+		padding: 10px 4px
+
+	.error_message
+		border: solid 1px $color_monokai-red
+		color: $color_monokai-red
+		margin: 9px 4px 4px
+		padding: 10px
+		position: relative
+		&:before
+			background: $color_monokai-red
+			content: ' '
+			height: 14px
+			left: 10px
+			position: absolute
+			top: -7px
+			transform: rotate(45deg)
+			width: 14px
+
+	.disclosure
+		border: solid 1px $color_monokai-orange
+		color: $color_monokai-orange
+		margin: 4px
+		padding: 10px

@@ -1,22 +1,24 @@
-section.section_code
-	h3 Anatomy of a full-featured text field
-	p (w/tooltip, disclosure, and error message containers)
+article.basic_forms
+	header
+		h3 Text field
+		p (w/tooltip, disclosure, and error message containers)
 
-	p Ideal structure without flexbox:
+	section.section_diagram
+		h4 Diagram
 
-	div.code_sample
-		div.field_container
-			div.label_container
-				label.label(for="input") label
-				button.button.button_tooltip info
-			div.input_container
-				input.input(
-					id="input"
-					type="text"
-					name="text"
-					aria-describedby="disclosure"
-					placeholder="input"
-					)
-				button.button.button_extra_feature button
-			div.error_message#error_message div.error_message
-			div.disclosure#disclosure div.disclosure
+		//- svg
+		p insert svg here
+
+	section.section_example
+		h4 Example
+
+		div.example
+			include ../components/sample_text_field
+
+	section.section_code
+		h4 Code
+
+		pre: code
+			//- :escape-html
+			:markdown
+				include ../components/sample_text_field
