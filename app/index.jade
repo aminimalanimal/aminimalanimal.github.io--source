@@ -9,23 +9,35 @@ html.no-js(lang="en")
 
 		link(rel="apple-touch-icon" href="apple-touch-icon.png")
 
+		script(src="/vendor/modernizr/modernizr.js")
+
+		//- STYLES
+		//- Vendor
 		link(rel="stylesheet" href="/vendor/normalize.css/normalize.css")
+		link(rel="stylesheet" href="/vendor/prism/themes/prism-okaidia.css")
+
+		//- Ours
 		link(rel="stylesheet" href="/styles/main.css")
 
-		script(src="/vendor/modernizr/modernizr.js")
 
 	body
 		include markup/instances/sections/anatomy_of_a_text_field
 
 
 		//- SCRIPTS
-
+		//- Vendor
 		//- get jQuery from google's library
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
 		//- if suceeded in getting jQuery's version, do nothing. Otherwise, use ours.
 		script.
 			window.jQuery || document.write('<script src="/vendor/jquery/dist/jquery.min.js"><\/script>')
-		//- load our script
+
+		script(src="/vendor/prism/prism.js")
+		script(src="/vendor/prism/components/prism-jade.min.js")
+		script(src="/vendor/prism/components/prism-scss.min.js")
+		script(src="/vendor/prism/components/prism-coffeescript.min.js")
+
+		//- Ours
 		script(src="/scripts/main.js")
 
 		//- Google Analytics: change UA-XXXXX-X to be your site's ID.
