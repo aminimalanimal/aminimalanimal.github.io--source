@@ -1,13 +1,21 @@
 html
-	background: $color_monokai-black
+	background: $color-monokai-black
 	box-sizing: border-box
+	color: $color-monokai-white
 
 *, *:before, *:after
 	box-sizing: inherit
 
+// All focus states
+*
+	transition: box-shadow 50ms
+	&:focus
+		box-shadow: inset 0 0 0 2px #fff
+		outline: none
+
 // PRISM overrides
 pre[class*="language-"]
 	background: none
-	border: solid 1px $color_monokai-yellow
+	border: solid 1px $color-monokai-yellow
 	> code
 		tab-size: 2
