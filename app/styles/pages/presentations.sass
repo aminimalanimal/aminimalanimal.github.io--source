@@ -1,5 +1,15 @@
+@import ../global_variables
+
 @import url(http://fonts.googleapis.com/css?family=Droid+Serif)
 @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz)
+
+html
+	background: $color-monokai-black
+	box-sizing: border-box
+	color: $color-monokai-white
+
+*, *:before, *:after
+	box-sizing: inherit
 
 body
 	font-family: 'Droid Serif'
@@ -56,3 +66,16 @@ code
 	height: 100%
 	opacity: 0.2
 	z-index: 999
+
+.remark-slide-content
+	overflow: hidden
+
+.left-column
+	float: left
+	height: 92%
+	width: 20%
+
+.right-column
+	float: left
+	padding: 0 0 0 10%
+	width: 80%

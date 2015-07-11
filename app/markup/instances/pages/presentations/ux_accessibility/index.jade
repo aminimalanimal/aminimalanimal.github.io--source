@@ -31,11 +31,7 @@ html.no-js(lang="en")
 		script.
 			window.jQuery || document.write('<script src="/vendor/jquery/dist/jquery.min.js"><\/script>')
 
-		//- get latest version of Remark
-		script(src="http://gnab.github.io/remark/downloads/remark-latest.min.js")
-		//- if succeeded in getting Remark, do nothing. Otherwise, use ours.
-		script.
-			window.remark || document.write('<script src="/vendor/remark.min.js"><\/script>')
+		script(src="/vendor/remark.min.js")
 
 		script.
 			'use strict';
