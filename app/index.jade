@@ -14,14 +14,16 @@ html.no-js(lang="en")
 		//- STYLES
 		//- Vendor
 		link(rel="stylesheet" href="/vendor/normalize.css/normalize.css")
-		link(rel="stylesheet" href="/vendor/prism/themes/prism-okaidia.css")
 
 		//- Ours
 		link(rel="stylesheet" href="/styles/main.css")
 
 
 	body
-		include markup/instances/sections/anatomy_of_a_text_field
+		h1 aminimalanimal
+		p Under construction. Don't mind my dust. Look—there's a slideshow here to distract you from the nothing: <a href="/presentations/ux_accessibility/index.html">Presentation - Accessibility for UX</a>
+
+		p Pattern Library (WIP) scratch is here: <a href="/accessibility/pattern_library/index.html">Accessibility - Pattern Library</a>
 
 
 		//- SCRIPTS
@@ -31,11 +33,6 @@ html.no-js(lang="en")
 		//- if suceeded in getting jQuery's version, do nothing. Otherwise, use ours.
 		script.
 			window.jQuery || document.write('<script src="/vendor/jquery/dist/jquery.min.js"><\/script>')
-
-		script(src="/vendor/prism/prism.js")
-		script(src="/vendor/prism/components/prism-jade.min.js")
-		script(src="/vendor/prism/components/prism-scss.min.js")
-		script(src="/vendor/prism/components/prism-coffeescript.min.js")
 
 		//- Ours
 		script(src="/scripts/main.js")

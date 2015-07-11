@@ -29,20 +29,25 @@ require('gulp-watch');
 // var transformers = require('transformers');
 
 var jadeConfiguration = {
+  basedir: 'app/markup',
   pretty: '\t'
 };
 
 
 // DIRECTORY STRUCTURE
+
+// Parsed
 var DIR_SOURCE_INDEX     = './app/index.jade',
     DIR_BUILD_INDEX      = './dist',
     DIR_WATCH_INDEX      = './app/index.jade';
 
-var DIR_SOURCE_MARKUP    = './app/markup/instances/pages/*.jade',
-    DIR_BUILD_MARKUP     = './dist/pages',
+var DIR_SOURCE_MARKUP    = './app/markup/instances/pages/**/*.jade',
+    DIR_BUILD_MARKUP     = './dist',
     DIR_WATCH_MARKUP     = './app/markup/**/*.jade';
 
-var DIR_SOURCE_STYLES    = ['./app/styles/main.sass', './app/styles/*.scss'],
+var DIR_SOURCE_STYLES    = ['./app/styles/main.sass',
+                            './app/styles/pages/presentations.sass',
+                            './app/styles/*.scss'],
     DIR_BUILD_STYLES     = './dist/styles',
     DIR_WATCH_STYLES     = ['./app/styles/**/*.sass', './app/styles/*.scss'];
 
@@ -50,9 +55,17 @@ var DIR_SOURCE_SCRIPTS   = ['./app/scripts/**/*.coffee', './app/scripts/*.litcof
     DIR_BUILD_SCRIPTS    = './dist/scripts',
     DIR_WATCH_SCRIPTS    = ['./app/scripts/**/*.coffee', './app/scripts/*.litcoffee'];
 
-var DIR_SOURCE_VENDOR    = './app/vendor/**/*',
+// Copied
+var DIR_SOURCE_ASSETS  = './app/assets/**/*',
+    DIR_BUILD_ASSETS   = './dist/assets',
+    DIR_WATCH_ASSETS   = './app/assets/**/*';
+
+var DIR_SOURCE_VENDOR    = ['./app/bower_components/**/*', './app/vendor/**/*'],
     DIR_BUILD_VENDOR     = './dist/vendor';
 
+var DIR_SOURCE_MARKDOWN  = ['./app/markdown/**/*.md', './app/markdown/**/*.mdown', './app/markdown/**/*.markdown'],
+    DIR_BUILD_MARKDOWN   = './dist',
+    DIR_WATCH_MARKDOWN   = ['./app/markdown/**/*.md', './app/markdown/**/*.mdown', './app/markdown/**/*.markdown'];
 
 
 // TASKS
@@ -101,8 +114,20 @@ gulp.task('copy_vendor', function() {
     .pipe(gulp.dest(DIR_BUILD_VENDOR));
 });
 
+// Copy markdown files
+gulp.task('copy_markdown', function() {
+  return gulp.src(DIR_SOURCE_MARKDOWN)
+    .pipe(gulp.dest(DIR_BUILD_MARKDOWN));
+});
+
+// Copy assets
+gulp.task('copy_assets', function() {
+  return gulp.src(DIR_SOURCE_ASSETS)
+    .pipe(gulp.dest(DIR_BUILD_ASSETS));
+});
+
 // Serve
-gulp.task('serve', ['index', 'jade', 'sass', 'coffee', 'copy_vendor'], function() {
+gulp.task('serve', ['index', 'jade', 'sass', 'coffee', 'copy_vendor', 'copy_markdown'], function() {
   browserSync.init({
     server: {
       baseDir: DIR_BUILD_INDEX
@@ -113,6 +138,8 @@ gulp.task('serve', ['index', 'jade', 'sass', 'coffee', 'copy_vendor'], function(
   gulp.watch(DIR_WATCH_MARKUP, ['index', 'jade']).on('change', reload);
   gulp.watch(DIR_WATCH_STYLES, ['sass']).on('change', reload);
   gulp.watch(DIR_WATCH_SCRIPTS, ['coffee']).on('change', reload);
+  gulp.watch(DIR_WATCH_MARKDOWN, ['copy_markdown']).on('change', reload);
+  gulp.watch(DIR_WATCH_ASSETS, ['copy_assets']).on('change', reload);
 });
 
 // Default

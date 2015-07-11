@@ -28,10 +28,16 @@ Structure is currently:
 	.
 	├── app
 	|	├── index.jade
+	|	├── assets
+	|	|	└── (Path)
+	|	├── bower_components
+	|	├── markdown
+	|	|	└── (Pages Path)
 	|	├── markup
 	|	|	├── instances
 	|	|	|	├── components
 	|	|	|	├── pages
+	|	|	|	|	└── (Pages Path)
 	|	|	|	└── sections
 	|	|	└── templates
 	|	|		├── components
@@ -42,13 +48,15 @@ Structure is currently:
 	|	|	├── components
 	|	|	├── pages
 	|	|	└── sections
-	|	└── vendor
+	|	└── vendor (non-bower-componentized vendor scripts)
 	├── dist
 	|	├── index.html
-	|	├── pages
+	|	├── assets
+	|	|	└── (Path)
+	|	├── (Pages Path)
 	|	├── scripts
 	|	├── styles
-	|	└── vendor
+	|	└── vendor (bower_components and vendor)
 	├── .bowerrc
 	├── .gitignore
 	├── bower.json
@@ -56,3 +64,19 @@ Structure is currently:
 	├── package.json
 	├── node_modules
 	└── README.md
+
+
+## Presentations
+
+Slideshows are created with [Remark](https://github.com/gnab/remark).
+
+fwiw, I couldn't actually **build** Remark with their instructions, and had to resort to ripping already-built files out of other examples. Pretty simple stuff to get it set up, though—reference the js, reference the css, and host the html.
+
+Because there's no bower_component for Remark, I've just inlined the minified js. Gross stuff, but it works for now.
+
+### How to Edit
+
+- Open `accessibility_ux.md`
+- Edit as Markdown
+
+_Special rules can be found here: [Remark - Wiki](https://github.com/gnab/remark/wiki)_.
