@@ -4,14 +4,13 @@
 @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz)
 
 html
-	background: $color-monokai-black
 	box-sizing: border-box
-	color: $color-monokai-white
 
 *, *:before, *:after
 	box-sizing: inherit
 
 body
+	color: $color-monokai-black
 	font-family: 'Droid Serif'
 	font-size: medium
 
@@ -27,16 +26,22 @@ code
 	border-radius: 5px
 
 .inverse
-	background: #23241f
-	color: #f8f8f2
+	background: $color-monokai-black
+	color: $color-monokai-white
 	text-shadow: 0 0 20px #333
 
-.inverse
-	h1, h2, h3, h4, h5, h6
-		line-height: 0.8em
+em
+	color: $color-monokai-red
+
+p
+	em
+		color: $color-monokai-green
+
+strong
+	color: $color-monokai-yellow
 
 .inverse a
-	color: #66d9ef
+	color: $color-monokai-blue
 
 .footnote
 	position: absolute
@@ -72,10 +77,10 @@ code
 
 .left-column
 	float: left
-	height: 92%
-	width: 20%
+	height: 100%
+	width: 18%
 
 .right-column
 	float: left
-	padding: 0 0 0 10%
-	width: 80%
+	padding: 0 0 0 8%
+	width: 82%
