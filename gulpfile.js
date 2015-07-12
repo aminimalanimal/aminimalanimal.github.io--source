@@ -127,7 +127,7 @@ gulp.task('copy_assets', function() {
 });
 
 // Serve
-gulp.task('serve', ['index', 'jade', 'sass', 'coffee', 'copy_vendor', 'copy_markdown'], function() {
+gulp.task('serve', ['index', 'jade', 'sass', 'coffee', 'copy_vendor', 'copy_markdown', 'copy_assets'], function() {
   browserSync.init({
     server: {
       baseDir: DIR_BUILD_INDEX

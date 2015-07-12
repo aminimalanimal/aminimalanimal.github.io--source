@@ -176,17 +176,6 @@ layout: true
 
 ]
 
-???
-
-
-We're already used to thinking about different users.
-
-> slides for current user types
-
-People from different backgrounds, with different skill sets, with different understandings of technology are all going to interface with your products in a slightly different manner. Skeumorphism was so popular for so long because it was believed that people needed an interface analogous to real world objects they were already accustomed to.
-
-We already design for simple users in mind. We design for power users. We design for people who have too much time on their hands, and for people who have no patience.
-
 
 
 
@@ -204,6 +193,14 @@ We already design for simple users in mind. We design for power users. We design
 
 ]
 
+???
+
+???
+
+
+I've included a couple of different links to personas on the left-hand bar. If you want fully fleshed out personas, you can look for them there. This entire presentation is online at aminimalanimal.github.io/presentations/UX_accessibility/index.html.
+
+
 --
 count: false
 
@@ -217,6 +214,8 @@ count: false
 - issues with understanding visual context and clues
 
 ]
+
+I separated the categories here for blindness and low vision to point out the both of these groups use screen readers. Because many of our users will have low vision, it's important that they experience that blind people have is one-to-one with what sighted people have. Any discrepancy between that one to one to experience results in potentially confusing circumstances.
 
 ---
 template: personas
@@ -239,7 +238,7 @@ We design for iPhones, computers, tablets, video game consoles, displays in a ma
 
 We also need to design for for users who are accessing the computer only through a keyboard, relying solely on browser-based navigation like the tab key and up and down arrows.
 
-> Users with motor impairments are more likely to use only a mouse, only a keyboard, voice or other inputs to control and navigate the web.   Websites developed with flexibility of input options are more accessible to these individuals.  Requiring mouse-only or keyboard-only control will create a barrier for some of these individuals.
+> Users with motor impairments are more likely to use only a mouse, only a keyboard, voice or other inputs to control and navigate the web. Websites developed with flexibility of input options are more accessible to these individuals. Requiring mouse-only or keyboard-only control will create a barrier for some of these individuals.
 
 --
 count: false
@@ -322,15 +321,16 @@ layout: true
 
 _Content is Perceivable in multiple ways_
 
-- Audio content is captioned for those that cannot perceive the audio through hearing alone.
-- Text alternatives are provided for non-text content.
-- State changes—focus, interactions... you should be getting feedback
+- Audio content is captioned for those that cannot perceive the audio through hearing alone
+- Text alternatives are provided for non-text content
+- Keyboard users understand where their focus is placed
 
 ]
 
 ???
 
-You need to make sure that users can perceive our website. They understand where they're focuses That they understand what elements are, they can see the dividing lines between things, that they understand when an error has taken place.
+You need to make sure that users can perceive our website. They need to understand where they're focused. They should understand what elements are, that they understand when an error has taken place.
+
 The first tenant of accessible design is that you provide multiple ways to perceive everything. Now that's not as hard as it sounds. It actually just means that if you have a picture, you give it alt text. If you have an input, it's actually coded as an input, that way when a user uses a screen reader, they can hear that it is an input.
 
 
@@ -362,6 +362,7 @@ _Content is Understandable_
 
 - Text is readable and understandable
 - Content appears and is operable in **predictable** ways
+- Users shouldn't have to navigate back and forth to understand context
 
 ]
 
@@ -393,19 +394,16 @@ _Offerings are Robust across multiple platforms_
 class: center middle inverse
 layout: false
 
-## _Sounds easy._
+## _Seems easy enough._
 
 
 ???
 
+It's a challenge, definitely.
 
-Now frankly, your client may not be a bank or an airline. Your client may not come to you with this as a concern. And when it's not part of the clients agenda, the concessions can be hard to sell.
+Consider this very presentation. This is actually an HTML site. And... it's not especially accessible. Ironic, right?
 
-And... look—I say concessions, and I mean it. If you're making an accessible website, you simply cannot do all of the things that you might have done if you weren't. So, there are concessions, however, many of those concessions lead to a more positive experience for everybody.
-
-Creating a truly accessible website requires a lot of knowledge. Not just from your developers, or your testers, but right in the beginning as well—from the functional requirements, the information architecture, and the design itself.
-
-And even without buy-in from a client, there are certainly several steps we can take in the right direction, and they begin with awareness.
+Later in the presentation, we'll take a dive into some examples—this site included—and assess them.
 
 
 
@@ -415,20 +413,22 @@ And even without buy-in from a client, there are certainly several steps we can 
 class: middle, inverse
 layout: false
 
-## Introduction to the Tools
+## Introduction to Screen Readers
 
+???
 
+First, let's get acquainted with Screen Readers.
 
 
 ---
 
-template: tools
+template: screenreaders
 class: inverse
 layout: true
 
 .left-column[
 
-## Tools
+## Screen Readers
 
 ]
 
@@ -437,7 +437,7 @@ layout: true
 
 .right-column[
 
-###Desktop Screen Readers
+### Desktop
 
 - OS X VoiceOver
 - NVDA (NonVisual Desktop Access)
@@ -447,29 +447,35 @@ layout: true
 
 ]
 
+???
 
+The most popular desktop screen readers are JAWS, NVDA, and VoiceOver. JAWS is Windows-only and costs $1000 unless subsidized, so you can imagine that it doesn't get a ton of support when testing. We've done nearly everything in NVDA and VoiceOver, since NVDA is donation-based and VoiceOver comes with the Mac.
+
+VoiceOver and NVDA provide some surprisingly different experiences, and attempting to keep them both happy is nearly impossible. This is the Wild West of the internet right now.
+
+NVDA gives the user the ability to hear items they're hovering over as well.
+
+I've never used Window-Eyes or ChromeVox.
 
 --
 count: false
 
 .right-column[
 
-### Mobile Screen Readers
+### Mobile
 
 - iOS VoiceOver
 - Google Talkback
 
 ]
 
+???
 
+iOS VoiceOver by far has the bigger share of users here. Until iOS 8, it was a really solid screen reader. We've got our fingers crossed that iOS 9 brings it back to it's previous greatness.
 
+8 just... completely dropped the ball for accessibility.
 
-
-
-
-
-
-
+TalkBack is specifically for Android, and it's got it's quirks, too. None of these are perfect, which makes for some frustrating times.
 
 
 
@@ -477,27 +483,52 @@ count: false
 
 
 ---
-class: middle, inverse
+class: middle inverse
 layout: false
 
-## A Screen Reader's Experience
+## OS X VoiceOver: _The Experience_
 
-- VoiceOver for OS X
-	- `Command` + `F5`
-	- can navigate from element to element
-	- can navigate by element type
-- VoiceOver for iOS
-	- turn on in System Preferences
-		- triple-tap to start
-	- typically swiping from element to element
-	- can also navigate by types of elements
-	- can also point at elements
+To turn on:
 
-> insert a link to run through
+- `Command` + `F5`
+- Go through the tutorial if it pops up
+
+VoiceOver can:
+
+- navigate from element to element by using `control` + `option` + left or right arrow
+- navigate by element type
+- go into QuickNav mode by pressing both left and right arrows at the same time, then navigate by pressing left or right
+- and so much more!
+
+
 
 ???
 
-NVDA and Talkback aren't terribly different from these two. NVDA gives the user the ability to hear items they're hovering over as well.
+(Turn on VoiceOver and read the page)
+
+
+---
+class: middle inverse
+
+## iOS VoiceOver: _That Tiny Screen From Far Away_
+
+To enable iOS VoiceOver:
+
+- turn on in Settings
+- triple-tap to start
+
+iOS VoiceOver's experience:
+
+- swipe from element to element
+- navigate by types of elements
+- point at elements
+- double-tap to click on elements
+
+???
+
+Since I have the ability to point directly at elements on iOS, things have to be what they actually are. Stylistic hacks that cover up the elements the user is interacting with just don't work here—it prevents the real element from being percievable and operable.
+
+NVDA gives the user the ability to hear items they're hovering over as well, even though it's a desktop screen reader, it's not limited to the keyboard.
 
 
 
@@ -508,15 +539,19 @@ class: middle, inverse
 
 ### The Importance of a One to One Experience
 
+Everything important (non-decorative) you are able to see, you should be able hear and touch or hover over.
+
+.visuallyhidden[
+
+Hiding content for screen readers only can be dangerous. Not only did we not expect to hear this at all, but iOS users could miss this content entirely if they aren't swiping from element to element. That goes against the Understandable and Percievable tenants of POUR.
+
+]
+
+Nearly everything you hear should have a visible on-page component that's related to it. An X icon may say "Close", an image may be described, an icon may tell you what it is without the words present on the page, but the user should understand what visible object is being read to them. ![Winking Smiley Face](/assets/images/presentations/winking_emoji.png)
+
 ???
 
-Because we can interact with the page in so many ways, it's important that we structure the page in a manner that makes these interactions useful.
-
-Everything ~important~ (non-decorative) you are able to see, you should be able hear, you should be able to reach out and touch it, hover over it (if supported), click on it (and navigate to it with keyboard alone) if it's actionable, etc.
-
-Similarly, nearly everything you hear should have a visible on-page component that's related to it. An X icon may say "Close", an image may be described, a tooltip may say "Open tooltip" when these words aren't present on the page, but the user should understand what visible object is being read. We should not be hiding entire passages of text just for a screen reader, because, well, how likely are you to point at it and see it? There's no spirit realm here. We just want to make this stuff exist in nearly every percievable way it can.
-
-
+(Turn on VO and read through this page)
 
 
 
