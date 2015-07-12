@@ -19,7 +19,7 @@ count: false
 class: middle inverse
 layout: false
 
-## Intro to James
+## Intro **to James**
 
 ???
 
@@ -32,7 +32,7 @@ count: false
 class: middle inverse
 layout: false
 
-## Intro to James' Client Account
+## Intro to James' **Client Account**
 
 ???
 
@@ -45,7 +45,7 @@ count: false
 class: middle inverse
 layout: false
 
-## Intro to James' Client Account's Fear
+## Intro to James' Client Account's **Fear**
 
 ???
 
@@ -58,7 +58,7 @@ count: false
 class: middle inverse
 layout: false
 
-## Intro to James' Client Account's Fear of the WCAG 2.0
+## Intro to James' Client Account's Fear of the **WCAG 2.0**
 
 ???
 
@@ -72,7 +72,7 @@ count: false
 class: middle inverse
 layout: false
 
-## Intro to James' Client Account's Fear of the ADA
+## Intro to James' Client Account's Fear of the **ADA**
 
 ???
 
@@ -84,7 +84,7 @@ count: false
 class: middle inverse
 layout: false
 
-## Intro to James' Client Account's Fear of Being Sued
+## Intro to James' Client Account's Fear of **Being Sued**
 
 ???
 
@@ -96,7 +96,7 @@ count: false
 class: middle inverse
 layout: false
 
-## Intro to James again
+## Intro to **James again**
 
 ???
 
@@ -108,7 +108,7 @@ count: false
 class: middle inverse
 layout: false
 
-## Intro to Accessibility
+## Intro to **Accessibility**
 
 ???
 
@@ -120,7 +120,7 @@ count: false
 class: middle inverse
 layout: false
 
-## Intro to Web Accessibility
+## Intro to **Web** Accessibility
 
 ???
 
@@ -130,19 +130,21 @@ The web is no different.
 
 ---
 
+count: false
 class: middle inverse
 layout: false
 
-## Intro to Web Accessibility: The Basics
+## Intro to Web Accessibility: **The Basics**
 
 
 
 ---
 
+count: false
 class: middle inverse
 layout: false
 
-## Intro to Web Accessibility: The Basics: Our Users
+## Intro to Web Accessibility: The Basics: **Our Users**
 
 ???
 
@@ -195,9 +197,6 @@ layout: true
 
 ???
 
-???
-
-
 I've included a couple of different links to personas on the left-hand bar. If you want fully fleshed out personas, you can look for them there. This entire presentation is online at aminimalanimal.github.io/presentations/UX_accessibility/index.html.
 
 
@@ -214,6 +213,8 @@ count: false
 - issues with understanding visual context and clues
 
 ]
+
+???
 
 I separated the categories here for blindness and low vision to point out the both of these groups use screen readers. Because many of our users will have low vision, it's important that they experience that blind people have is one-to-one with what sighted people have. Any discrepancy between that one to one to experience results in potentially confusing circumstances.
 
@@ -291,7 +292,7 @@ And we need to care for users with cognitive disabilities. We need to make sure 
 class: middle inverse
 layout: false
 
-## The tenants of accessible design: POUR
+## The tenants of accessible design: **POUR**
 
 
 
@@ -396,14 +397,27 @@ layout: false
 
 ## _Seems easy enough._
 
+---
+count: false
+class: center middle inverse
+
+## _Right?_
+
+???
+
+(sigh hard) _A thousand sighs_
+
+---
+count: false
+class: center middle inverse
+
+## _Oh._
 
 ???
 
 It's a challenge, definitely.
 
-Consider this very presentation. This is actually an HTML site. And... it's not especially accessible. Ironic, right?
-
-Later in the presentation, we'll take a dive into some examples—this site included—and assess them.
+After a deeper look at the tools our users are using, you'll start to understand why this is difficult.
 
 
 
@@ -413,7 +427,7 @@ Later in the presentation, we'll take a dive into some examples—this site incl
 class: middle, inverse
 layout: false
 
-## Introduction to Screen Readers
+## Introduction to **Screen Readers**
 
 ???
 
@@ -444,6 +458,7 @@ layout: true
 - JAWS (Job Access With Speech)
 - Window-Eyes
 - ChromeVox
+- and many, many more!
 
 ]
 
@@ -466,6 +481,7 @@ count: false
 
 - iOS VoiceOver
 - Google Talkback
+- and many more!
 
 ]
 
@@ -490,8 +506,8 @@ layout: false
 
 To turn on:
 
-- `Command` + `F5`
-- Go through the tutorial if it pops up
+1. `command` + `F5`
+1. go through the tutorial if it pops up
 
 VoiceOver can:
 
@@ -514,8 +530,8 @@ class: middle inverse
 
 To enable iOS VoiceOver:
 
-- turn on in Settings
-- triple-tap to start
+1. turn on in Settings
+1. triple-tap to start
 
 iOS VoiceOver's experience:
 
@@ -537,7 +553,7 @@ NVDA gives the user the ability to hear items they're hovering over as well, eve
 ---
 class: middle, inverse
 
-### The Importance of a One to One Experience
+## The Importance of a One to One Experience
 
 Everything important (non-decorative) you are able to see, you should be able hear and touch or hover over.
 
@@ -556,10 +572,19 @@ Nearly everything you hear should have a visible on-page component that's relate
 
 
 
+
+
+
+
+
+
+
+
+
 ---
 class: middle, inverse
 
-### Scanning: Landmarks and Headings
+## Scanning: Landmarks and Headings
 
 Users generally rely on headings and landmarks to scan the page.
 
@@ -570,13 +595,13 @@ Users generally rely on headings and landmarks to scan the page.
 
 
 
-#### Types of Landmarks
+### Types of Landmarks
 
 
 
 
 
-#### How Heading Levels Work
+### How Heading Levels Work
 
 
 
@@ -586,7 +611,7 @@ Users generally rely on headings and landmarks to scan the page.
 ---
 class: middle, inverse
 
-#### Skip To Link
+## Skip To Link
 
 - jumping past redundant elements and navigation, etc.
 	— screen readers already have this ability. At this point, it's mainly for keyboard users, so making the link visible when it's focused is a good idea
@@ -599,7 +624,7 @@ class: middle, inverse
 ---
 class: middle, inverse
 
-### The Importance of a Linear Experience
+## The Importance of a Linear Experience
 
 - element order, within a module/component, is arranged left-to-right top-to-bottom (assuming it's an English page).
 - information that's necessary to the user should be presented in a logical and upfront manner. Close your eyes and walk through this. Did you have all the information you needed to have to make a sound judgement on whether or not to submit this form?
@@ -623,23 +648,10 @@ class: middle, inverse
 
 
 
-
-
-
----
-class: middle, inverse
-
 ### Don't redirect focus
 
 - EXAMPLE: three input fields for phone number
 
-
-
-
-
-
----
-class: middle, inverse
 
 ### The Importance of Obvious Focus States
 
@@ -654,10 +666,13 @@ class: middle, inverse
 
 
 ---
-class: middle, inverse
+class: center middle inverse
 
 
-## pushing the limits within the limits
+## _Pushing the limits *within the limits*_
+
+
+???
 
 ### SPA difficulties
 
@@ -671,19 +686,11 @@ At this point in time, the ideal screen reader experience is a page that has tru
 ---
 class: middle, inverse
 
-### responsive difficulties
+### Responsive Difficulties
 
-https://medium.com/salesforce-ux/7-things-every-designer-needs-to-know-about-accessibility-64f105f0881b
+[7 Things every designer should know](https://medium.com/salesforce-ux/7-things-every-designer-needs-to-know-about-accessibility-64f105f0881b)
 
-
-
-
-
-
----
-class: middle, inverse
-
-#### stray from Giving Elements Identity Crisis
+#### Stray from Giving Elements Identity Crisis
 
 - minor design changes could lead to changes in a user’s interaction model.
 - thou shalt not switch input types - breaks our STAYING FOCUSED rule
@@ -697,12 +704,21 @@ class: middle, inverse
 ---
 class: middle, inverse
 
-## Misc - for design
+## Visual Design
 
 ### Color Contrast
 - there be standards for compliance
-- your icons don't matter—actually, all that matters is text on a background
-	- so this (pic of text on a crazy background) is bad
+	- your icons don't matter—actually, all that matters is text on a background
+
+> look these up
+
+
+
+.poor_contrast[
+
+Example of poor color contrast
+
+]
 
 
 
