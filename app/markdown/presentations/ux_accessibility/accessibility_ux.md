@@ -468,8 +468,6 @@ The most popular desktop screen readers are JAWS, NVDA, and VoiceOver. JAWS is W
 
 VoiceOver and NVDA provide some surprisingly different experiences, and attempting to keep them both happy is nearly impossible. This is the Wild West of the internet right now.
 
-NVDA gives the user the ability to hear items they're hovering over as well.
-
 I've never used Window-Eyes or ChromeVox.
 
 --
@@ -549,9 +547,142 @@ NVDA gives the user the ability to hear items they're hovering over as well, eve
 
 
 
+---
+class: middle inverse
+layout: false
+
+## How to Make Screen Readers **Happy**
+
+
 
 ---
-class: middle, inverse
+class: middle inverse
+layout: false
+
+## Use Landmarks and Headings
+
+Users generally rely on headings and landmarks to scan the page.
+
+- landmarks allow them to jump from area to area
+	- In OS X VoiceOver, press left and right arrow together to turn on QuickNav, then press up and left arrows to cycle through webspots, then press up or down to navigate to web spots of your choice
+- `control` + `option` + `command` + `h` allows users to jump to the next heading
+
+
+---
+template: landmarksandheadings
+class: middle inverse
+layout: true
+
+.left-column[
+
+## Landmarks and Headings
+
+]
+
+---
+count: false
+
+.right-column[
+
+### Types of Landmarks
+
+- banner (header, **only one**)
+- search
+- navigation
+- main (**only one**)
+- complementary
+- contentinfo (footer, **only one**)
+
+In addition to these landmarks, it can be helpful if we **label them** based on something on the page so that when the user jumps to that section, they hear what it is.
+
+> find link to demonstrate
+
+]
+
+
+---
+count: false
+
+.right-column[
+
+### How Heading Levels Work
+
+_Like your family tree (presumably)_
+
+Headings form a tree starting at `h1`. Headings that are nested deeper are considered _within_ the previous heading's section, and cannot skip heading levels.
+
+![Diagram of Heading Level Tree](/assets/images/presentations/heading_level_tree.svg)
+
+]
+
+
+???
+
+There is generally only one `h1`.
+
+So, this would be read h1 > h2 > h3> h4> h5> h6 > back up to the second h3 and back down again.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+class: middle inverse
+layout: false
+
+
+???
+
+
+
+---
+class: middle inverse
+layout: false
+
+## How to Make Screen Readers _Hate You_
+
+
+
+
+
+
+
+---
+class: middle inverse
+
+**Don't** do a non-linear experience
+
 
 ## The Importance of a One to One Experience
 
@@ -569,6 +700,9 @@ Nearly everything you hear should have a visible on-page component that's relate
 
 (Turn on VO and read through this page)
 
+(after)
+
+So what just happened there is I used a CSS technique to completely hide a passage of text from sighted users. This is a pattern that we started adopting when we realized that we could explain things to screen readers that the visual design just wouldn't allow us to explain to sighted users. Ultimately, the best practice is just to not put yourself in a position in which you feel you need that sort of thing.
 
 
 
@@ -578,30 +712,6 @@ Nearly everything you hear should have a visible on-page component that's relate
 
 
 
-
-
-
----
-class: middle, inverse
-
-## Scanning: Landmarks and Headings
-
-Users generally rely on headings and landmarks to scan the page.
-
-- landmarks allow them to jump from area to area
-- within these areas, it's best that the experience is linear
-
-
-
-
-
-### Types of Landmarks
-
-
-
-
-
-### How Heading Levels Work
 
 
 
@@ -610,6 +720,8 @@ Users generally rely on headings and landmarks to scan the page.
 
 ---
 class: middle, inverse
+
+_Do_
 
 ## Skip To Link
 
@@ -623,6 +735,8 @@ class: middle, inverse
 
 ---
 class: middle, inverse
+
+_Do_
 
 ## The Importance of a Linear Experience
 
@@ -782,64 +896,5 @@ class: middle, inverse
 
 ##### Naming Conventions
 ##### Error Messaging
-##### Tooltips
 
-- multiple constraints:
-	- we can either treat these as modals
-	- or have them read immediately
-
-
-
-
-
----
-class: middle, inverse
-### Tables
-
-so tricky.
-
-
-
-
----
-class: middle, inverse
-### Dropdown Menus
-
-
-
-
-
----
-class: middle, inverse
-
-### Modals
-
-
-
-
----
-class: middle, inverse
-
-### Expandable Content
-
-- it's best to keep the button that expands content 
-
-
-
-
-
----
-class: middle, inverse
-
-### Show More...
-
-- ick
-
-
-
-
----
-class: middle, inverse
-
-### Replaceable content
 
