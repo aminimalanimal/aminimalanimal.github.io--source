@@ -624,56 +624,56 @@ So, this would be read h1 > h2 > h3> h4> h5> h6 > back up to the second h3 and b
 
 
 
+---
+class: middle inverse
+layout: false
 
+## **Good Idea:** Craft a Linear Experience
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- element order, within a module/component, should be arranged left-to-right top-to-bottom (assuming it's an English page)
+- information that's necessary to the user should be presented in a logical and upfront manner.
 
 
 
 ---
 class: middle inverse
-layout: false
 
+## _Bad Idea:_ Provide Important Information Out of Order
+
+<form class="demo">
+	<div class="field">
+		<div class="label_container">
+			<label class="label" for="input_1">Name</label>
+		</div>
+		<div class="input_container">
+			<input class="input" type="text" id="input_1">
+		</div>
+	</div>
+	<div class="field">
+		<div class="label_container">
+			<label class="label" for="input_2">Mobile Phone Number</label>
+		</div>
+		<div class="input_container">
+			<input class="input" type="text" id="input_2">
+		</div>
+	</div>
+	<button type="button">Submit</button>
+	<small>Your mobile phone number is not required. If you give us your mobile phone number, we'll sell it to our partners and they will call you. So much.</small>
+</form>
 
 ???
 
+Close your eyes and walk through this. Did you have all the information you needed to have to make a sound judgement on whether or not to submit this form?
+
+
+
 
 
 ---
 class: middle inverse
 layout: false
 
-## How to Make Screen Readers _Hate You_
-
-
-
+## **Good Idea:** Provide a one-to-one experience
 
 
 
@@ -681,10 +681,7 @@ layout: false
 ---
 class: middle inverse
 
-**Don't** do a non-linear experience
-
-
-## The Importance of a One to One Experience
+## _Bad Idea:_ Hide Content Solely for Screen Reader Users
 
 Everything important (non-decorative) you are able to see, you should be able hear and touch or hover over.
 
@@ -704,14 +701,7 @@ Nearly everything you hear should have a visible on-page component that's relate
 
 So what just happened there is I used a CSS technique to completely hide a passage of text from sighted users. This is a pattern that we started adopting when we realized that we could explain things to screen readers that the visual design just wouldn't allow us to explain to sighted users. Ultimately, the best practice is just to not put yourself in a position in which you feel you need that sort of thing.
 
-
-
-
-
-
-
-
-
+It's likely that this hidden content will be missed in future CMS updates, or that it was never integrated at all.
 
 
 
@@ -719,58 +709,102 @@ So what just happened there is I used a CSS technique to completely hide a passa
 
 
 ---
-class: middle, inverse
+class: middle inverse
 
-_Do_
+## **Good Idea:** Manage Focus Only When Necessary
 
-## Skip To Link
+It's really nice to be able to look around the page as much as we want, isn't it? Leaving focus alone ensures screen reader users can do that, too.
 
-- jumping past redundant elements and navigation, etc.
-	— screen readers already have this ability. At this point, it's mainly for keyboard users, so making the link visible when it's focused is a good idea
+Now and then, we'll send the user to a modal. When that happens and the page gets an overlay placed on top, it's nice to bring them along with us. This is one of the few times we actually want to manage their focus.
 
+---
+class: middle inverse
 
+## _Bad Idea:_ Create Focus Traps
 
-
+> We thought it'd be really cool to start them out in the search field and then not let them leave, 'cause the whole point is just filtering search results, right? **Super Convenient UX!**
 
 
 ---
-class: middle, inverse
+class: middle inverse
 
-_Do_
+## _Bad Idea:_ Redirect Focus Instantly and Unexpectedly
 
-## The Importance of a Linear Experience
+<form class="demo">
+	<div class="field">
+		<fieldset>
+			<legend>Phone Number</legend>
+			<label class="visuallyhidden" for="awful_focus_management_example_input_1">Area Code</label>
+			<label class="visuallyhidden" for="awful_focus_management_example_input_2">Prefix</label>
+			<label class="visuallyhidden" for="awful_focus_management_example_input_3">Last 4 Digits</label>
+			<div class="input_container">
+				<input class="awful_focus_management_example input" type="text" id="awful_focus_management_example_input_1" maxlength="3" onKeyup="var t = event.target; if (t.value.length >= 3) {t.nextSibling.nextElementSibling.focus();}">
+				<input class="awful_focus_management_example input" type="text" id="awful_focus_management_example_input_2" maxlength="3" onKeyup="var t = event.target; if (t.value.length >= 3) {t.nextSibling.nextElementSibling.focus();}">
+				<input class="awful_focus_management_example input" type="text" id="awful_focus_management_example_input_3" maxlength="4">
+			</div>
+		</fieldset>
+	</div>
+</form>
 
-- element order, within a module/component, is arranged left-to-right top-to-bottom (assuming it's an English page).
-- information that's necessary to the user should be presented in a logical and upfront manner. Close your eyes and walk through this. Did you have all the information you needed to have to make a sound judgement on whether or not to submit this form?
-	- EXAMPLE: form with Terms and Conditions below the Submit button "your email address is optional. If you give us your email address, we will send you offers from our partners."
+---
+class: middle inverse
 
+## **Good Idea:** Obvious Focus States
 
+They're required! Embrace these. Make them cool!
 
-
+<form class="demo">
+	<div class="field">
+		<div class="label_container">
+			<label class="label" for="input_1">Name</label>
+		</div>
+		<div class="input_container">
+			<input class="input" type="text" id="input_1">
+		</div>
+	</div>
+	<div class="field">
+		<div class="label_container">
+			<label class="label" for="input_2">Mobile Phone Number</label>
+		</div>
+		<div class="input_container">
+			<input class="input" type="text" id="input_2">
+		</div>
+	</div>
+</form>
 
 
 ---
-class: middle, inverse
+class: middle inverse
 
-## Staying Focused
+## _Bad Idea:_ No Focus States or Hard-to-See Focus States
 
-- we always have to keep track of a user's focus
-	- don't instantly place them on elements because they can miss information
-		- EXAMPLE: instantly focused find field
-	- no locking them on elements
-		- EXAMPLE: a worse focused find field
+<form class="demo">
+	<div class="field">
+		<div class="label_container">
+			<label class="label" for="input_1">Name</label>
+		</div>
+		<div class="input_container">
+			<input class="" type="text" id="input_1">
+		</div>
+	</div>
+	<div class="field">
+		<div class="label_container">
+			<label class="label" for="input_2">Mobile Phone Number</label>
+		</div>
+		<div class="input_container">
+			<input class="" type="text" id="input_2">
+		</div>
+	</div>
+</form>
 
 
 
-### Don't redirect focus
-
-- EXAMPLE: three input fields for phone number
 
 
-### The Importance of Obvious Focus States
 
-- focus states focus states focus states
-	- embrace these. make them cool!
+
+
+
 
 
 
@@ -896,5 +930,17 @@ class: middle, inverse
 
 ##### Naming Conventions
 ##### Error Messaging
+
+
+
+
+---
+class: middle inverse
+
+
+## **Good Idea:** Skip To Link
+
+- jumping past redundant elements and navigation, etc.
+	— screen readers already have this ability. At this point, it's mainly for keyboard users, so making the link visible when it's focused is a good idea
 
 

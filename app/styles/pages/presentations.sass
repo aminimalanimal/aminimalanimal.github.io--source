@@ -1,4 +1,7 @@
 @import ../global_variables
+@import ../global
+@import ../components/form_fields-layout-flex
+@import ../components/form_fields-style-basic
 
 @import url(http://fonts.googleapis.com/css?family=Droid+Serif)
 @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz)
@@ -117,3 +120,23 @@ blockquote
 	color: $color-monokai-blue
 	p
 		font-size: 32px
+
+button
+	background: $color-monokai-black
+	border: solid 1px $color-monokai-white
+	border-radius: $border-radius
+	display: block
+	margin: 14px 8px 14px 0
+	&:hover
+		background: lighten($color-monokai-black, 5%)
+
+small
+	color: $color-monokai-red
+
+.demo
+	border: solid 1px $color-monokai-yellow
+	border-radius: $border-radius
+	padding: 14px
+
+.awful_focus_management_example
+	width: 100px
