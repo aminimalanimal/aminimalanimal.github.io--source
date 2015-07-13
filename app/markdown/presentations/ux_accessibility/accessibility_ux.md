@@ -1,4 +1,4 @@
-class: center, middle, inverse
+class: center, middle inverse
 
 # Accessibility for UX
 
@@ -424,7 +424,7 @@ After a deeper look at the tools our users are using, you'll start to understand
 
 
 ---
-class: middle, inverse
+class: middle inverse
 layout: false
 
 ## Introduction to **Screen Readers**
@@ -595,7 +595,7 @@ count: false
 
 In addition to these landmarks, it can be helpful if we **label them** based on something on the page so that when the user jumps to that section, they hear what it is.
 
-> find link to demonstrate
+<a href="/" target="_blank">Demo</a>
 
 ]
 
@@ -620,7 +620,7 @@ Headings form a tree starting at `h1`. Headings that are nested deeper are consi
 
 There is generally only one `h1`.
 
-So, this would be read h1 > h2 > h3> h4> h5> h6 > back up to the second h3 and back down again.
+So, this would be read `h1` > `h2` > `h3`> `h4`> `h5`> `h6` > back up to the second h3 and back down again.
 
 
 
@@ -666,6 +666,39 @@ class: middle inverse
 Close your eyes and walk through this. Did you have all the information you needed to have to make a sound judgement on whether or not to submit this form?
 
 
+---
+class: middle inverse
+
+## _Bad Idea:_ Inconsistently Deviate from Left-to-Right
+
+In both of these cases, the user will land on Submit first, but it is confusing when the Submit button is on the right side and breaks from a general rule of navigating left-to-right.
+
+<form class="demo">
+	<div class="field">
+		<input type="checkbox" id="deviate_left-to-right_check_1">
+		<label class="label" for="deviate_left-to-right_check_1">Accept the Conditions.</label>
+	</div>
+	<div class="right-to-left">
+		<button type="button">Submit</button>
+		<button type="button">Cancel</button>
+	</div>
+</form>
+
+<form class="demo">
+	<div class="field">
+		<input type="checkbox" id="deviate_left-to-right_check_2">
+		<label class="label" for="deviate_left-to-right_check_2">Accept the Conditions.</label>
+	</div>
+	<div class="left-to-right">
+		<button type="button">Submit</button>
+		<button type="button">Cancel</button>
+	</div>
+</form>
+
+
+???
+
+The temptation to do this occurs when we start collapsing content into a single column. Say you want that Submit button on the right in _most_ cases, but want it first on the phone. 
 
 
 
@@ -722,7 +755,19 @@ class: middle inverse
 
 ## _Bad Idea:_ Create Focus Traps
 
-> We thought it'd be really cool to start them out in the search field and then not let them leave, 'cause the whole point is just filtering search results, right? **Super Convenient UX!**
+<form class="demo">
+	<input class="input" type="text" role="search" onfocusout="event.target.focus();" id="search_focus_trap_example" placeholder="Search...">
+	<ul>
+		<li><a href="#">First Result</a></li>
+		<li><a href="#">Second Result</a></li>
+		<li><a href="#">Third Result</a></li>
+		<li><a href="#">Fourth Result</a></li>
+	</ul>
+</form>
+
+???
+
+We thought it'd be really cool to start them out in the search field and then not let them leave, 'cause the whole point is just filtering search results, right? **Super Convenient UX!**
 
 
 ---
@@ -820,29 +865,74 @@ class: center middle inverse
 ## _Pushing the limits *within the limits*_
 
 
-???
 
-### SPA difficulties
+---
+class: middle inverse
 
-At this point in time, the ideal screen reader experience is a page that has true separate page loads.
+### Single Page App Difficulties
 
+At this point in time, the ideal screen reader experience is a page that has true separate page loads. Single page webapps make the experience less understandable, as page transitions can occur without the user being introduced to them.
+
+When all of your page's content falls away, the user ends up at the bottom of the page.
 
 
 
 
 
 ---
-class: middle, inverse
+class: middle inverse
 
 ### Responsive Difficulties
 
 [7 Things every designer should know](https://medium.com/salesforce-ux/7-things-every-designer-needs-to-know-about-accessibility-64f105f0881b)
 
-#### Stray from Giving Elements Identity Crisis
 
-- minor design changes could lead to changes in a user’s interaction model.
-- thou shalt not switch input types - breaks our STAYING FOCUSED rule
 
+---
+class: middle inverse
+
+## _Bad Idea:_ Using Color as the Only Means of Conveying Information
+
+This:
+
+.demo[
+
+<h3 class="marginless bar_red">Using <code>tabindex</code> on all the things!</h3>
+
+]
+
+May be seen as:
+
+.demo[
+
+<h3 class="marginless bar_grey">Using <code>tabindex</code> on all the things!</h3>
+
+]
+
+???
+
+Let's say you're colorblind. Can you tell if this example is a good idea or a bad idea?
+
+---
+class: middle inverse
+
+## **Good Idea:** Using Color to Enhance What is Already Visible
+
+This:
+
+.demo[
+
+<h3 class="marginless bar_red"><em>Bad Idea:</em> Using <code>tabindex</code> on all the things!</h3>
+
+]
+
+Is still decent as:
+
+.demo[
+
+<h3 class="marginless bar_grey"><i>Bad Idea:</i> Using <code>tabindex</code> on all the things!</h3>
+
+]
 
 
 
@@ -850,13 +940,34 @@ class: middle, inverse
 
 
 ---
-class: middle, inverse
+class: middle inverted
+
+
+
+
+Keep expandable content links where they are.
+
+
+Keep modals simple
+
+
+
+Screen readers hate Scrollable content
+
+
+
+---
+class: middle inverse
 
 ## Visual Design
 
 ### Color Contrast
-- there be standards for compliance
-	- your icons don't matter—actually, all that matters is text on a background
+
+> there be standards for compliance
+
+> all that matters is text on a background
+
+Decorative icons don't matter to the WCAG actually, so if you wanted to, you _could_ ignore those.
 
 > look these up
 
@@ -874,7 +985,7 @@ Example of poor color contrast
 
 
 ---
-class: middle, inverse
+class: middle inverse
 
 ## Prototyping
 
@@ -886,7 +997,7 @@ Prototyping accessibility for the web requires knowledge of established patterns
 
 
 ---
-class: middle, inverse
+class: middle inverse
 
 ## Component Patterns for the Web
 
@@ -898,7 +1009,7 @@ http://www.w3.org/TR/wai-aria-practices/#aria_ex
 
 
 ---
-class: middle, inverse
+class: middle inverse
 
 ### Forms
 
@@ -913,7 +1024,7 @@ class: middle, inverse
 
 
 ---
-class: middle, inverse
+class: middle inverse
 
 #### Input types
 
@@ -926,7 +1037,7 @@ Issues with overlaying native elements
 
 
 ---
-class: middle, inverse
+class: middle inverse
 
 ##### Naming Conventions
 ##### Error Messaging

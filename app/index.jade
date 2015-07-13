@@ -20,10 +20,15 @@ html.no-js(lang="en")
 
 
 	body
-		h1 aminimalanimal
-		p Under construction. Don't mind my dust. Look—there's a slideshow here to distract you from the nothing: <a href="/presentations/ux_accessibility/index.html">Presentation - Accessibility for UX</a>
+		header(role="banner")
+			h1 aminimalanimal
+		nav(role="navigation")
+			a(href="/presentations/ux_accessibility/index.html") Presentation - Accessibility for UX
+			a(href="/accessibility/pattern_library/index.html") Accessibility - Pattern Library
+		main(role="main")
+			p Under construction. Don't mind my dust. Look—there's a slideshow here to distract you from the nothing: <a href="/presentations/ux_accessibility/index.html">Presentation - Accessibility for UX</a>
 
-		p Pattern Library (WIP) scratch is here: <a href="/accessibility/pattern_library/index.html">Accessibility - Pattern Library</a>
+		footer(role="contentinfo") Page created by James Curd, 2015
 
 
 		//- SCRIPTS
