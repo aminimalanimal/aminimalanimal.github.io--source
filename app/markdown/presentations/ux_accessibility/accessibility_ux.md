@@ -76,7 +76,7 @@ layout: false
 
 ???
 
-which passed in 1990. The ADA prevents discrimination based on disability, and in recent years many companies that have functionality deemed to be universal enough to be a public service—such as banks and airlines—have found themselves under pressure to offer their services and their websites to everyone,
+which passed in 1990. The ADA prevents discrimination based on disability, and in recent years many companies that have functionality deemed to be universal enough to be a public service—such as banks, airlines, universities, government websites, states—have found themselves under pressure to offer their services and their websites to everyone,
 
 ---
 
@@ -1040,12 +1040,13 @@ There are a ton of ideas out there that we may or may not be able to pull off. I
 ---
 class: middle inverse
 
-### Forms
+## **Good Idea:** Place Important Information at the top of Forms
+
+???
 
 - where to place important information
 - the expectation of being able to tab through an entire form
-- creating related content
-	- fieldsets and how they sound
+
 
 
 
@@ -1055,14 +1056,15 @@ class: middle inverse
 ---
 class: middle inverse
 
-#### Input types
-
-### Radios and checkboxes
+## _Bad Idea:_ Styling Overrides of Radio Buttons and Checkboxes
 
 Issues with overlaying native elements
 - try selecting this radio button/checkbox by hovering over it
 
 
+???
+
+This just doesn't work well at all for iOS users that are trying to hover over something.
 
 
 ---
@@ -1094,3 +1096,14 @@ At this point in time, the ideal screen reader experience is a page that has tru
 
 When all of your page's content falls away, the user ends up at the bottom of the page.
 
+
+
+
+
+---
+
+
+???
+
+- creating related content
+	- fieldsets and how they sound
