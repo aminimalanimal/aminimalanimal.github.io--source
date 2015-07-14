@@ -783,8 +783,8 @@ class: middle inverse
 			<label class="visuallyhidden" for="awful_focus_management_example_input_2">Prefix</label>
 			<label class="visuallyhidden" for="awful_focus_management_example_input_3">Last 4 Digits</label>
 			<div class="input_container">
-				<input class="awful_focus_management_example input" type="text" id="awful_focus_management_example_input_1" maxlength="3" onKeyup="var t = event.target; if (t.value.length >= 3) {t.nextSibling.nextElementSibling.focus();}">
-				<input class="awful_focus_management_example input" type="text" id="awful_focus_management_example_input_2" maxlength="3" onKeyup="var t = event.target; if (t.value.length >= 3) {t.nextSibling.nextElementSibling.focus();}">
+				<input class="awful_focus_management_example input" type="text" id="awful_focus_management_example_input_1" maxlength="3" onKeyup="var t = event.target; if (t.value.length >= 3) {$(t).next().focus();}">
+				<input class="awful_focus_management_example input" type="text" id="awful_focus_management_example_input_2" maxlength="3" onKeyup="var t = event.target; if (t.value.length >= 3) {$(t).next().focus();}">
 				<input class="awful_focus_management_example input" type="text" id="awful_focus_management_example_input_3" maxlength="4">
 			</div>
 		</fieldset>
@@ -843,51 +843,6 @@ class: middle inverse
 </form>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----
-class: center middle inverse
-
-
-## _Pushing the limits *within the limits*_
-
-
-
----
-class: middle inverse
-
-### Single Page App Difficulties
-
-At this point in time, the ideal screen reader experience is a page that has true separate page loads. Single page webapps make the experience less understandable, as page transitions can occur without the user being introduced to them.
-
-When all of your page's content falls away, the user ends up at the bottom of the page.
-
-
-
-
-
----
-class: middle inverse
-
-### Responsive Difficulties
-
-[7 Things every designer should know](https://medium.com/salesforce-ux/7-things-every-designer-needs-to-know-about-accessibility-64f105f0881b)
-
-
-
 ---
 class: middle inverse
 
@@ -938,40 +893,31 @@ Is still decent as:
 
 
 
-
 ---
-class: middle inverted
+class: middle inverse
 
+## _Bad Idea:_ Scroll Bars within Scroll Bars
 
+In general, screen readers are not very good at coping with these areas. Sometimes
 
+.demo.scrollable_content[
 
-Keep expandable content links where they are.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-
-Keep modals simple
-
-
-
-Screen readers hate Scrollable content
-
+]
 
 
 ---
 class: middle inverse
 
-## Visual Design
+## **Good Idea:** Meet Color Contrast Standards for Text
 
-### Color Contrast
-
-> there be standards for compliance
-
-> all that matters is text on a background
-
-Decorative icons don't matter to the WCAG actually, so if you wanted to, you _could_ ignore those.
-
-> look these up
-
-
+Text needs to have a contrast ratio of 4.5:1. Large-scale text, 3:1.
 
 .poor_contrast[
 
@@ -979,6 +925,14 @@ Example of poor color contrast
 
 ]
 
+Logos, decorative text, and text that belongs to inactive UI components have no contrast requirement.
+
+???
+
+The visual presentation of text and images of text has a contrast ratio of at least 4.5:1, except for the following: (Level AA)
+Large Text: Large-scale text and images of large-scale text have a contrast ratio of at least 3:1;
+Incidental: Text or images of text that are part of an inactive user interface component, that are pure decoration, that are not visible to anyone, or that are part of a picture that contains significant other visual content, have no contrast requirement.
+Logotypes: Text that is part of a logo or brand name has no minimum contrast requirement.
 
 
 
@@ -987,10 +941,78 @@ Example of poor color contrast
 ---
 class: middle inverse
 
-## Prototyping
+## _Bad Idea:_ Give Users Seizures
 
-Prototyping accessibility for the web requires knowledge of established patterns. Anything new requires testing.
+.demo[
 
+<button type="button" onclick="window.alert('(smh) DO NOT GIVE USERS SEIZURES!!')">Click to Have a Seizure</button>
+
+]
+
+???
+
+"Does anyone in here have issues with seizures... rapidly flashing colors, anything like that?"
+
+(click it)
+
+Well, you can imagine. Flashing stuff. Myspace circa 2000.
+
+
+
+
+---
+class: inverse
+
+## **Good Idea:** Keep expandable content links where they are.
+
+.demo[
+
+<button aria-expanded="false" aria-owns="more_content_1" type="button" onclick="$.fn.toggleAttr = function (attr, value1, value2) {return this.each(function () { var self; self = $(this); if (self.attr(attr) === value1) { self.attr(attr, value2); } else { self.attr(attr, value1); }});}; $(this).toggleAttr('aria-expanded', 'true', 'false'); $('#more_content_1').toggleClass('hidden');">Bibendum Fermentum Aenean</button>
+<div id="more_content_1" class="hidden">
+	<h3>Bibendum Fermentum Aenean</h3>
+	<p>Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+</div>
+
+]
+
+
+???
+
+Okay, so this is a poorly-styled accordion.
+When we drop these down, screen readers have to go backwards. Also, note the lack of "More/Less" text.
+
+
+---
+class: inverse
+
+## _Bad Idea:_ Move expandable links to the bottom of the content.
+
+.demo[
+
+<div id="more_content_2" class="hidden">
+	<h3 class="marginless">Bibendum Fermentum Aenean</h3>
+	<p>Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+</div>
+<button aria-expanded="false" aria-owns="more_content_2" type="button" onclick="$.fn.toggleAttr = function (attr, value1, value2) {return this.each(function () { var self; self = $(this); if (self.attr(attr) === value1) { self.attr(attr, value2); } else { self.attr(attr, value1); }});}; $(this).toggleAttr('aria-expanded', 'true', 'false'); $('#more_content_2').toggleClass('hidden');">Bibendum Fermentum Aenean</button>
+
+]
+
+
+???
+
+Okay, so this is a poorly-styled accordion.
+When we drop these down, screen readers have to go backwards. Also, note the lack of "More/Less" text.
+
+
+---
+class: middle inverse
+
+## **Good Idea:** Keep Modals/Pop Ups Simple
+
+???
+
+NVDA doesn't treat modals very well. They intentionally don't allow users to navigate through them element by element, so it's up to us to read the entire modal to the user when it pops up. After that, the user has to rely on browser-based navigation in order to actually manipulate it.
+This means that we can do simple things that work well, but taking complicated portions of a webpage and sticking them in a pop-up is a bad idea.
 
 
 
@@ -999,9 +1021,16 @@ Prototyping accessibility for the web requires knowledge of established patterns
 ---
 class: middle inverse
 
-## Component Patterns for the Web
+## **Good Idea:** Work with Developers to Prototype New Concepts
 
-http://www.w3.org/TR/wai-aria-practices/#aria_ex
+[W3 - WAI-ARIA Patterns](http://www.w3.org/TR/wai-aria-practices/#aria_ex)
+
+(Not all of these work well, though!)
+
+???
+
+There are a ton of ideas out there that we may or may not be able to pull off. It's unfortunate when you have to revamp design later in a project and change functional requirements.
+
 
 
 
@@ -1054,4 +1083,14 @@ class: middle inverse
 - jumping past redundant elements and navigation, etc.
 	— screen readers already have this ability. At this point, it's mainly for keyboard users, so making the link visible when it's focused is a good idea
 
+
+
+---
+class: middle inverse
+
+### Single Page App Difficulties
+
+At this point in time, the ideal screen reader experience is a page that has true separate page loads. Single page webapps make the experience less understandable, as page transitions can occur without the user being introduced to them.
+
+When all of your page's content falls away, the user ends up at the bottom of the page.
 
