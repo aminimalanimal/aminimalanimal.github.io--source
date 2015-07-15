@@ -1156,3 +1156,24 @@ class: center middle inverse
 Open floor at this point. If anyone wants to ask anything, go for it. I'm sure this wasn't Everything you could know.
 
 And if anyone has ideas for websites to go walk through, we can do that, too.
+
+
+---
+class: inverse
+
+.left-column[
+## Links
+]
+
+.right-column[
+
+This presentation: [aminimalanimal.com](http://aminimalanimal.github.io/presentations/ux_accessibility/index.html)
+
+- [WCAG 2.0](http://www.w3.org/TR/WCAG20/)
+- [WebAIM: Using VoiceOver](http://webaim.org/articles/voiceover/)
+- [W3 - WAI-ARIA Patterns](http://www.w3.org/TR/wai-aria-practices/#aria_ex)
+- [MIT - UX Accessibility Guidelines](https://ux.mit.edu/accessibility/guidelines)
+- [Aegis Personas](http://www.aegis-project.eu/index.php?option=com_content&view=article&id=63&Itemid=53)
+- [A Web for Everyone - Personas](https://uxmag.com/articles/book-excerpt-a-web-for-everyone)
+
+]
