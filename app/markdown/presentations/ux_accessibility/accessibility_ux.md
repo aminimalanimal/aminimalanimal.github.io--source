@@ -622,6 +622,15 @@ There is generally only one `h1`.
 
 So, this would be read `h1` > `h2` > `h3`> `h4`> `h5`> `h6` > back up to the second h3 and back down again.
 
+---
+class: center middle inverse
+layout: false
+
+## And Now, it's Time for **Good Idea**, _Bad Idea_
+
+???
+
+So, I defaulted to this because I had a lot of disparate things to say and needed _some_ form of structure. Not all of these bad ideas are equally awful.
 
 
 ---
@@ -846,6 +855,30 @@ class: middle inverse
 ---
 class: middle inverse
 
+## **Good Idea:** Using Color to Enhance What is Already Visible
+
+This:
+
+.demo[
+
+<h3 class="marginless bar_red"><em>Bad Idea:</em> Using <code>tabindex</code> on all the things!</h3>
+
+]
+
+Is still decent as:
+
+.demo[
+
+<h3 class="marginless bar_grey"><i>Bad Idea:</i> Using <code>tabindex</code> on all the things!</h3>
+
+]
+
+
+
+
+---
+class: middle inverse
+
 ## _Bad Idea:_ Using Color as the Only Means of Conveying Information
 
 This:
@@ -868,48 +901,6 @@ May be seen as:
 
 Let's say you're colorblind. Can you tell if this example is a good idea or a bad idea?
 
----
-class: middle inverse
-
-## **Good Idea:** Using Color to Enhance What is Already Visible
-
-This:
-
-.demo[
-
-<h3 class="marginless bar_red"><em>Bad Idea:</em> Using <code>tabindex</code> on all the things!</h3>
-
-]
-
-Is still decent as:
-
-.demo[
-
-<h3 class="marginless bar_grey"><i>Bad Idea:</i> Using <code>tabindex</code> on all the things!</h3>
-
-]
-
-
-
-
-
----
-class: middle inverse
-
-## _Bad Idea:_ Scroll Bars within Scroll Bars
-
-In general, screen readers are not very good at coping with these areas. Sometimes
-
-.demo.scrollable_content[
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-]
 
 
 ---
@@ -918,12 +909,6 @@ class: middle inverse
 ## **Good Idea:** Meet Color Contrast Standards for Text
 
 Text needs to have a contrast ratio of 4.5:1. Large-scale text, 3:1.
-
-.poor_contrast[
-
-Example of poor color contrast
-
-]
 
 Logos, decorative text, and text that belongs to inactive UI components have no contrast requirement.
 
@@ -935,7 +920,16 @@ Incidental: Text or images of text that are part of an inactive user interface c
 Logotypes: Text that is part of a logo or brand name has no minimum contrast requirement.
 
 
+---
+class: middle inverse
 
+.poor_contrast[
+
+<h2><i>Bad Idea:</i> This</h2>
+
+
+
+]
 
 
 ---
@@ -1017,13 +1011,43 @@ This means that we can do simple things that work well, but taking complicated p
 
 
 
+---
+class: middle inverse
+
+## _Bad Idea:_ Scrollable Areas
+
+In general, screen readers are not very good at coping with these areas. Sometimes
+
+.demo.scrollable_content[
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+]
+
+???
+
+Alright, so this doesn't relate too directly, but it's especially true in modals.
+
+
+Similarly, a bad idea is Locking Scroll. Scroll down, take it over, force the page up... that kind of thing.
+
+
+
+
 
 ---
 class: middle inverse
 
-## **Good Idea:** Work with Developers to Prototype New Concepts
+## **Good Idea:** Prototype Non-traditional UI
 
-[W3 - WAI-ARIA Patterns](http://www.w3.org/TR/wai-aria-practices/#aria_ex)
+_Preferably before selling it?_
+
+Some already-made components: [W3 - WAI-ARIA Patterns](http://www.w3.org/TR/wai-aria-practices/#aria_ex)
 
 (Not all of these work well, though!)
 
@@ -1037,20 +1061,6 @@ There are a ton of ideas out there that we may or may not be able to pull off. I
 
 
 
----
-class: middle inverse
-
-## **Good Idea:** Place Important Information at the top of Forms
-
-???
-
-- where to place important information
-- the expectation of being able to tab through an entire form
-
-
-
-
-
 
 
 ---
@@ -1058,21 +1068,39 @@ class: middle inverse
 
 ## _Bad Idea:_ Styling Overrides of Radio Buttons and Checkboxes
 
-Issues with overlaying native elements
-- try selecting this radio button/checkbox by hovering over it
-
-
 ???
 
 This just doesn't work well at all for iOS users that are trying to hover over something.
+
+That being said, I doubt you'll _not_ do it. Personally, I'm looking into alternative means. Defaults are just ugly, aren't they?
 
 
 ---
 class: middle inverse
 
-##### Naming Conventions
-##### Error Messaging
+## **Good Idea:** Prefix Error Messages with "Error"
 
+And reference the field that has the error.
+
+<form class="demo">
+	<div class="field">
+		<div class="label_container">
+			<label class="label" for="error_message_prefix_input_1">Name</label>
+		</div>
+		<div class="input_container">
+			<input class="input" type="text" id="error_message_prefix_input_1" aria-describedby="error_message_prefix_error_input_1" placeholder="*@$###">
+		</div>
+		<div class="error" id="error_message_prefix_error_input_1">
+			<img src="/assets/images/presentations/error_icon.svg" alt="Error" class="error_icon">
+			Wow. You Messed Up Your Name. Please don't use symbols in the Name field.
+		</div>
+	</div>
+</form>
+
+
+???
+
+_And other related helpful explanations of what things are_
 
 
 
@@ -1090,20 +1118,41 @@ class: middle inverse
 ---
 class: middle inverse
 
-### Single Page App Difficulties
+## _Bad Idea:_ Single Page Web Apps
+
+- no true page loads
+- lots of DOM mutation
+
+???
 
 At this point in time, the ideal screen reader experience is a page that has true separate page loads. Single page webapps make the experience less understandable, as page transitions can occur without the user being introduced to them.
 
 When all of your page's content falls away, the user ends up at the bottom of the page.
 
+We've tried to care for this a bit in our project, to varying degrees of success.
 
+---
+class: middle inverse
+
+## _Bad Idea:_ Giving Elements an “Identity Crisis”
+
+- compounding several different elements together into one
+- changing element types on breakpoint
+
+???
+
+- I've seen a `select` turn into `radio` buttons once it hit a proper screen size
+- I've seen the Menu in Fusion alter between breakpoints
 
 
 
 ---
+class: center middle inverse
 
+## Questions and Free-range Accessment
 
 ???
 
-- creating related content
-	- fieldsets and how they sound
+Open floor at this point. If anyone wants to ask anything, go for it. I'm sure this wasn't Everything you could know.
+
+And if anyone has ideas for websites to go walk through, we can do that, too.
