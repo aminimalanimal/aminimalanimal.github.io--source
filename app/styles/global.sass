@@ -1,17 +1,10 @@
 html
 	background: $color-monokai-black
 	box-sizing: border-box
-	color: $color-monokai-white
+	color: $color-monokai-black
 
 *, *:before, *:after
 	box-sizing: inherit
-
-// All focus states
-*
-	transition: box-shadow 50ms
-	&:focus
-		box-shadow: inset 0 0 0 2px #fff
-		outline: none
 
 // PRISM overrides
 pre[class*="language-"]
@@ -31,12 +24,13 @@ nav
 	display: none
 
 .triangular_background
-	bottom: 0
 	left: 0
-	position: fixed
-	right: 0
+	min-height: 100%
+	position: absolute
 	top: 0
 	z-index: -1
 
 article
+	margin: 0 auto
 	padding: 40px
+	width: 360px

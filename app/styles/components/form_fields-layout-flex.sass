@@ -21,8 +21,12 @@
 	height: $field-height
 	padding: $field-spacing-x
 
-.input
+.input, .textarea
 	flex-grow: 1
+
+.textarea
+	min-height: $field-height * 2
+	padding: $field-spacing-x
 
 .error_message
 	margin: $field-spacing-y 0
