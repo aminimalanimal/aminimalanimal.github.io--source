@@ -17,28 +17,30 @@ block styles_head
 
 
 block body
-	//- Basic Elements
-	include /instances/components/input_field
-	include /instances/components/textarea
-	include /instances/components/select
-	include /instances/components/checkbox
-	include /instances/components/radio_group
-	include /instances/components/checkbox_group
-	include /instances/components/range
-	include /instances/components/button
+	article
+		//- Basic Elements
+		include /instances/components/input_field
+		include /instances/components/textarea
+		include /instances/components/select
+		include /instances/components/checkbox
+		include /instances/components/radio_group
+		include /instances/components/checkbox_group
+		include /instances/components/range
+		include /instances/components/button
 
-	//- Nonbasic Elements
-	include /instances/components/flipswitch
-	include /instances/components/ratings_widget
+		//- Nonbasic Elements
+		include /instances/components/flipswitch
+		include /instances/components/ratings_widget
 
-	//- Navigation Patterns
-	//- include /instances/components/tabpanel
-	//- include /instances/components/mega_menu
+		//- Navigation Patterns
+		//- include /instances/components/tabpanel
+		//- include /instances/components/mega_menu
 
-	//- Complex Components
-	//- include /instances/components/carousel
-	//- include /instances/components/modal
-
+		//- Complex Components
+		//- include /instances/components/carousel
+		//- include /instances/components/modal
+		//- include /instances/components/accordion
+		//- include /instances/components/dropdown
 
 
 block scripts_footer
@@ -53,6 +55,7 @@ block scripts_footer
 	script(src="/vendor/prism/components/prism-jade.min.js")
 	script(src="/vendor/prism/components/prism-scss.min.js")
 	script(src="/vendor/prism/components/prism-coffeescript.min.js")
+	script(src="/vendor/trianglify/dist/trianglify.min.js")
 
 	//- Ours
-	//- script(src="/scripts/main.js")
+	script(src="/scripts/main.js")
