@@ -4,26 +4,35 @@
 
 Generates fun backgrounds.
 
-	pattern = Trianglify
-		cell_size: 75
-		height: window.innerHeight
-		variance: 1
-		width: window.innerWidth
-		x_colors: ['#000000', '#66d9ef']
-		y_colors: ['#000000', '#66d9ef']
+	generate_triangular_background = ->
 
-	document.body.appendChild(pattern.svg())
+		triangular_background_height = $(document.body).outerHeight()
+		triangular_background_width = $(document.body).outerWidth()
 
-	$background = $('svg', document.body)
+		pattern = Trianglify
+			cell_size: 75
+			height: triangular_background_height
+			variance: 1
+			width: triangular_background_width
+			x_colors: ['#23241f', '#f8f8f2', '#23241f', '#f8f8f2']
+			y_colors: ['#fd9720', '#66d9ef', '#e6db74']
 
-	viewBox = "0 0 #{window.innerWidth} #{window.innerHeight}"
+		document.body.appendChild(pattern.svg())
 
-	$background.attr
-		'aria-hidden': 'true'
-		class: 'triangular_background'
-		height: '100%'
-		preserveAspectRatio: 'none'
-		width: '100%'
+		$background = $('svg', document.body)
 
-	# because jQuery's stupid and doesn't listen to my camelcasing for `viewBox`, we have to use native JavaScript:
-	$background[0].setAttribute 'viewBox', viewBox
+		viewBox = "0 0 #{triangular_background_width} #{triangular_background_height}"
+
+		$background.removeAttr('height').attr
+			'aria-hidden': 'true'
+			class: 'triangular_background'
+			width: '100%'
+
+		# because jQuery's stupid and doesn't listen to my camelcasing for `viewBox`, we have to use native JavaScript:
+		$background[0].setAttribute 'viewBox', viewBox
+
+	generate_triangular_background()
+
+	$(window).on 'resize', ->
+		$('.triangular_background').remove()
+		generate_triangular_background()
