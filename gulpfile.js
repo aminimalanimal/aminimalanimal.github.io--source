@@ -74,14 +74,16 @@ var DIR_SOURCE_MARKDOWN  = ['./app/markdown/**/*.md', './app/markdown/**/*.mdown
 gulp.task('index', function() {
   return gulp.src(DIR_SOURCE_INDEX)
     .pipe(jade(jadeConfiguration))
-    .pipe(gulp.dest(DIR_BUILD_INDEX));
+    .pipe(gulp.dest(DIR_BUILD_INDEX))
+    .pipe(browserSync.stream());
 });
 
 // Compile Jade
 gulp.task('jade', function() {
   return gulp.src(DIR_SOURCE_MARKUP)
     .pipe(jade(jadeConfiguration))
-    .pipe(gulp.dest(DIR_BUILD_MARKUP));
+    .pipe(gulp.dest(DIR_BUILD_MARKUP))
+    .pipe(browserSync.stream());
 });
 
 // Compile Sass
@@ -96,7 +98,8 @@ gulp.task('sass', function() {
       cascade: false
     }))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest(DIR_BUILD_STYLES));
+    .pipe(gulp.dest(DIR_BUILD_STYLES))
+    .pipe(browserSync.stream());
 });
 
 // Compile Coffeescript
@@ -105,7 +108,8 @@ gulp.task('coffee', function() {
     .pipe(sourcemaps.init())
     .pipe(coffee().on('error', gutil.log))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest(DIR_BUILD_SCRIPTS));
+    .pipe(gulp.dest(DIR_BUILD_SCRIPTS))
+    .pipe(browserSync.stream());
 });
 
 // Copy vendor scripts
@@ -134,12 +138,12 @@ gulp.task('serve', ['index', 'jade', 'sass', 'coffee', 'copy_vendor', 'copy_mark
     }
   });
 
-  gulp.watch(DIR_WATCH_INDEX, ['index']).on('change', reload);
-  gulp.watch(DIR_WATCH_MARKUP, ['index', 'jade']).on('change', reload);
-  gulp.watch(DIR_WATCH_STYLES, ['sass']).on('change', reload);
-  gulp.watch(DIR_WATCH_SCRIPTS, ['coffee']).on('change', reload);
-  gulp.watch(DIR_WATCH_MARKDOWN, ['copy_markdown']).on('change', reload);
-  gulp.watch(DIR_WATCH_ASSETS, ['copy_assets']).on('change', reload);
+  gulp.watch(DIR_WATCH_INDEX, ['index']);
+  gulp.watch(DIR_WATCH_MARKUP, ['index', 'jade']);
+  gulp.watch(DIR_WATCH_STYLES, ['sass']);
+  gulp.watch(DIR_WATCH_SCRIPTS, ['coffee']);
+  gulp.watch(DIR_WATCH_MARKDOWN, ['copy_markdown']).on('change', browserSync.reload);
+  gulp.watch(DIR_WATCH_ASSETS, ['copy_assets']).on('change', browserSync.reload);
 });
 
 // Default
