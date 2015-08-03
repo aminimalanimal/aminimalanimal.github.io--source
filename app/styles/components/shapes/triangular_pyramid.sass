@@ -1,17 +1,17 @@
-.component_3d_cube
-	$cube-size: 100px
+.component_triangular_pyramid
+	$pyramid-size: 100px
 
 	.viewport
-		margin: (-1 * $cube-size) 0 0 (-1 * $cube-size)
-		height: $cube-size * 2
+		margin: (-1 * $pyramid-size) 0 0 (-1 * $pyramid-size)
+		height: $pyramid-size * 2
 		left: 50%
 		overflow: visible
 		perspective: 1000px
 		position: absolute
 		top: 50%
-		width: $cube-size * 2
+		width: $pyramid-size * 2
 
-	.cube
+	.triangular_pyramid
 		color: $color-monokai-black
 		height: 100%
 		opacity: 1
@@ -31,19 +31,13 @@
 
 	.front
 		background: $color-monokai-red
-		transform: translateZ($cube-size)
-	.back
-		background: $color-monokai-blue
-		transform: translateZ(-1 * $cube-size) rotateY(-180deg)
+		transform: translateZ($pyramid-size)
 	.left
 		background: $color-monokai-yellow
-		transform: translateX(-1 * $cube-size) rotateY(-90deg)
+		transform: translateX(-1 * $pyramid-size) rotateY(-90deg)
 	.right
 		background: $color-monokai-purple
-		transform: translateX($cube-size) rotateY(90deg)
-	.top
-		background: $color-monokai-orange
-		transform: translateY(-1 * $cube-size) rotateX(90deg)
-	.bottom
+		transform: translateX($pyramid-size) rotateY(90deg)
+	.base
 		background: $color-monokai-green
-		transform: translateY($cube-size) rotateX(-90deg)
+		transform: translateY($pyramid-size) rotateX(-90deg)
