@@ -1,14 +1,14 @@
+$cube-size: 100px
+
 .viewport
-	$viewport-size-x: 200px
-	$viewport-size-y: 200px
-	margin: (-1 * $viewport-size-y / 2) 0 0 (-1 * $viewport-size-x / 2)
-	height: $viewport-size-y
+	margin: (-1 * $cube-size) 0 0 (-1 * $cube-size)
+	height: $cube-size * 2
 	left: 50%
 	overflow: visible
 	perspective: 1000px
 	position: absolute
 	top: 50%
-	width: $viewport-size-x
+	width: $cube-size * 2
 
 .cube
 	color: $color-monokai-black
@@ -30,19 +30,19 @@
 
 .front
 	background: $color-monokai-red
-	transform: translateZ(100px)
+	transform: translateZ($cube-size)
 .back
 	background: $color-monokai-blue
-	transform: translateZ(-100px) rotateY(-180deg)
+	transform: translateZ(-1 * $cube-size) rotateY(-180deg)
 .left
 	background: $color-monokai-yellow
-	transform: translateX(-100px) rotateY(-90deg)
+	transform: translateX(-1 * $cube-size) rotateY(-90deg)
 .right
 	background: $color-monokai-purple
-	transform: translateX(100px) rotateY(90deg)
+	transform: translateX($cube-size) rotateY(90deg)
 .top
 	background: $color-monokai-orange
-	transform: translateY(-100px) rotateX(90deg)
+	transform: translateY(-1 * $cube-size) rotateX(90deg)
 .bottom
 	background: $color-monokai-green
-	transform: translateY(100px) rotateX(-90deg)
+	transform: translateY($cube-size) rotateX(-90deg)
