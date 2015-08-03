@@ -1,7 +1,7 @@
 extends /templates/pages/basic_html
 
 prepend head
-	title aminimalanimal - experiments - 3D Cube
+	title aminimalanimal - Experiments - Shapes
 	meta(name="description" content="")
 
 block scripts_head
@@ -17,8 +17,9 @@ block styles_head
 
 block body
 	article
-		//- Basic Elements
+		//- 3D Shapes
 		include /instances/components/shapes/cube
+		include /instances/components/shapes/triangular_pyramid
 
 
 block scripts_footer
