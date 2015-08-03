@@ -7,7 +7,6 @@ var gutil        = require('gutil');
 
 // Live Reloading
 var browserSync  = require('browser-sync').create();
-var reload       = browserSync.reload;
 
 // Precompilers
 var jade         = require('gulp-jade');
