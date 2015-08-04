@@ -1,0 +1,57 @@
+.component-rectangular-prism
+	$rectangular-prism-size-x: 100px
+	$rectangular-prism-size-y: 50px
+	height: $rectangular-prism-size-y * 3
+	margin: 50px auto
+	position: relative
+	width: $rectangular-prism-size-x * 3
+
+	.viewport
+		margin: (-1 * $rectangular-prism-size-y) 0 0 (-1 * $rectangular-prism-size-x)
+		height: $rectangular-prism-size-y * 2
+		left: 50%
+		overflow: visible
+		perspective: 1000px
+		position: absolute
+		top: 50%
+		width: $rectangular-prism-size-x * 2
+
+	.rectangular-prism
+		color: $color-monokai-black
+		height: 100%
+		opacity: 1
+		transform: rotateX(-25deg) rotateY(-25deg) rotateZ(-1deg)
+		transform-style: preserve-3d
+		width: 100%
+
+	.side
+		align-items: center
+		border: solid 1px $color-monokai-white
+		display: flex
+		height: 100%
+		justify-content: center
+		opacity: 0.5
+		position: absolute
+		width: 100%
+
+	.cap
+		width: 50%
+
+	.front
+		background: $color-monokai-red
+		transform: translateZ($rectangular-prism-size-y)
+	.back
+		background: $color-monokai-blue
+		transform: translateZ(-1 * $rectangular-prism-size-y) rotateY(-180deg)
+	.left
+		background: $color-monokai-yellow
+		transform: translateX(-1 * $rectangular-prism-size-x / 2) rotateY(-90deg)
+	.right
+		background: $color-monokai-purple
+		transform: translateX($rectangular-prism-size-x * 1.5) rotateY(90deg)
+	.top
+		background: $color-monokai-orange
+		transform: translateY(-1 * $rectangular-prism-size-y) rotateX(90deg)
+	.bottom
+		background: $color-monokai-green
+		transform: translateY($rectangular-prism-size-y) rotateX(-90deg)
