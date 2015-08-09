@@ -61,12 +61,22 @@ var DIR_SOURCE_VENDOR    = './app/vendor/**/*',
     DIR_BUILD_VENDOR     = './dist/vendor';
 
 
+// Error handling
+
+var handleError = function(error) {
+  //If you want details of the error in the console
+  console.log(error.toString());
+
+  this.emit('end');
+};
+
 // TASKS
 
 // Compile Index
 gulp.task('index', function() {
   return gulp.src(DIR_SOURCE_INDEX)
-    .pipe(jade(jadeConfiguration))
+    .pipe(jade(jadeConfiguration)
+      .on('error', handleError))
     .pipe(gulp.dest(DIR_BUILD_INDEX))
     .pipe(browserSync.stream());
 });
@@ -74,7 +84,8 @@ gulp.task('index', function() {
 // Compile Jade
 gulp.task('jade', function() {
   return gulp.src(DIR_SOURCE_MARKUP)
-    .pipe(jade(jadeConfiguration))
+    .pipe(jade(jadeConfiguration)
+      .on('error', handleError))
     .pipe(gulp.dest(DIR_BUILD_MARKUP))
     .pipe(browserSync.stream());
 });
@@ -86,7 +97,7 @@ gulp.task('sass', function() {
     .pipe(sass({
       includePaths: ['./app'],
       indentedSyntax: true
-    }))
+    }).on('error', handleError))
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
@@ -101,7 +112,8 @@ gulp.task('sass', function() {
 gulp.task('coffee', function() {
   return gulp.src(DIR_SOURCE_SCRIPTS)
     .pipe(sourcemaps.init())
-    .pipe(coffee().on('error', gutil.log))
+    .pipe(coffee()
+      .on('error', handleError))
     .pipe(concat('script.js'))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(DIR_BUILD_SCRIPTS))
