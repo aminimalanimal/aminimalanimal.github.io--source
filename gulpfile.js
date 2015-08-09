@@ -84,13 +84,13 @@ gulp.task('sass', function() {
   return gulp.src(DIR_SOURCE_STYLES)
     .pipe(sourcemaps.init())
     .pipe(sass({
+      includePaths: ['./app'],
       indentedSyntax: true
     }))
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
     }))
-    .pipe(sourcemaps.init())
     .pipe(concat('style.css'))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(DIR_BUILD_STYLES))
@@ -102,7 +102,6 @@ gulp.task('coffee', function() {
   return gulp.src(DIR_SOURCE_SCRIPTS)
     .pipe(sourcemaps.init())
     .pipe(coffee().on('error', gutil.log))
-    .pipe(sourcemaps.init())
     .pipe(concat('script.js'))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(DIR_BUILD_SCRIPTS))
