@@ -14,7 +14,7 @@ var sass         = require('gulp-sass');
 var coffee       = require('gulp-coffee');
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps   = require('gulp-sourcemaps');
-
+var concat       = require('gulp-concat');
 // Watcher
 require('gulp-watch');
 
@@ -28,7 +28,7 @@ require('gulp-watch');
 // var transformers = require('transformers');
 
 var jadeConfiguration = {
-  basedir: 'app/markup',
+  basedir: 'app',
   pretty: '\t'
 };
 
@@ -40,31 +40,25 @@ var DIR_SOURCE_INDEX     = './app/index.jade',
     DIR_BUILD_INDEX      = './dist',
     DIR_WATCH_INDEX      = './app/index.jade';
 
-var DIR_SOURCE_MARKUP    = './app/markup/instances/pages/**/*.jade',
+var DIR_SOURCE_MARKUP    = './app/instances/pages/**/*.jade',
     DIR_BUILD_MARKUP     = './dist',
-    DIR_WATCH_MARKUP     = './app/markup/**/*.jade';
+    DIR_WATCH_MARKUP     = './app/{templates,instances}/**/*.jade';
 
-var DIR_SOURCE_STYLES    = ['./app/styles/main.sass',
-                            './app/styles/pages/presentations.sass',
-                            './app/styles/*.scss'],
-    DIR_BUILD_STYLES     = './dist/styles',
-    DIR_WATCH_STYLES     = ['./app/styles/**/*.sass', './app/styles/*.scss'];
+var DIR_SOURCE_STYLES    = ['./app/global.sass', './app/{templates,instances}/**/*.{sass,scss}'],
+    DIR_BUILD_STYLES     = './dist',
+    DIR_WATCH_STYLES     = ['./app/global.sass', './app/{templates,instances}/**/*.{sass,scss}'];
 
-var DIR_SOURCE_SCRIPTS   = ['./app/scripts/**/*.coffee', './app/scripts/*.litcoffee'],
-    DIR_BUILD_SCRIPTS    = './dist/scripts',
-    DIR_WATCH_SCRIPTS    = ['./app/scripts/**/*.coffee', './app/scripts/*.litcoffee'];
+var DIR_SOURCE_SCRIPTS   = './app/{templates,instances}/**/*.{coffee,litcoffee}',
+    DIR_BUILD_SCRIPTS    = './dist',
+    DIR_WATCH_SCRIPTS    = './app/{templates,instances}/**/*.{coffee,litcoffee}';
 
 // Copied
-var DIR_SOURCE_ASSETS  = './app/assets/**/*',
+var DIR_SOURCE_ASSETS  = './app/instances/**/*.{md,mdown,markdown,svg,png,jpg,jpeg,gif,webp,ico,eot,ttf,woff,otf}',
     DIR_BUILD_ASSETS   = './dist/assets',
     DIR_WATCH_ASSETS   = './app/assets/**/*';
 
-var DIR_SOURCE_VENDOR    = ['./app/bower_components/**/*', './app/vendor/**/*'],
+var DIR_SOURCE_VENDOR    = './app/vendor/**/*',
     DIR_BUILD_VENDOR     = './dist/vendor';
-
-var DIR_SOURCE_MARKDOWN  = ['./app/markdown/**/*.md', './app/markdown/**/*.mdown', './app/markdown/**/*.markdown'],
-    DIR_BUILD_MARKDOWN   = './dist',
-    DIR_WATCH_MARKDOWN   = ['./app/markdown/**/*.md', './app/markdown/**/*.mdown', './app/markdown/**/*.markdown'];
 
 
 // TASKS
@@ -96,6 +90,8 @@ gulp.task('sass', function() {
       browsers: ['last 2 versions'],
       cascade: false
     }))
+    .pipe(sourcemaps.init())
+    .pipe(concat('style.css'))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(DIR_BUILD_STYLES))
     .pipe(browserSync.stream());
@@ -106,6 +102,8 @@ gulp.task('coffee', function() {
   return gulp.src(DIR_SOURCE_SCRIPTS)
     .pipe(sourcemaps.init())
     .pipe(coffee().on('error', gutil.log))
+    .pipe(sourcemaps.init())
+    .pipe(concat('script.js'))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(DIR_BUILD_SCRIPTS))
     .pipe(browserSync.stream());
@@ -117,12 +115,6 @@ gulp.task('copy_vendor', function() {
     .pipe(gulp.dest(DIR_BUILD_VENDOR));
 });
 
-// Copy markdown files
-gulp.task('copy_markdown', function() {
-  return gulp.src(DIR_SOURCE_MARKDOWN)
-    .pipe(gulp.dest(DIR_BUILD_MARKDOWN));
-});
-
 // Copy assets
 gulp.task('copy_assets', function() {
   return gulp.src(DIR_SOURCE_ASSETS)
@@ -130,7 +122,7 @@ gulp.task('copy_assets', function() {
 });
 
 // Serve
-gulp.task('serve', ['index', 'jade', 'sass', 'coffee', 'copy_vendor', 'copy_markdown', 'copy_assets'], function() {
+gulp.task('serve', ['index', 'jade', 'sass', 'coffee', 'copy_vendor', 'copy_assets'], function() {
   browserSync.init({
     server: {
       baseDir: DIR_BUILD_INDEX
@@ -141,7 +133,6 @@ gulp.task('serve', ['index', 'jade', 'sass', 'coffee', 'copy_vendor', 'copy_mark
   gulp.watch(DIR_WATCH_MARKUP, ['index', 'jade']);
   gulp.watch(DIR_WATCH_STYLES, ['sass']);
   gulp.watch(DIR_WATCH_SCRIPTS, ['coffee']);
-  gulp.watch(DIR_WATCH_MARKDOWN, ['copy_markdown']).on('change', browserSync.reload);
   gulp.watch(DIR_WATCH_ASSETS, ['copy_assets']).on('change', browserSync.reload);
 });
 

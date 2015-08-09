@@ -1,0 +1,36 @@
+@import ../../../global_variables
+
+// Diagram styling for fields
+
+article[data-field-style="diagram"]
+	.field
+		border: solid 1px $color-monokai-blue
+
+	.label_container
+		border: solid 1px $color-monokai-green
+		margin: $field-diagram-spacing
+
+	.input_container
+		border: solid 1px $color-monokai-green
+		margin: $field-diagram-spacing
+
+	.label, .input, .button
+		border: solid 1px $color-monokai-white
+		margin: $field-diagram-spacing
+
+	.label
+		padding-left: $field-diagram-spacing
+		padding-right: $field-diagram-spacing
+
+	.button
+		margin-left: 0
+
+	.error_message
+		border: solid 1px $color-monokai-red
+		color: $color-monokai-red
+		margin: $field-diagram-spacing
+
+	.disclosure
+		border: solid 1px $color-monokai-orange
+		color: $color-monokai-orange
+		margin: $field-diagram-spacing

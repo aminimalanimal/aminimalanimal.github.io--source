@@ -1,0 +1,41 @@
+extends /templates/pages/basic_html
+
+prepend head
+	title aminimalanimal - Experiments - Shapes
+	meta(name="description" content="")
+
+block scripts_head
+	script(src="/vendor/modernizr/modernizr.js")
+
+block styles_head
+	//- Vendor
+	link(rel="stylesheet" href="/vendor/normalize.css/normalize.css")
+
+	//- Ours
+	link(rel="stylesheet" href="/styles/main.css")
+
+
+block body
+	article
+		//- 3D Shapes
+		//- include /instances/components/shapes/tetrahedron/z
+		include /instances/components/shapes/cube/z
+		include /instances/components/shapes/rectangular_prism/z
+
+
+block scripts_footer
+	//- Vendor
+	//- get jQuery from google's library
+	script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+	//- if suceeded in getting jQuery's version, do nothing. Otherwise, use ours.
+	script.
+		window.jQuery || document.write('<script src="/vendor/jquery/dist/jquery.min.js"><\/script>')
+
+	//- script(src="/vendor/prism/prism.js")
+	//- script(src="/vendor/prism/components/prism-jade.min.js")
+	//- script(src="/vendor/prism/components/prism-scss.min.js")
+	//- script(src="/vendor/prism/components/prism-coffeescript.min.js")
+	//- script(src="/vendor/trianglify/dist/trianglify.min.js")
+
+	//- Ours
+	//- script(src="/scripts/main.js")

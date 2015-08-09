@@ -23,47 +23,60 @@ Task-runner: [Gulp](http://gulpjs.com)
 ## File Structure
 The `dist` folder isn't uploaded in this repo—this contains only the source files. To see the output, check out [github -- aminimalanimal.github.io](https://github.com/aminimalanimal/aminimalanimal.github.io).
 
-Structure is currently:
+The goal is to just have a fairly simple setup that keeps the component's pieces together and makes adding new components fairly effortless. Eventually, I'd like to start implementing Webpack, but for now, everything gets flattened.
+
+- each component template has its own markup, stylesheet, and script
+	- instances can override the styles in the usual way: override them
+	- instances can override scripts by extending the prototype
+
+Currently using the following structure:
 
 	.
 	├── app
-	|	├── index.jade
-	|	├── assets
-	|	|	└── (Path)
-	|	├── bower_components
-	|	├── markdown
-	|	|	└── (Pages Path)
-	|	├── markup
-	|	|	├── instances
-	|	|	|	├── components
-	|	|	|	├── pages
-	|	|	|	|	└── (Pages Path)
-	|	|	|	└── sections
-	|	|	└── templates
-	|	|		├── components
-	|	|		├── pages
-	|	|		└── sections
-	|	├── scripts
-	|	├── styles
-	|	|	├── components
-	|	|	├── pages
-	|	|	└── sections
-	|	└── vendor (non-bower-componentized vendor scripts)
-	├── dist
-	|	├── index.html
-	|	├── assets
-	|	|	└── (Path)
-	|	├── (Pages Path)
-	|	├── scripts
-	|	├── styles
-	|	└── vendor (bower_components and vendor)
-	├── .bowerrc
-	├── .gitignore
-	├── bower.json
-	├── gulpfile.js
-	├── package.json
-	├── node_modules
-	└── README.md
+	|	├──	index.jade
+	|	├──	global_variables.sass
+	|	├──	global.sass
+	|	├──	instances
+	|	|	├──	components
+	|	|	|	└──	[folder - component instance name]
+	|	|	|		├──	z.jade
+	|	|	|		├──	z.sass
+	|	|	|		├──	z.litcoffee
+	|	|	|		├──	readme
+	|	|	|		└──	assets
+	|	|	|			├──	svg, png, jpg
+	|	|	|			└──	markdown
+	|	|	└──	pages
+	|	|		└──	[Pages Path]
+	|	├──	templates
+	|	|	├──	components
+	|	|	|	└──	[folder - component template name]
+	|	|	|		├──	z.jade
+	|	|	|		├──	z.sass
+	|	|	|		├──	z.litcoffee
+	|	|	|		├──	readme.md
+	|	|	|		└──	assets
+	|	|	|			├──	svg, png, jpg
+	|	|	|			└──	markdown
+	|	|	└──	pages
+	|	└──	vendor
+	|		├──	bower_components
+	|		└──	(non-bower-componentized vendor scripts)
+	|
+	├──	dist
+	|	├──	index.html
+	|	├──	style.css
+	|	├──	script.js
+	|	├──	assets
+	|	├──	[Pages Path]
+	|	└──	vendor
+	├──	.bowerrc
+	├──	.gitignore
+	├──	bower.json
+	├──	gulpfile.js
+	├──	package.json
+	├──	node_modules
+	└──	README.md
 
 
 ## Presentations

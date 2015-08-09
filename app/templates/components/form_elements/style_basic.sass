@@ -1,0 +1,25 @@
+@import ../../../global_variables
+
+.field
+	// nothing here
+
+.input, .button
+	background: $color-monokai-black
+	border: solid 1px $color-monokai-white
+	transition: background 500ms
+	&:hover
+		background: lighten($color-monokai-black, 5%)
+
+.button-extra_feature
+	border-left: transparent
+
+.button-tooltip
+	border-radius: $border-radius
+
+.error_message
+	border: solid 1px $color-monokai-red
+	color: $color-monokai-red
+
+.disclosure
+	border: solid 1px $color-monokai-orange
+	color: $color-monokai-orange
