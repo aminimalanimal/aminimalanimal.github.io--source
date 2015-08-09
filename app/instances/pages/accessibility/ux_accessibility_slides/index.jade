@@ -14,13 +14,10 @@ html.no-js(lang="en")
 		link(rel="stylesheet" href="/vendor/normalize.css/normalize.css")
 
 		//- Ours
-		//- link(rel="stylesheet" href="/styles/main.css")
-
-		//- Presentations
-		link(rel="stylesheet" href="/styles/presentations.css")
+		link(rel="stylesheet" href="/style.css")
 
 
-	body
+	body.presentation
 
 
 		//- SCRIPTS
@@ -37,7 +34,7 @@ html.no-js(lang="en")
 			'use strict';
 
 			var slideshow = remark.create({
-				sourceUrl: './accessibility_ux.md'
+				sourceUrl: '/assets/accessibility/ux_accessibility_slides/assets/accessibility_ux.md'
 			});
 
 		//- script(src="/vendor/prism/prism.js")

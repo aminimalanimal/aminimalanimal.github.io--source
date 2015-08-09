@@ -53,11 +53,12 @@ var DIR_SOURCE_SCRIPTS   = './app/{templates,instances}/**/*.{coffee,litcoffee}'
     DIR_WATCH_SCRIPTS    = './app/{templates,instances}/**/*.{coffee,litcoffee}';
 
 // Copied
-var DIR_SOURCE_ASSETS  = './app/instances/**/*.{md,mdown,markdown,svg,png,jpg,jpeg,gif,webp,ico,eot,ttf,woff,otf}',
+var DIR_SOURCE_ASSETS  = './app/instances/pages/**/assets/*',
     DIR_BUILD_ASSETS   = './dist/assets',
-    DIR_WATCH_ASSETS   = './app/assets/**/*';
+    DIR_WATCH_ASSETS   = './app/instances/**/assets/*';
 
-var DIR_SOURCE_VENDOR    = './app/vendor/**/*',
+// Combine bower_components and non-bower components into a single vendor folder.
+var DIR_SOURCE_VENDOR    = ['./app/vendor/bower_components/**/*', './app/vendor/!(bower_components)'],
     DIR_BUILD_VENDOR     = './dist/vendor';
 
 
@@ -126,7 +127,7 @@ gulp.task('copy_vendor', function() {
     .pipe(gulp.dest(DIR_BUILD_VENDOR));
 });
 
-// Copy assets
+// Copy page assets
 gulp.task('copy_assets', function() {
   return gulp.src(DIR_SOURCE_ASSETS)
     .pipe(gulp.dest(DIR_BUILD_ASSETS));

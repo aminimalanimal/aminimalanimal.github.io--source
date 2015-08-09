@@ -3,204 +3,198 @@
 @import url(http://fonts.googleapis.com/css?family=Droid+Serif)
 @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz)
 
-html
-	box-sizing: border-box
-
-*, *:before, *:after
-	box-sizing: inherit
-
-body
+body.presentation
 	color: $color-monokai-black
 	font-family: 'Droid Serif'
 	font-size: medium
 
-h1, h2, h3, h4, h5, h6
-	font-family: 'Yanone Kaffeesatz'
-	font-weight: 400
-	margin-bottom: 0
+	h1, h2, h3, h4, h5, h6
+		font-family: 'Yanone Kaffeesatz'
+		font-weight: 400
+		margin-bottom: 0
 
-.small *
-	font-size: small !important
+	.small *
+		font-size: small !important
 
-code
-	border-radius: 5px
-
-.inverse
-	background: $color-monokai-black
-	color: $color-monokai-white
-	text-shadow: 0 0 20px #333
-
-em
-	color: $color-monokai-red
-
-p
-	em
-		color: $color-monokai-green
-	img
-		vertical-align: middle
-
-li
-	margin-top: 4px
-
-strong
-	color: $color-monokai-yellow
-
-h2
-	strong
-		font-weight: normal
-
-.inverse a
-	color: $color-monokai-blue
-
-.inverse button
-	color: $color-monokai-white
-
-.footnote
-	position: absolute
-	font-size: small
-	bottom: 3em
-	right: 3em
-
-// styling only necessary for displaying source
-#source
-	position: absolute
-	display: none
-	font-family: monospace
-	font-size: medium
-	background: #333333
-	color: white
-	padding: 10px
-	text-align: left
-	width: 65%
-	height: 70%
-	z-index: 1000
-
-#overlay
-	position: absolute
-	display: none
-	background: black
-	width: 100%
-	height: 100%
-	opacity: 0.2
-	z-index: 999
-
-.remark-slide-content
-	overflow: hidden
-
-.left-column
-	float: left
-	height: 100%
-	width: 18%
-
-.right-column
-	float: left
-	padding: 0 0 0 8%
-	width: 82%
-
-code
-	border: solid 1px $color-monokai-purple
-	border-radius: $border-radius
-	padding: 2px 4px
-
-h3
 	code
-		font-size: 0.8em
+		border-radius: 5px
 
-.visuallyhidden
-	border: 0
-	clip: rect(0 0 0 0)
-	height: 1px
-	margin: -1px
-	overflow: hidden
-	padding: 0
-	position: absolute
-	width: 1px
+	.inverse
+		background: $color-monokai-black
+		color: $color-monokai-white
+		text-shadow: 0 0 20px #333
 
-.poor_contrast
-	color: $color-monokai-grey
+	em
+		color: $color-monokai-red
+
+	p
+		em
+			color: $color-monokai-green
+		img
+			vertical-align: middle
+
+	li
+		margin-top: 4px
+
+	strong
+		color: $color-monokai-yellow
+
+	h2
+		strong
+			font-weight: normal
+
+	.inverse a
+		color: $color-monokai-blue
+
+	.inverse button
+		color: $color-monokai-white
+
+	.footnote
+		position: absolute
+		font-size: small
+		bottom: 3em
+		right: 3em
+
+	// styling only necessary for displaying source
+	#source
+		position: absolute
+		display: none
+		font-family: monospace
+		font-size: medium
+		background: #333333
+		color: white
+		padding: 10px
+		text-align: left
+		width: 65%
+		height: 70%
+		z-index: 1000
+
+	#overlay
+		position: absolute
+		display: none
+		background: black
+		width: 100%
+		height: 100%
+		opacity: 0.2
+		z-index: 999
+
+	.remark-slide-content
+		overflow: hidden
+
+	.left-column
+		float: left
+		height: 100%
+		width: 18%
+
+	.right-column
+		float: left
+		padding: 0 0 0 8%
+		width: 82%
+
+	code
+		border: solid 1px $color-monokai-purple
+		border-radius: $border-radius
+		padding: 2px 4px
+
+	h3
+		code
+			font-size: 0.8em
+
+	.visuallyhidden
+		border: 0
+		clip: rect(0 0 0 0)
+		height: 1px
+		margin: -1px
+		overflow: hidden
+		padding: 0
+		position: absolute
+		width: 1px
+
+	.poor_contrast
+		color: $color-monokai-grey
 
 
-blockquote
-	color: $color-monokai-blue
+	blockquote
+		color: $color-monokai-blue
 
-button
-	background: $color-monokai-black
-	border: solid 1px $color-monokai-white
-	border-radius: $border-radius
-	display: block
-	font-family: 'Droid Serif'
-	font-size: 1em
-	margin: 14px $field-spacing-x 14px 0
-	padding: 6px
-	&:hover
-		background: lighten($color-monokai-black, 5%)
-
-small
-	color: $color-monokai-red
-
-.demo
-	border: solid 1px $color-monokai-yellow
-	border-radius: $border-radius
-	margin-bottom: $field-spacing-x
-	padding: 14px
-
-.awful_focus_management_example
-	width: 100px
-
-input:not(.input)
-	color: $color-monokai-black
-
-
-.bar_red
-	border-left: solid 4px $color-monokai-red
-	padding-left: $field-spacing-x
-
-.bar_grey
-	border-left: solid 4px $color-monokai-grey
-	padding-left: $field-spacing-x
-
-.marginless
-	margin: 0
-
-.left-to-right
 	button
-		display: inline-block
-		margin-right: $field-spacing-x
+		background: $color-monokai-black
+		border: solid 1px $color-monokai-white
+		border-radius: $border-radius
+		display: block
+		font-family: 'Droid Serif'
+		font-size: 1em
+		margin: 14px $field-spacing-x 14px 0
+		padding: 6px
+		&:hover
+			background: lighten($color-monokai-black, 5%)
 
-.right-to-left
-	direction: rtl
-	text-align: left
-	button
-		display: inline-block
-		margin-right: $field-spacing-x
+	small
+		color: $color-monokai-red
 
-input[type="checkbox"]
-	box-shadow: inset 0 0 0 4px $color-monokai-black, 0 0 0 1px $color-monokai-white
-	margin-right: $field-spacing-x
-	vertical-align: middle
-	&:focus
-		box-shadow: inset 0 0 0 4px $color-monokai-black, 0 0 0 3px $color-monokai-white
-	&:checked
-		box-shadow: inset 0 0 0 8px $color-monokai-white
+	.demo
+		border: solid 1px $color-monokai-yellow
+		border-radius: $border-radius
+		margin-bottom: $field-spacing-x
+		padding: 14px
+
+	.awful_focus_management_example
+		width: 100px
+
+	input:not(.input)
+		color: $color-monokai-black
+
+
+	.bar_red
+		border-left: solid 4px $color-monokai-red
+		padding-left: $field-spacing-x
+
+	.bar_grey
+		border-left: solid 4px $color-monokai-grey
+		padding-left: $field-spacing-x
+
+	.marginless
+		margin: 0
+
+	.left-to-right
+		button
+			display: inline-block
+			margin-right: $field-spacing-x
+
+	.right-to-left
+		direction: rtl
+		text-align: left
+		button
+			display: inline-block
+			margin-right: $field-spacing-x
+
+	input[type="checkbox"]
+		box-shadow: inset 0 0 0 4px $color-monokai-black, 0 0 0 1px $color-monokai-white
+		margin-right: $field-spacing-x
+		vertical-align: middle
 		&:focus
-			box-shadow: inset 0 0 0 5px $color-monokai-white, inset 0 0 0 8px $color-monokai-black, 0 0 0 2px $color-monokai-white
+			box-shadow: inset 0 0 0 4px $color-monokai-black, 0 0 0 3px $color-monokai-white
+		&:checked
+			box-shadow: inset 0 0 0 8px $color-monokai-white
+			&:focus
+				box-shadow: inset 0 0 0 5px $color-monokai-white, inset 0 0 0 8px $color-monokai-black, 0 0 0 2px $color-monokai-white
 
-input
-	font-size: 1em
+	input
+		font-size: 1em
 
-.scrollable_content
-	height: 100px
-	overflow-y: scroll
-	width: 320px
+	.scrollable_content
+		height: 100px
+		overflow-y: scroll
+		width: 320px
 
-.hidden
-	display: none
+	.hidden
+		display: none
 
-.error
-	border: solid 1px $color-monokai-red
-	color: $color-monokai-red
-	padding: $field-spacing-x
+	.error
+		border: solid 1px $color-monokai-red
+		color: $color-monokai-red
+		padding: $field-spacing-x
 
-.error_icon
-	height: 18px
-	width: 18px
+	.error_icon
+		height: 18px
+		width: 18px
