@@ -9,11 +9,14 @@ html
 	box-sizing: inherit
 
 // All focus states
-*
-	transition: box-shadow 50ms
-	&:focus
-		box-shadow: inset 0 0 0 2px #fff
-		outline: none
+// *
+	// transition: box-shadow 50ms
+	// &:focus
+		// box-shadow: inset 0 0 0 2px #fff
+		// outline: none
+
+div[class|="component"]
+	margin: $field-spacing-y 0
 
 // PRISM overrides
 pre[class*="language-"]

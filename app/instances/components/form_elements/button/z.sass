@@ -1,0 +1,13 @@
+@import global_variables
+
+.component-button
+	button
+		background: $field-background-color
+		border: solid 1px $field-border-color
+		border-radius: $border-radius
+		color: $field-text-color
+		height: $field-height
+		width: 100%
+		transition: background $field-hover-transition
+		&:hover
+			background: lighten($field-background-color, 5%)
