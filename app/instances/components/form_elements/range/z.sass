@@ -1,14 +1,33 @@
 @import global_variables
 
 .component-range
+	$range-thumb-height: 40px
+	$range-track-height: 4px
 	.label-container
 		margin: $field-spacing-internal-y 0
-	input
-		background: $field-background-color
-		border: solid 1px $field-border-color
-		color: $field-text-color
+	input[type="range"]
+		-webkit-appearance: none
+		background: transparent
 		height: $field-height
-		transition: background 500ms
 		width: 100%
-		&:hover
-			background: lighten($field-background-color, 5%)
+		&::-webkit-slider-runnable-track
+			-webkit-appearance: none
+			// &::-moz-range-track, &::-ms-track
+			border: solid 1px $field-border-color
+			background: $field-background-color
+			cursor: pointer
+			height: $range-track-height
+			width: 100%
+		&::-webkit-slider-thumb
+			// &::-moz-range-thumb, &::-ms-thumb
+			-webkit-appearance: none
+			background: $field-background-color
+			border: solid 1px $field-border-color
+			border-radius: $border-radius
+			cursor: pointer
+			height: $range-thumb-height
+			margin-top: (-1 * $range-thumb-height / 2) + ($range-track-height / 2)
+			transition: background 500ms
+			width: 20px
+			&:hover
+				background: lighten($field-background-color, 5%)
