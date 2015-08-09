@@ -3,7 +3,7 @@
 // REQUIRES
 // Gulp
 var gulp         = require('gulp');
-var gutil        = require('gutil');
+var del          = require('del');
 
 // Live Reloading
 var browserSync  = require('browser-sync').create();
@@ -37,29 +37,35 @@ var jadeConfiguration = {
 
 // Parsed
 var DIR_SOURCE_INDEX     = './app/index.jade',
-    DIR_BUILD_INDEX      = './dist',
-    DIR_WATCH_INDEX      = './app/index.jade';
+    DIR_BUILD_INDEX      = './dist';
+var DIR_WATCH_INDEX      = DIR_SOURCE_INDEX;
 
 var DIR_SOURCE_MARKUP    = './app/instances/pages/**/*.jade',
-    DIR_BUILD_MARKUP     = './dist',
-    DIR_WATCH_MARKUP     = './app/{templates,instances}/**/*.jade';
+    DIR_BUILD_MARKUP     = './dist';
+var DIR_WATCH_MARKUP     = './app/{templates,instances}/**/*.jade';
 
 var DIR_SOURCE_STYLES    = ['./app/global.sass', './app/{templates,instances}/**/*.{sass,scss}'],
-    DIR_BUILD_STYLES     = './dist',
-    DIR_WATCH_STYLES     = ['./app/global.sass', './app/{templates,instances}/**/*.{sass,scss}'];
+    DIR_BUILD_STYLES     = './dist';
+var DIR_WATCH_STYLES     = DIR_SOURCE_STYLES;
 
 var DIR_SOURCE_SCRIPTS   = './app/{templates,instances}/**/*.{coffee,litcoffee}',
-    DIR_BUILD_SCRIPTS    = './dist',
-    DIR_WATCH_SCRIPTS    = './app/{templates,instances}/**/*.{coffee,litcoffee}';
+    DIR_BUILD_SCRIPTS    = './dist';
+var DIR_WATCH_SCRIPTS    = DIR_SOURCE_SCRIPTS;
 
 // Copied
-var DIR_SOURCE_ASSETS  = './app/instances/pages/**/assets/*',
-    DIR_BUILD_ASSETS   = './dist/assets',
-    DIR_WATCH_ASSETS   = './app/instances/**/assets/*';
+// Copy global assets into a root assets folder.
+var DIR_SOURCE_GLOBAL_ASSETS = './app/assets/**/*',
+    DIR_BUILD_GLOBAL_ASSETS  = './dist/assets';
+var DIR_WATCH_GLOBAL_ASSETS  = DIR_SOURCE_GLOBAL_ASSETS;
+
+// Copy page assets into their page's assets folder.
+var DIR_SOURCE_PAGE_ASSETS   = './app/instances/pages/**/assets/*',
+    DIR_BUILD_PAGE_ASSETS    = './dist';
+var DIR_WATCH_PAGE_ASSETS    = DIR_WATCH_PAGE_ASSETS;
 
 // Combine bower_components and non-bower components into a single vendor folder.
-var DIR_SOURCE_VENDOR    = ['./app/vendor/bower_components/**/*', './app/vendor/!(bower_components)'],
-    DIR_BUILD_VENDOR     = './dist/vendor';
+var DIR_SOURCE_VENDOR        = ['./app/vendor/bower_components/**/*', './app/vendor/!(bower_components)'],
+    DIR_BUILD_VENDOR         = './dist/vendor';
 
 
 // Error handling
@@ -127,14 +133,20 @@ gulp.task('copy_vendor', function() {
     .pipe(gulp.dest(DIR_BUILD_VENDOR));
 });
 
+// Copy global assets
+gulp.task('copy_global_assets', function() {
+  return gulp.src(DIR_SOURCE_GLOBAL_ASSETS)
+    .pipe(gulp.dest(DIR_BUILD_GLOBAL_ASSETS));
+});
+
 // Copy page assets
-gulp.task('copy_assets', function() {
-  return gulp.src(DIR_SOURCE_ASSETS)
-    .pipe(gulp.dest(DIR_BUILD_ASSETS));
+gulp.task('copy_page_assets', function() {
+  return gulp.src(DIR_SOURCE_PAGE_ASSETS)
+    .pipe(gulp.dest(DIR_BUILD_PAGE_ASSETS));
 });
 
 // Serve
-gulp.task('serve', ['index', 'jade', 'sass', 'coffee', 'copy_vendor', 'copy_assets'], function() {
+gulp.task('serve', ['index', 'jade', 'sass', 'coffee', 'copy_vendor', 'copy_global_assets', 'copy_page_assets'], function() {
   browserSync.init({
     browser: 'google chrome',
     server: {
@@ -146,8 +158,14 @@ gulp.task('serve', ['index', 'jade', 'sass', 'coffee', 'copy_vendor', 'copy_asse
   gulp.watch(DIR_WATCH_MARKUP, ['index', 'jade']);
   gulp.watch(DIR_WATCH_STYLES, ['sass']);
   gulp.watch(DIR_WATCH_SCRIPTS, ['coffee']);
-  gulp.watch(DIR_WATCH_ASSETS, ['copy_assets']).on('change', browserSync.reload);
+  gulp.watch(DIR_WATCH_GLOBAL_ASSETS, ['copy_global_assets']).on('change', browserSync.reload);
+  gulp.watch(DIR_WATCH_PAGE_ASSETS, ['copy_page_assets']).on('change', browserSync.reload);
 });
 
 // Default
 gulp.task('default', ['serve']);
+
+// Clean `dist` folder except for the .git file
+gulp.task('clean', function() {
+  del(['dist/**/*', '!.git']);
+});

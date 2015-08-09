@@ -611,7 +611,7 @@ _Like your family tree (presumably)_
 
 Headings form a tree starting at `h1`. Headings that are nested deeper are considered _within_ the previous heading's section, and cannot skip heading levels.
 
-![Diagram of Heading Level Tree](/assets/accessibility/ux_accessibility_slides/assets/heading_level_tree.svg)
+![Diagram of Heading Level Tree](./assets/heading_level_tree.svg)
 
 ]
 
@@ -733,7 +733,7 @@ Hiding content for screen readers only can be dangerous. Not only did we not exp
 
 ]
 
-Nearly everything you hear should have a visible on-page component that's related to it. An X icon may say "Close", an image may be described, an icon may tell you what it is without the words present on the page, but the user should understand what visible object is being read to them. ![Winking Smiley Face](/assets/accessibility/ux_accessibility_slides/assets/winking_emoji.png)
+Nearly everything you hear should have a visible on-page component that's related to it. An X icon may say "Close", an image may be described, an icon may tell you what it is without the words present on the page, but the user should understand what visible object is being read to them. ![Winking Smiley Face](./assets/winking_emoji.png)
 
 ???
 
