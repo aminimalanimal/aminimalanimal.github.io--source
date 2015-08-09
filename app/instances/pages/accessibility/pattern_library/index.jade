@@ -18,6 +18,8 @@ block styles_head
 
 block body
 	article
+		h1 Pattern Library - early drafts
+		p I'm still in the process of making design decisions and altering the architecture of this site, so right now, we're left solely with some basic, (but properly coded) elements:
 		//- Basic Elements
 		include /instances/components/form_elements/input_field/z
 		include /instances/components/form_elements/textarea/z
@@ -29,8 +31,8 @@ block body
 		include /instances/components/form_elements/button/z
 
 		//- Nonbasic Elements
-		include /instances/components/form_elements/flipswitch/z
-		include /instances/components/form_elements/ratings_widget/z
+		//- include /instances/components/form_elements/flipswitch/z
+		//- include /instances/components/form_elements/ratings_widget/z
 
 		//- Navigation Patterns
 		//- include /instances/components/form_elements/tabpanel/z
@@ -46,16 +48,16 @@ block body
 block scripts_footer
 	//- Vendor
 	//- get jQuery from google's library
-	script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
-	//- if suceeded in getting jQuery's version, do nothing. Otherwise, use ours.
-	script.
-		window.jQuery || document.write('<script src="/vendor/jquery/dist/jquery.min.js"><\/script>')
+	//- script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+	//- //- if suceeded in getting jQuery's version, do nothing. Otherwise, use ours.
+	//- script.
+	//- 	window.jQuery || document.write('<script src="/vendor/jquery/dist/jquery.min.js"><\/script>')
 
-	script(src="/vendor/prism/prism.js")
-	script(src="/vendor/prism/components/prism-jade.min.js")
-	script(src="/vendor/prism/components/prism-scss.min.js")
-	script(src="/vendor/prism/components/prism-coffeescript.min.js")
-	script(src="/vendor/trianglify/dist/trianglify.min.js")
+	//- script(src="/vendor/prism/prism.js")
+	//- script(src="/vendor/prism/components/prism-jade.min.js")
+	//- script(src="/vendor/prism/components/prism-scss.min.js")
+	//- script(src="/vendor/prism/components/prism-coffeescript.min.js")
+	//- script(src="/vendor/trianglify/dist/trianglify.min.js")
 
-	//- Ours
-	script(src="/script.js")
+	//- //- Ours
+	//- script(src="/script.js")

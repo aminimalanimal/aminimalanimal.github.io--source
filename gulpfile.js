@@ -167,5 +167,5 @@ gulp.task('default', ['serve']);
 
 // Clean `dist` folder except for the .git file
 gulp.task('clean', function() {
-  del(['dist/**/*', '!.git']);
+  del(['dist/**/*', '!.git', '!README.md']);
 });
