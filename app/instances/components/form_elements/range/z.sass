@@ -2,6 +2,7 @@
 
 .component-range
 	$range-thumb-height: 40px
+	$range-thumb-width: 20px
 	$range-track-height: 4px
 	.label-container
 		margin: $field-spacing-internal-y 0
@@ -13,21 +14,27 @@
 		&::-webkit-slider-runnable-track
 			-webkit-appearance: none
 			// &::-moz-range-track, &::-ms-track
-			border: solid 1px $field-border-color
-			background: $field-background-color
-			cursor: pointer
+			border: $field-border
+			background: $field-background
+			// cursor: pointer
 			height: $range-track-height
 			width: 100%
 		&::-webkit-slider-thumb
 			// &::-moz-range-thumb, &::-ms-thumb
 			-webkit-appearance: none
-			background: $field-background-color
-			border: solid 1px $field-border-color
+			background: $field-background
+			border: $field-border
 			border-radius: $border-radius
 			cursor: pointer
 			height: $range-thumb-height
+			// look into using flexbox instead of doing negative margin calculations
 			margin-top: (-1 * $range-thumb-height / 2) + ($range-track-height / 2)
-			transition: background 500ms
-			width: 20px
+			transition: $field-transition
+			width: $range-thumb-width
 			&:hover
-				background: lighten($field-background-color, 5%)
+				background: $field-hover-background
+		&:focus
+			outline: $field-focus-outline
+			&::-webkit-slider-thumb
+				// &::-moz-range-thumb, &::-ms-thumb
+				box-shadow: $field-focus-box-shadow

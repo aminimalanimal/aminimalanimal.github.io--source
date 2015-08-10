@@ -4,12 +4,15 @@
 	.label-container
 		margin: $field-spacing-internal-y 0
 	textarea
-		background: $field-background-color
-		border: solid 1px $field-border-color
+		background: $field-background
+		border: $field-border
 		color: $field-text-color
-		height: $field-height * 2
+		min-height: $field-height * 2
 		padding: $field-spacing-internal-y $field-spacing-internal-x
-		transition: background 500ms
+		transition: $field-transition
 		width: 100%
+		&:focus
+			box-shadow: $field-focus-box-shadow
+			outline: $field-focus-outline
 		&:hover
-			background: lighten($field-background-color, 5%)
+			background: $field-hover-background
