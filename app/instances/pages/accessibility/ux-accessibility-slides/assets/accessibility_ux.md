@@ -1,10 +1,10 @@
-class: center, middle inverse
+class: center, middle
 
 # Accessibility for UX
 
 ---
 
-class: middle inverse
+class: middle
 layout: false
 
 ## Intro
@@ -16,7 +16,7 @@ Welcome to Accessibility for UX. My name is James Curd.
 ---
 
 count: false
-class: middle inverse
+class: middle
 layout: false
 
 ## Intro **to James**
@@ -29,7 +29,7 @@ I'm a presentation layer engineer here at the Austin office. I've worked here fo
 ---
 
 count: false
-class: middle inverse
+class: middle
 layout: false
 
 ## Intro to James' **Client Account**
@@ -42,7 +42,7 @@ layout: false
 ---
 
 count: false
-class: middle inverse
+class: middle
 layout: false
 
 ## Intro to James' Client Account's **Fear**
@@ -55,7 +55,7 @@ There is an increasing fear that the government will adopt an open-standards spe
 ---
 
 count: false
-class: middle inverse
+class: middle
 layout: false
 
 ## Intro to James' Client Account's Fear of the **WCAG 2.0**
@@ -69,7 +69,7 @@ layout: false
 ---
 
 count: false
-class: middle inverse
+class: middle
 layout: false
 
 ## Intro to James' Client Account's Fear of the **ADA**
@@ -81,7 +81,7 @@ which passed in 1990. The ADA prevents discrimination based on disability, and i
 ---
 
 count: false
-class: middle inverse
+class: middle
 layout: false
 
 ## Intro to James' Client Account's Fear of **Being Sued**
@@ -93,7 +93,7 @@ lest they be sued.
 ---
 
 count: false
-class: middle inverse
+class: middle
 layout: false
 
 ## Intro to **James again**
@@ -105,7 +105,7 @@ So, my primary focus so far at Razorfish has been Web accessibility... but bear 
 ---
 
 count: false
-class: middle inverse
+class: middle
 layout: false
 
 ## Intro to **Accessibility**
@@ -117,7 +117,7 @@ The ADA is why we have handicapped parking spots, wheelchair ramps, Braille in e
 ---
 
 count: false
-class: middle inverse
+class: middle
 layout: false
 
 ## Intro to **Web** Accessibility
@@ -131,7 +131,7 @@ The web is no different.
 ---
 
 count: false
-class: middle inverse
+class: middle
 layout: false
 
 ## Intro to Web Accessibility: **The Basics**
@@ -141,7 +141,7 @@ layout: false
 ---
 
 count: false
-class: middle inverse
+class: middle
 layout: false
 
 ## Intro to Web Accessibility: The Basics: **Our Users**
@@ -152,7 +152,7 @@ Let's start by going over who our users are.
 
 
 ---
-class: center middle inverse
+class: center middle
 layout: false
 
 ## _Let's get inclusive_
@@ -164,7 +164,7 @@ layout: false
 
 ---
 name: personas
-class: inverse
+class:
 layout: true
 
 
@@ -289,7 +289,7 @@ And we need to care for users with cognitive disabilities. We need to make sure 
 
 
 ---
-class: middle inverse
+class: middle
 layout: false
 
 ## The tenants of accessible design: **POUR**
@@ -301,7 +301,7 @@ layout: false
 
 ---
 template: pour
-class: inverse
+class:
 layout: true
 
 .left-column[
@@ -392,14 +392,14 @@ _Offerings are Robust across multiple platforms_
 
 
 ---
-class: center middle inverse
+class: center middle
 layout: false
 
 ## _Seems easy enough._
 
 ---
 count: false
-class: center middle inverse
+class: center middle
 
 ## _Right?_
 
@@ -409,7 +409,7 @@ class: center middle inverse
 
 ---
 count: false
-class: center middle inverse
+class: center middle
 
 ## _Oh._
 
@@ -424,7 +424,7 @@ After a deeper look at the tools our users are using, you'll start to understand
 
 
 ---
-class: middle inverse
+class: middle
 layout: false
 
 ## Introduction to **Screen Readers**
@@ -437,7 +437,7 @@ First, let's get acquainted with Screen Readers.
 ---
 
 template: screenreaders
-class: inverse
+class:
 layout: true
 
 .left-column[
@@ -497,7 +497,7 @@ TalkBack is specifically for Android, and it's got it's quirks, too. None of the
 
 
 ---
-class: middle inverse
+class: middle
 layout: false
 
 ## OS X VoiceOver: _The Experience_
@@ -522,7 +522,7 @@ VoiceOver can:
 
 
 ---
-class: middle inverse
+class: middle
 
 ## iOS VoiceOver: _That Tiny Screen From Far Away_
 
@@ -548,7 +548,7 @@ NVDA gives the user the ability to hear items they're hovering over as well, eve
 
 
 ---
-class: middle inverse
+class: middle
 layout: false
 
 ## How to Make Screen Readers **Happy**
@@ -556,7 +556,7 @@ layout: false
 
 
 ---
-class: middle inverse
+class: middle
 layout: false
 
 ## Use Landmarks and Headings
@@ -570,7 +570,7 @@ Users generally rely on headings and landmarks to scan the page.
 
 ---
 template: landmarksandheadings
-class: middle inverse
+class: middle
 layout: true
 
 .left-column[
@@ -623,7 +623,7 @@ There is generally only one `h1`.
 So, this would be read `h1` > `h2` > `h3`> `h4`> `h5`> `h6` > back up to the second h3 and back down again.
 
 ---
-class: center middle inverse
+class: center middle
 layout: false
 
 ## And Now, it's Time for **Good Idea**, _Bad Idea_
@@ -634,7 +634,7 @@ So, I defaulted to this because I had a lot of disparate things to say and neede
 
 
 ---
-class: middle inverse
+class: middle
 layout: false
 
 ## **Good Idea:** Craft a Linear Experience
@@ -645,28 +645,28 @@ layout: false
 
 
 ---
-class: middle inverse
+class: middle
 
 ## _Bad Idea:_ Provide Important Information Out of Order
 
 <form class="demo">
-	<div class="field">
+	<div class="component-input-field">
 		<div class="label_container">
-			<label class="label" for="input_1">Name</label>
+			<label for="input_1">Name</label>
 		</div>
 		<div class="input_container">
-			<input class="input" type="text" id="input_1">
+			<input type="text" id="input_1">
 		</div>
 	</div>
-	<div class="field">
+	<div class="component-input-field">
 		<div class="label_container">
-			<label class="label" for="input_2">Mobile Phone Number</label>
+			<label for="input_2">Mobile Phone Number</label>
 		</div>
 		<div class="input_container">
-			<input class="input" type="text" id="input_2">
+			<input type="text" id="input_2">
 		</div>
 	</div>
-	<button type="button">Submit</button>
+	<div class="component-button"><button type="button">Submit</button></div>
 	<small>Your mobile phone number is not required. If you give us your mobile phone number, we'll sell it to our partners and they will call you. So much.</small>
 </form>
 
@@ -676,31 +676,31 @@ Close your eyes and walk through this. Did you have all the information you need
 
 
 ---
-class: middle inverse
+class: middle
 
 ## _Bad Idea:_ Inconsistently Deviate from Left-to-Right
 
 In both of these cases, the user will land on Submit first, but it is confusing when the Submit button is on the right side and breaks from a general rule of navigating left-to-right.
 
 <form class="demo">
-	<div class="field">
+	<div class="component-checkbox">
 		<input type="checkbox" id="deviate_left-to-right_check_1">
-		<label class="label" for="deviate_left-to-right_check_1">Accept the Conditions.</label>
+		<label for="deviate_left-to-right_check_1">Accept the Conditions.</label>
 	</div>
 	<div class="right-to-left">
-		<button type="button">Submit</button>
-		<button type="button">Cancel</button>
+		<div class="component-button"><button type="button">Submit</button></div>
+		<div class="component-button"><button type="button">Cancel</button></div>
 	</div>
 </form>
 
 <form class="demo">
-	<div class="field">
+	<div class="component-checkbox">
 		<input type="checkbox" id="deviate_left-to-right_check_2">
-		<label class="label" for="deviate_left-to-right_check_2">Accept the Conditions.</label>
+		<label for="deviate_left-to-right_check_2">Accept the Conditions.</label>
 	</div>
 	<div class="left-to-right">
-		<button type="button">Submit</button>
-		<button type="button">Cancel</button>
+		<div class="component-button"><button type="button">Submit</button></div>
+		<div class="component-button"><button type="button">Cancel</button></div>
 	</div>
 </form>
 
@@ -712,7 +712,7 @@ The temptation to do this occurs when we start collapsing content into a single 
 
 
 ---
-class: middle inverse
+class: middle
 layout: false
 
 ## **Good Idea:** Provide a one-to-one experience
@@ -721,7 +721,7 @@ layout: false
 
 
 ---
-class: middle inverse
+class: middle
 
 ## _Bad Idea:_ Hide Content Solely for Screen Reader Users
 
@@ -751,7 +751,7 @@ It's likely that this hidden content will be missed in future CMS updates, or th
 
 
 ---
-class: middle inverse
+class: middle
 
 ## **Good Idea:** Manage Focus Only When Necessary
 
@@ -760,12 +760,14 @@ It's really nice to be able to look around the page as much as we want, isn't it
 Now and then, we'll send the user to a modal. When that happens and the page gets an overlay placed on top, it's nice to bring them along with us. This is one of the few times we actually want to manage their focus.
 
 ---
-class: middle inverse
+class: middle
 
 ## _Bad Idea:_ Create Focus Traps
 
 <form class="demo">
-	<input class="input" type="text" role="search" onfocusout="event.target.focus();" id="search_focus_trap_example" placeholder="Search...">
+	<div class="component-input-field">
+		<input type="text" role="search" onfocusout="event.target.focus();" id="search_focus_trap_example" placeholder="Search...">
+	</div>
 	<ul>
 		<li><a href="#">First Result</a></li>
 		<li><a href="#">Second Result</a></li>
@@ -780,18 +782,18 @@ We thought it'd be really cool to start them out in the search field and then no
 
 
 ---
-class: middle inverse
+class: middle
 
 ## _Bad Idea:_ Redirect Focus Instantly and Unexpectedly
 
 <form class="demo">
-	<div class="field">
+	<div>
 		<fieldset>
 			<legend>Phone Number</legend>
 			<label class="visuallyhidden" for="awful_focus_management_example_input_1">Area Code</label>
 			<label class="visuallyhidden" for="awful_focus_management_example_input_2">Prefix</label>
 			<label class="visuallyhidden" for="awful_focus_management_example_input_3">Last 4 Digits</label>
-			<div class="input_container">
+			<div class="input_container component-input-field">
 				<input class="awful_focus_management_example input" type="text" id="awful_focus_management_example_input_1" maxlength="3" onKeyup="var t = event.target; if (t.value.length >= 3) {$(t).next().focus();}">
 				<input class="awful_focus_management_example input" type="text" id="awful_focus_management_example_input_2" maxlength="3" onKeyup="var t = event.target; if (t.value.length >= 3) {$(t).next().focus();}">
 				<input class="awful_focus_management_example input" type="text" id="awful_focus_management_example_input_3" maxlength="4">
@@ -801,49 +803,49 @@ class: middle inverse
 </form>
 
 ---
-class: middle inverse
+class: middle
 
 ## **Good Idea:** Obvious Focus States
 
 They're required! Embrace these. Make them cool!
 
 <form class="demo">
-	<div class="field">
+	<div class="component-input-field">
 		<div class="label_container">
-			<label class="label" for="input_1">Name</label>
+			<label for="input_1">Name</label>
 		</div>
 		<div class="input_container">
-			<input class="input" type="text" id="input_1">
+			<input type="text" id="input_1">
 		</div>
 	</div>
-	<div class="field">
+	<div class="component-input-field">
 		<div class="label_container">
-			<label class="label" for="input_2">Mobile Phone Number</label>
+			<label for="input_2">Mobile Phone Number</label>
 		</div>
 		<div class="input_container">
-			<input class="input" type="text" id="input_2">
+			<input type="text" id="input_2">
 		</div>
 	</div>
 </form>
 
 
 ---
-class: middle inverse
+class: middle
 
 ## _Bad Idea:_ No Focus States or Hard-to-See Focus States
 
 <form class="demo">
-	<div class="field">
+	<div class="component-input-field">
 		<div class="label_container">
-			<label class="label" for="input_1">Name</label>
+			<label for="input_1">Name</label>
 		</div>
 		<div class="input_container">
 			<input class="" type="text" id="input_1">
 		</div>
 	</div>
-	<div class="field">
+	<div class="component-input-field">
 		<div class="label_container">
-			<label class="label" for="input_2">Mobile Phone Number</label>
+			<label for="input_2">Mobile Phone Number</label>
 		</div>
 		<div class="input_container">
 			<input class="" type="text" id="input_2">
@@ -853,7 +855,7 @@ class: middle inverse
 
 
 ---
-class: middle inverse
+class: middle
 
 ## **Good Idea:** Using Color to Enhance What is Already Visible
 
@@ -877,7 +879,7 @@ Is still decent as:
 
 
 ---
-class: middle inverse
+class: middle
 
 ## _Bad Idea:_ Using Color as the Only Means of Conveying Information
 
@@ -904,7 +906,7 @@ Let's say you're colorblind. Can you tell if this example is a good idea or a ba
 
 
 ---
-class: middle inverse
+class: middle
 
 ## **Good Idea:** Meet Color Contrast Standards for Text
 
@@ -921,7 +923,7 @@ Logotypes: Text that is part of a logo or brand name has no minimum contrast req
 
 
 ---
-class: middle inverse
+class: middle
 
 .poor_contrast[
 
@@ -933,13 +935,13 @@ class: middle inverse
 
 
 ---
-class: middle inverse
+class: middle
 
 ## _Bad Idea:_ Give Users Seizures
 
 .demo[
 
-<button type="button" onclick="window.alert('(smh) DO NOT GIVE USERS SEIZURES!!')">Click to Have a Seizure</button>
+<div class="component-button"><button type="button" onclick="window.alert('(smh) DO NOT GIVE USERS SEIZURES!!')">Click to Have a Seizure</button></div>
 
 ]
 
@@ -955,13 +957,13 @@ Well, you can imagine. Flashing stuff. Myspace circa 2000.
 
 
 ---
-class: inverse
+class:
 
 ## **Good Idea:** Keep expandable content links where they are.
 
 .demo[
 
-<button aria-expanded="false" aria-owns="more_content_1" type="button" onclick="$.fn.toggleAttr = function (attr, value1, value2) {return this.each(function () { var self; self = $(this); if (self.attr(attr) === value1) { self.attr(attr, value2); } else { self.attr(attr, value1); }});}; $(this).toggleAttr('aria-expanded', 'true', 'false'); $('#more_content_1').toggleClass('hidden');">Bibendum Fermentum Aenean</button>
+<div class="component-button"><button aria-expanded="false" aria-owns="more_content_1" type="button" onclick="$.fn.toggleAttr = function(attr, value1, value2) {this.each(function() { var self = $(this); if (self.attr(attr) === value1) { self.attr(attr, value2); } else { self.attr(attr, value1); }});}; $(this).toggleAttr('aria-expanded', 'true', 'false'); $('#more_content_1').toggleClass('hidden');">Bibendum Fermentum Aenean</button></div>
 <div id="more_content_1" class="hidden">
 	<h3>Bibendum Fermentum Aenean</h3>
 	<p>Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
@@ -977,7 +979,7 @@ When we drop these down, screen readers have to go backwards. Also, note the lac
 
 
 ---
-class: inverse
+class:
 
 ## _Bad Idea:_ Move expandable links to the bottom of the content.
 
@@ -987,7 +989,7 @@ class: inverse
 	<h3 class="marginless">Bibendum Fermentum Aenean</h3>
 	<p>Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
 </div>
-<button aria-expanded="false" aria-owns="more_content_2" type="button" onclick="$.fn.toggleAttr = function (attr, value1, value2) {return this.each(function () { var self; self = $(this); if (self.attr(attr) === value1) { self.attr(attr, value2); } else { self.attr(attr, value1); }});}; $(this).toggleAttr('aria-expanded', 'true', 'false'); $('#more_content_2').toggleClass('hidden');">Bibendum Fermentum Aenean</button>
+<div class="component-button"><button aria-expanded="false" aria-owns="more_content_2" type="button" onclick="$.fn.toggleAttr = function(attr, value1, value2) {this.each(function() { var self = $(this); if (self.attr(attr) === value1) { self.attr(attr, value2); } else { self.attr(attr, value1); }});}; $(this).toggleAttr('aria-expanded', 'true', 'false'); $('#more_content_2').toggleClass('hidden');">Bibendum Fermentum Aenean</button></div>
 
 ]
 
@@ -999,7 +1001,7 @@ When we drop these down, screen readers have to go backwards. Also, note the lac
 
 
 ---
-class: middle inverse
+class: middle
 
 ## **Good Idea:** Keep Modals/Pop Ups Simple
 
@@ -1012,11 +1014,11 @@ This means that we can do simple things that work well, but taking complicated p
 
 
 ---
-class: middle inverse
+class: middle
 
 ## _Bad Idea:_ Scrollable Areas
 
-In general, screen readers are not very good at coping with these areas. Sometimes
+In general, screen readers are not very good at coping with these areas.
 
 .demo.scrollable_content[
 
@@ -1041,7 +1043,7 @@ Similarly, a bad idea is Locking Scroll. Scroll down, take it over, force the pa
 
 
 ---
-class: middle inverse
+class: middle
 
 ## **Good Idea:** Prototype Non-traditional UI
 
@@ -1064,7 +1066,7 @@ There are a ton of ideas out there that we may or may not be able to pull off. I
 
 
 ---
-class: middle inverse
+class: middle
 
 ## _Bad Idea:_ Styling Overrides of Radio Buttons and Checkboxes
 
@@ -1076,22 +1078,22 @@ That being said, I doubt you'll _not_ do it. Personally, I'm looking into altern
 
 
 ---
-class: middle inverse
+class: middle
 
 ## **Good Idea:** Prefix Error Messages with "Error"
 
 And reference the field that has the error.
 
 <form class="demo">
-	<div class="field">
+	<div class="component-input-field">
 		<div class="label_container">
-			<label class="label" for="error_message_prefix_input_1">Name</label>
+			<label for="error_message_prefix_input_1">Name</label>
 		</div>
 		<div class="input_container">
-			<input class="input" type="text" id="error_message_prefix_input_1" aria-describedby="error_message_prefix_error_input_1" placeholder="*@$###">
+			<input type="text" id="error_message_prefix_input_1" aria-describedby="error_message_prefix_error_input_1" placeholder="*@$###">
 		</div>
 		<div class="error" id="error_message_prefix_error_input_1">
-			<img src="/assets/images/presentations/error_icon.svg" alt="Error" class="error_icon">
+			<img src="./assets/error_icon.svg" alt="Error" class="error_icon">
 			Wow. You Messed Up Your Name. Please don't use symbols in the Name field.
 		</div>
 	</div>
@@ -1105,7 +1107,7 @@ _And other related helpful explanations of what things are_
 
 
 ---
-class: middle inverse
+class: middle
 
 
 ## **Good Idea:** Skip To Link
@@ -1116,7 +1118,7 @@ class: middle inverse
 
 
 ---
-class: middle inverse
+class: middle
 
 ## _Bad Idea:_ Single Page Web Apps
 
@@ -1132,7 +1134,7 @@ When all of your page's content falls away, the user ends up at the bottom of th
 We've tried to care for this a bit in our project, to varying degrees of success.
 
 ---
-class: middle inverse
+class: middle
 
 ## _Bad Idea:_ Giving Elements an “Identity Crisis”
 
@@ -1147,7 +1149,7 @@ class: middle inverse
 
 
 ---
-class: center middle inverse
+class: center middle
 
 ## Questions and Free-range Accessment
 
@@ -1159,7 +1161,7 @@ And if anyone has ideas for websites to go walk through, we can do that, too.
 
 
 ---
-class: inverse
+class:
 
 .left-column[
 ## Links

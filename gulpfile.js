@@ -61,7 +61,7 @@ var DIR_WATCH_GLOBAL_ASSETS  = DIR_SOURCE_GLOBAL_ASSETS;
 // Copy page assets into their page's assets folder.
 var DIR_SOURCE_PAGE_ASSETS   = './app/instances/pages/**/assets/*',
     DIR_BUILD_PAGE_ASSETS    = './dist';
-var DIR_WATCH_PAGE_ASSETS    = DIR_WATCH_PAGE_ASSETS;
+var DIR_WATCH_PAGE_ASSETS    = DIR_SOURCE_PAGE_ASSETS;
 
 // Combine bower_components and non-bower components into a single vendor folder.
 var DIR_SOURCE_VENDOR        = ['./app/vendor/bower_components/**/*', './app/vendor/!(bower_components)'],

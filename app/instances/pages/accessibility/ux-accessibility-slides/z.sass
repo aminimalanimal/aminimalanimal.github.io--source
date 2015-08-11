@@ -1,12 +1,15 @@
 @import global_variables
 
-@import url(http://fonts.googleapis.com/css?family=Droid+Serif)
-@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz)
+.remark-slide-content
+	background: $color-monokai-black
+	color: $color-monokai-white
+	overflow: hidden
 
 body.presentation
-	color: $color-monokai-black
 	font-family: 'Droid Serif'
 	font-size: medium
+	text-shadow: 0 0 20px #333
+
 
 	h1, h2, h3, h4, h5, h6
 		font-family: 'Yanone Kaffeesatz'
@@ -18,11 +21,6 @@ body.presentation
 
 	code
 		border-radius: 5px
-
-	.inverse
-		background: $color-monokai-black
-		color: $color-monokai-white
-		text-shadow: 0 0 20px #333
 
 	em
 		color: $color-monokai-red
@@ -43,11 +41,8 @@ body.presentation
 		strong
 			font-weight: normal
 
-	.inverse a
+	a
 		color: $color-monokai-blue
-
-	.inverse button
-		color: $color-monokai-white
 
 	.footnote
 		position: absolute
@@ -77,9 +72,6 @@ body.presentation
 		height: 100%
 		opacity: 0.2
 		z-index: 999
-
-	.remark-slide-content
-		overflow: hidden
 
 	.left-column
 		float: left
@@ -117,18 +109,6 @@ body.presentation
 	blockquote
 		color: $color-monokai-blue
 
-	button
-		background: $color-monokai-black
-		border: solid 1px $color-monokai-white
-		border-radius: $border-radius
-		display: block
-		font-family: 'Droid Serif'
-		font-size: 1em
-		margin: 14px $field-spacing-internal-x 14px 0
-		padding: 6px
-		&:hover
-			background: $field-hover-background
-
 	small
 		color: $color-monokai-red
 
@@ -157,14 +137,14 @@ body.presentation
 		margin: 0
 
 	.left-to-right
-		button
+		.component-button
 			display: inline-block
 			margin-right: $field-spacing-internal-x
 
 	.right-to-left
 		direction: rtl
 		text-align: left
-		button
+		.component-button
 			display: inline-block
 			margin-right: $field-spacing-internal-x
 
