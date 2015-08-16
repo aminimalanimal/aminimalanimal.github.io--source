@@ -1,0 +1,18 @@
+div.component-aria-checkbox(
+	aria-checked="false"
+	aria-describedby="disclosure-aria-checkbox"
+	data-name="aria-checkbox"
+	data-value="aria-checkbox-value"
+	role="checkbox"
+	tabindex="0"
+	)
+	span.checkbox
+	span.label aria checkbox
+
+	div.disclosure.hidden#disclosure-checkbox div.disclosure
+
+	//- need a method of submitting value
+	input(
+		name="aria-checkbox"
+		type="hidden"
+		value="aria-checkbox-value")

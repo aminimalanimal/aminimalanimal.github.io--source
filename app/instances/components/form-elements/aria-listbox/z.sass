@@ -1,0 +1,21 @@
+@import global_variables
+
+.component-aria-listbox
+	.label-container
+		margin: $field-spacing-internal-y 0
+	.listbox
+		background: $field-background
+		border: $field-border
+		border-radius: $border-radius
+		color: $field-text-color
+		height: $field-height
+		padding: $field-spacing-internal-y $field-spacing-internal-x
+		transition: $field-transition
+		width: 100%
+		&:focus
+			box-shadow: $field-focus-box-shadow
+			outline: $field-focus-outline
+		&:hover
+			background: $field-hover-background
+	.option
+		display: none

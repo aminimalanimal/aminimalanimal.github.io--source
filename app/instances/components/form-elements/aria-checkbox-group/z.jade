@@ -1,0 +1,40 @@
+div.component-aria-checkbox-group(
+	data-name="aria-checkbox-group"
+	data-value="aria-checkbox-group-value"
+	role="checkboxgroup"
+	)
+	div.checkbox-container(
+		aria-checked="false"
+		aria-describedby="disclosure-aria-checkbox"
+		role="checkbox"
+		tabindex="0"
+		)
+		span.checkbox
+		span.label aria checkbox
+
+	div.checkbox-container(
+		aria-checked="false"
+		aria-describedby="disclosure-aria-checkbox"
+		role="checkbox"
+		tabindex="0"
+		)
+		span.checkbox
+		span.label aria checkbox
+
+	div.checkbox-container(
+		aria-checked="false"
+		aria-describedby="disclosure-aria-checkbox"
+		role="checkbox"
+		tabindex="0"
+		)
+		span.checkbox
+		span.label aria checkbox
+
+	//- disclosure
+	div.disclosure.hidden#disclosure-aria-checkbox div.disclosure
+
+	//- need a method of submitting value
+	input(
+		name="aria-checkbox-group"
+		type="hidden"
+		value="aria-checkbox-group-value")
