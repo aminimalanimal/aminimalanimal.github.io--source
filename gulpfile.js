@@ -46,7 +46,7 @@ var DIR_WATCH_MARKUP     = './app/{templates,instances}/**/*.jade';
 
 var DIR_SOURCE_STYLES    = ['./app/global.sass', './app/{templates,instances}/**/*.{sass,scss}'],
     DIR_BUILD_STYLES     = './dist';
-var DIR_WATCH_STYLES     = './app/**/*.{sass,scss}';
+var DIR_WATCH_STYLES     = './app/**/**/*.{sass,scss}';
 
 var DIR_SOURCE_SCRIPTS   = './app/{templates,instances}/**/*.{coffee,litcoffee}',
     DIR_BUILD_SCRIPTS    = './dist';
