@@ -33,7 +33,42 @@ $field-focus-box-shadow: inset 0 0 0 2px $color-monokai-white
 $field-focus-outline: none
 
 // Field: Hover State
-$field-hover-background: lighten($color-monokai-black, 5%)
+$field-hover-background: lighten($color-monokai-black, 10%)
 
-// Field Style Diagram: deprecated?
-$field-diagram-spacing: 8px
+// Field: Selected States
+$field-selected-background: $color-monokai-white
+$field-selected-text-color: $color-monokai-black
+$field-selected-hover-background: darken($color-monokai-white, 10%)
+$field-selected-focus-box-shadow: inset 0 0 0 1px $color-monokai-white, inset 0 0 0 3px $color-monokai-black
+$field-selected-focus-hover-box-shadow: inset 0 0 0 1px darken($color-monokai-white, 10%), inset 0 0 0 3px $color-monokai-black
+
+
+
+// // Field Style Diagram: deprecated?
+// $field-diagram-spacing: 8px
+
+
+$field-disclosure-border: solid 1px $color-monokai-orange
+
+
+
+
+// MIXINS
+
+%states-focus-and-hover
+	&:focus
+		box-shadow: $field-focus-box-shadow
+		outline: $field-focus-outline
+	&:hover
+		background: $field-hover-background
+
+%states-aria-selected
+	&[aria-selected="true"]
+		background: $field-selected-background
+		color: $field-selected-text-color
+		&:focus
+			box-shadow: $field-selected-focus-box-shadow
+			&:hover
+				box-shadow: $field-selected-focus-hover-box-shadow
+		&:hover
+			background: $field-selected-hover-background

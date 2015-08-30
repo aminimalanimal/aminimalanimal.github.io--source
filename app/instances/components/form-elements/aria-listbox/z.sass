@@ -3,19 +3,37 @@
 .component-aria-listbox
 	.label-container
 		margin: $field-spacing-internal-y 0
-	.listbox
+	.input-container
 		background: $field-background
 		border: $field-border
-		border-radius: $border-radius
 		color: $field-text-color
-		height: $field-height
+		width: 100%
+	button
+		@extend %states-focus-and-hover
+		align-items: center
+		background: $field-background
+		border: none
+		cursor: pointer
+		display: flex
+		font-size: 18px
+		min-height: $field-height
 		padding: $field-spacing-internal-y $field-spacing-internal-x
 		transition: $field-transition
-		width: 100%
-		&:focus
-			box-shadow: $field-focus-box-shadow
-			outline: $field-focus-outline
-		&:hover
-			background: $field-hover-background
-	.option
+
+		&[aria-expanded="true"] + .options
+			display: block
+
+	.options
 		display: none
+		padding: $field-spacing-internal-x / 2
+	.option
+		@extend %states-focus-and-hover
+		@extend %states-aria-selected
+		align-items: center
+		cursor: pointer
+		display: flex
+		font-size: 14px
+		min-height: $field-height
+		padding: $field-spacing-internal-y $field-spacing-internal-x
+		transition: $field-transition
+

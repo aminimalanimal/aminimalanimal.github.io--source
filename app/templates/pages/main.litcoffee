@@ -25,7 +25,7 @@ Generates fun backgrounds.
 
 		$background.removeAttr('height').attr
 			'aria-hidden': 'true'
-			class: 'triangular_background'
+			class: 'triangular-background'
 			width: '100%'
 
 		# because jQuery's stupid and doesn't listen to my camelcasing for `viewBox`, we have to use native JavaScript:
@@ -34,5 +34,5 @@ Generates fun backgrounds.
 	generate_triangular_background()
 
 	$(window).on 'resize', ->
-		$('.triangular_background').remove()
+		$('.triangular-background').remove()
 		generate_triangular_background()

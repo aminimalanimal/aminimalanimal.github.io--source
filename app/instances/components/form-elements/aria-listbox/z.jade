@@ -1,19 +1,23 @@
-//- incomplete html. listbox currently has no selection.
-
 div.component-aria-listbox
 	div.label-container
-		span.label aria listbox
+		span.label aria-created select. button + listbox
 	div.input-container
-		div.listbox(
+		button(
+			aria-controls="aria-select-listbox"
 			aria-describedby="disclosure-aria-listbox"
+			aria-expanded="true"
 			data-display="aria-listbox-value"
 			data-name="aria-listbox"
-			role="listbox"
 			tabindex="0"
 			) default
+		div.options(
+			id="aria-select-listbox"
+			role="listbox"
+			)
 			div.option(
-				aria-checked="true"
+				aria-selected="true"
 				role="option"
+				tabindex="0"
 				) default
 			div.option(role="option") option 1
 			div.option(role="option") option 2
@@ -21,17 +25,10 @@ div.component-aria-listbox
 			div.option(role="option") option 4
 			div.option(role="option") option 5
 			div.option(role="option") option 6
-			div.option(role="option") option 7
-			div.option(role="option") option 8
-			div.option(role="option") option 9
-			div.option(role="option") option 10
-			div.option(role="option") option 11
-			div.option(role="option") option 12
-			div.option(role="option") option 13
-			div.option(role="option") option 14
-			div.option(role="option") option 15
 
-	div.disclosure.hidden#disclosure-listbox div.disclosure
+	div.component-disclosure
+		span.disclosure-triangle(aria-hidden="true")
+		div.disclosure#disclosure-listbox div.disclosure
 
 	//- need a method of submitting value
 	input(
