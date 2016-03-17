@@ -189,7 +189,7 @@ layout: true
 
 - likely to use a screen reader
 	- possible keyboard-only navigation
-	- need labelled graphics
+	- need labeled graphics
 	- need semantic markup
 - issues with understanding visual context and clues
 
@@ -529,7 +529,7 @@ class: middle
 To enable iOS VoiceOver:
 
 1. turn on in Settings
-1. triple-tap to start
+1. triple-tap Home to start
 
 iOS VoiceOver's experience:
 
