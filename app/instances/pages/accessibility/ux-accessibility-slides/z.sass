@@ -121,10 +121,6 @@ body.presentation
 	.awful_focus_management_example
 		width: 100px
 
-	input:not(.input)
-		color: $color-monokai-black
-
-
 	.bar_red
 		border-left: solid 4px $color-monokai-red
 		padding-left: $field-spacing-internal-x
@@ -149,18 +145,27 @@ body.presentation
 			margin-right: $field-spacing-internal-x
 
 	input[type="checkbox"]
-		box-shadow: inset 0 0 0 4px $color-monokai-black, 0 0 0 1px $color-monokai-white
+		// box-shadow: inset 0 0 0 4px $color-monokai-black, 0 0 0 1px $color-monokai-white
 		margin-right: $field-spacing-internal-x
 		vertical-align: middle
 		&:focus
-			box-shadow: inset 0 0 0 4px $color-monokai-black, 0 0 0 3px $color-monokai-white
-		&:checked
-			box-shadow: inset 0 0 0 8px $color-monokai-white
-			&:focus
-				box-shadow: inset 0 0 0 5px $color-monokai-white, inset 0 0 0 8px $color-monokai-black, 0 0 0 2px $color-monokai-white
+			// box-shadow: inset 0 0 0 4px $color-monokai-black, 0 0 0 3px $color-monokai-white
+			outline: 2px solid $color-monokai-white
+			outline-offset: 2px
+		// &:checked
+			// box-shadow: inset 0 0 0 8px $color-monokai-white
+			// &:focus
+				// box-shadow: inset 0 0 0 5px $color-monokai-white, inset 0 0 0 8px $color-monokai-black, 0 0 0 2px $color-monokai-white
+
 
 	input
 		font-size: 1em
+
+	.poor_focus_state
+		&:hover
+			background: none
+		&:focus
+			box-shadow: none !important
 
 	.scrollable_content
 		height: 100px

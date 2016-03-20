@@ -840,7 +840,7 @@ class: middle
 			<label for="input_1">Name</label>
 		</div>
 		<div class="input_container">
-			<input class="" type="text" id="input_1">
+			<input class="poor_focus_state" type="text" id="input_1">
 		</div>
 	</div>
 	<div class="component-input-field">
@@ -848,7 +848,7 @@ class: middle
 			<label for="input_2">Mobile Phone Number</label>
 		</div>
 		<div class="input_container">
-			<input class="" type="text" id="input_2">
+			<input class="poor_focus_state" type="text" id="input_2">
 		</div>
 	</div>
 </form>
@@ -913,6 +913,9 @@ class: middle
 Text needs to have a contrast ratio of 4.5:1. Large-scale text, 3:1.
 
 Logos, decorative text, and text that belongs to inactive UI components have no contrast requirement.
+
+<a href="http://contrastchecker.com/">contrastchecker.com/</a><br>
+<a href="http://leaverou.github.io/contrast-ratio/">leaverou.github.io/contrast-ratio/</a>
 
 ???
 
@@ -1046,8 +1049,6 @@ Similarly, a bad idea is Locking Scroll. Scroll down, take it over, force the pa
 class: middle
 
 ## **Good Idea:** Prototype Non-traditional UI
-
-_Preferably before selling it?_
 
 Some already-made components: [W3 - WAI-ARIA Patterns](http://www.w3.org/TR/wai-aria-practices/#aria_ex)
 
