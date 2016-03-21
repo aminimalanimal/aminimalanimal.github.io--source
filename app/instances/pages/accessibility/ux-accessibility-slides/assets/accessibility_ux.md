@@ -595,7 +595,7 @@ count: false
 
 In addition to these landmarks, it can be helpful if we **label them** based on something on the page so that when the user jumps to that section, they hear what it is.
 
-<a href="/" target="_blank">Demo</a>
+[https://accessibility.oit.ncsu.edu/training/aria/landmarks-xhtml.html](accessibility.oit.ncsu.edu/training/aria/landmarks-xhtml.html)
 
 ]
 
