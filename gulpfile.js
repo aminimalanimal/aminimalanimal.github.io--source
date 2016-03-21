@@ -149,6 +149,7 @@ gulp.task('copy_page_assets', function() {
 gulp.task('serve', ['index', 'jade', 'sass', 'coffee', 'copy_vendor', 'copy_global_assets', 'copy_page_assets'], function() {
   browserSync.init({
     browser: 'google chrome',
+    notify: false,
     server: {
       baseDir: DIR_BUILD_INDEX
     }

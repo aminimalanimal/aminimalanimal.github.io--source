@@ -1152,7 +1152,7 @@ class: middle
 ---
 class: center middle
 
-## Questions and Free-range Accessment
+## Questions and Free-range Assessment
 
 ???
 
