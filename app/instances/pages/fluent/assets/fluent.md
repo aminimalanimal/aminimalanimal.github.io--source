@@ -4,7 +4,7 @@ class: center, middle
 
 ???
 
-Robot voice: Fluent is a conference held by O'Reilly. It is held in San Francisco, CA. There were a lot of people there. It was cool. It is...
+Fluent is a conference held by O'Reilly. It is held in San Francisco, CA. There were a lot of people there. It was cool. It is...
 
 ---
 
@@ -86,10 +86,64 @@ count: false
 
 ]
 
+---
+
+count: false
+
+.right-column[
+
+- React
+
+Used by:
+
+.really-long-list[
+
+- Airbnb
+- Atlassian
+- Automattic
+- BBC
+- Codecademy
+- Dailymotion
+- Docker
+- Dropbox
+- Facebook
+- Feedly
+- Flipkart
+- HipChat
+- IGN
+- IMDb
+- Imgur
+- Instacart
+- Instagram
+- Khan Academy
+- Lyft
+- NHL
+- Netflix
+- NFL
+- OkCupid
+- Paypal
+- Reddit
+- Squarespace
+- Tesla Motors
+- The New York Times
+- Uber
+- Wordpress.com
+- Yahoo
+
+]
+
+This [github wiki page](https://github.com/facebook/react/wiki/Sites-Using-React) lists every site, app, data visualization, and agency that says they're using React.
+
+
+
+]
+
 ???
 
 There was so much React. Talks that didn't even mention that they were using React were referencing their use of React. Oh, there were presentations on Angular 2, too... but they were **about** Angular 2. React was just **everywhere else**.
 
+We aren't on the We Use React page yet.
+
 
 ---
 
@@ -100,17 +154,110 @@ count: false
 - React
 	- Performance
 
-_GET IMAGE OF PERFORMANCE METRICS_
+]
+
+???
+
+And for good reason. React rocks performance metrics.
+
+---
+
+count: false
+
+.right-column[
+
+- React
+	- Performance
+
+![](https://cdn.auth0.com/blog/newdombenchs/MajorGC.svg)
 
 
 ]
 
 ???
 
+Angular 1 skews this one, so it's hard to compare the others. React is first on the list. VirtualDOM, IncrementalDOM (Google), and Mithril constantly compare favorably.
 
-And for good reason. React has bludgeoned its competitors to death on the performance scale.
+---
 
-(You might remember I mentioned using Mythril instead at a previous talk. Nope. Use React. Even it loses.)
+count: false
+
+.right-column[
+
+- React
+	- Performance
+
+![](https://cdn.auth0.com/blog/newdombenchs/Layout.svg)
+
+
+]
+
+???
+
+I'm gonna rush through these.
+
+
+---
+
+count: false
+
+.right-column[
+
+- React
+	- Performance
+
+![](https://cdn.auth0.com/blog/newdombenchs/Paint.svg)
+
+
+]
+
+???
+
+Painting time...
+
+---
+
+count: false
+
+.right-column[
+
+- React
+	- Performance
+
+![](https://cdn.auth0.com/blog/newdombenchs/droppedFrameCount.svg)
+
+
+]
+
+???
+
+Frames that take longer than 16.6ms to be drawn can cause stuttering. This metric's for the subjective feeling of an application.
+
+---
+
+count: false
+
+.right-column[
+
+- React
+	- Performance
+
+![](https://cdn.auth0.com/blog/newdombenchs/Javascript.svg)
+
+
+]
+
+???
+
+You get the idea. React's not the tip top of the tip top but it's consistently near the top in how it benchmarks between the different factors you could test for.
+
+Also, no one's talking about IncrementalDOM or VirtualDOM or Mithril.
+
+Seriously. No one.
+
+So, fastest framework with a community built around it: React.
+
+
 
 ---
 
@@ -166,9 +313,9 @@ count: false
 	- Reusability
 		- Enhancing an existing page?
 		- Making a webapp from scratch?
-		- Making a static site?
+		- [Making a static site?](https://www.smashingmagazine.com/2016/03/server-side-rendering-react-node-express/)
 
-_Show how?_
+
 
 ]
 
@@ -178,6 +325,34 @@ A static site? Rendered on the server?
 
 Yeah. It's a thing.
 
+It's apparently a little tricky if you're trying to straight up statically render an existing site that wasn't set up for it, but if you know you're making a static site to begin with, this little code snippet
+
+---
+
+count: false
+
+.right-column[
+
+- React
+	- Performance
+	- Reusability
+		- Enhancing an existing page?
+		- Making a webapp from scratch?
+		- [Making a static site?](https://www.smashingmagazine.com/2016/03/server-side-rendering-react-node-express/)
+
+Instead of:
+
+`React.render`
+
+Use:
+
+`ReactDOM.renderToString`
+
+]
+
+???
+
+is apparently all you really need.
 
 ---
 
@@ -191,7 +366,7 @@ count: false
 		- Enhancing an existing page?
 		- Making a webapp from scratch?
 		- Making a static site?
-- ES6 / ES2015 + Babel
+- [ES6](https://github.com/lukehoban/es6features) / ES2015 + Babel
 
 ]
 
@@ -199,19 +374,7 @@ count: false
 
 Lots of code examples were just already in ES6, and many devs didn't feel the need to explain them. It's time to get up to future-date, it seems.
 
-
-
-
-
-
----
-
-count: false
-
-_Maybe insert some quick ES6 code snippets in here now_
-
-
-
+I'm not going to hit even **most** of them.
 
 
 ---
@@ -221,19 +384,159 @@ count: false
 .right-column[
 
 - React
-	- Performance
-	- Reusability
-		- Enhancing an existing page?
-		- Making a webapp from scratch?
-		- Making a static site?
 - ES6 / ES2015 + Babel
-	- Death to Coffeescript
+	- Arrows
+
+<iframe width="854" height="480" src="https://www.youtube.com/embed/XRYN2xt11Ek?start=422" frameborder="0" allowfullscreen></iframe>
 
 ]
 
 ???
 
-Use Babel, compile your JS, and get the most coffee script-looking JavaScript ever right now.
+Arrows. Citi team knows about arrows. There's no skinny arrow, though. `this` is always transferred inside as though it's a Coffeescript fat arrow.
+
+---
+
+count: false
+
+.right-column[
+
+- React
+- ES6 / ES2015 + Babel
+	- Arrows
+	- Classes
+
+```
+class SkinnedMesh extends THREE.Mesh {
+  constructor(geometry, materials) {
+    super(geometry, materials);
+
+    this.idMatrix = SkinnedMesh.defaultMatrix();
+    this.bones = [];
+    this.boneMatrices = [];
+    //...
+  }
+  update(camera) {
+    //...
+    super.update();
+  }
+  get boneCount() {
+    return this.bones.length;
+  }
+  set matrixType(matrixType) {
+    this.idMatrix = SkinnedMesh[matrixType]();
+  }
+  static defaultMatrix() {
+    return new THREE.Matrix4();
+  }
+}
+```
+
+]
+
+???
+
+Classes - complete with `super` and `constructor`s.
+
+
+---
+
+count: false
+
+.right-column[
+
+- React
+- ES6 / ES2015 + Babel
+	- Arrows
+	- Classes
+	- Let + Const
+
+```
+function f() {
+  {
+    let x;
+    {
+      // okay, block scoped name
+      const x = "sneaky";
+      // error, const
+      x = "foo";
+    }
+    // error, already declared in block
+    let x = "inner";
+  }
+}
+```
+
+]
+
+???
+
+`let` is the new `var`. Both of these are scoped to their block. `const` can't ever be changed, which saves memory. (I saw way more `const` in the presenter's code than `let`.)
+
+---
+
+count: false
+
+.right-column[
+
+- React
+- ES6 / ES2015 + Babel
+	- Arrows
+	- Classes
+	- Let + Const
+	- Promises
+
+```
+function timeout(duration = 0) {
+    return new Promise((resolve, reject) => {
+        setTimeout(resolve, duration);
+    })
+}
+
+var p = timeout(1000).then(() => {
+    return timeout(2000);
+}).then(() => {
+    throw new Error("hmm");
+}).catch(err => {
+    return Promise.all([timeout(100), timeout(200)]);
+})
+```
+]
+
+???
+
+And **Promises**. Except that most talks that showed Promises actually talked about how _not great they are_.
+
+Lots of complaining about `then` `then` `then`, which is better than callback hell, but apparently nowhere near as amazeballs as Observables.
+
+---
+
+count: false
+
+.right-column[
+
+- React
+- ES6 / ES2015 + Babel
+	- Arrows
+	- Classes
+	- Let + Const
+	- ~~Promises~~ Observables
+
+]
+
+???
+
+Observables are the new rage. And they aren't part of ES6. So... lets back up.
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -256,13 +559,267 @@ layout: false
 count: true
 class: middle
 
-## 2. Progressive Offline Web Apps
+## 2. Functional Reactive Programming
 
 ---
 
 layout: true
 
-## 2. Progressive Offline Web Apps
+## 2. Functional Reactive Programming
+
+---
+
+count: false
+
+- Whatsit?
+
+.large[
+
+> Reactive programming is <br>programming with <br>asynchronous data streams.
+
+]
+
+---
+
+layout: false
+count: false
+class: middle center
+
+## HUH
+
+---
+
+layout: false
+count: false
+class: middle center
+
+## WUT
+
+---
+
+layout: false
+count: false
+class: middle center
+
+## HUH
+
+---
+
+layout: false
+count: false
+class: middle center
+
+## WUT
+
+---
+
+layout: true
+
+## 2. Functional Reactive Programming
+
+---
+
+count: false
+
+
+.large[
+<br>
+What's an asynchronous data stream?
+
+]
+
+???
+
+Basically, it just means you've subscribed to an event to receive data, and you don't necessarily know when that's going to show up, but you're open to having anywhere from 0 to infinite sets of data to show up via that subscription.
+
+---
+
+count: false
+
+- Asynchronous Data Streams
+- Observables
+
+???
+
+Observables aren't supported in a spec yet (they are submitted), but we can use them now with a variety of different JavaScript libraries, all of which pretty much owe their JavaScript origins to Rx.js.
+
+Observables, as far as I can tell, turn the events that they receive into Arrays (documentation tends to refer to these as Collections, seems like the same thing to me).
+
+---
+
+count: false
+
+- Asynchronous Data Streams
+- Observables
+	- So, who cares if they're arrays now?
+
+???
+
+Well, now that they're arrays, you can do all sorts of things to them.
+
+---
+
+count: false
+
+- Asynchronous Data Streams
+- Observables
+	- `filter`, `map`, `flatmap`
+
+---
+
+count: false
+
+- Asynchronous Data Streams
+- Observables
+	- `filter`, `map`, `flatmap`
+	- simple error handling, simple completion, simple canceling out
+
+.right-column[
+
+<iframe width="854" height="480" src="https://www.youtube.com/embed/XRYN2xt11Ek?start=866" frameborder="0" allowfullscreen></iframe>
+
+]
+
+???
+
+The shortest video I have found to explain this is 40 minutes long, so I recognize that you aren't getting everything. I'm really aiming just to tease you into looking into this stuff more.
+
+---
+
+count: false
+
+- Asynchronous Data Streams
+- Observables
+
+.right-column[
+
+<iframe width="854" height="480" src="https://www.youtube.com/embed/XRYN2xt11Ek?start=1502" frameborder="0" allowfullscreen></iframe>
+
+]
+
+???
+
+Let's check out a quick demonstration of the kinds of bullshit it saved Netflix, though.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+layout: false
+count: true
+class: middle
+
+## 3. Immutable Data Structures
+
+---
+
+layout: true
+
+## 3. Immutable Data Structures
+
+---
+
+count: false
+
+.large[
+
+> [Immutable Data Structures] go together with Reactive streams just like pancakes are good with syrup.
+
+]
+
+???
+
+
+
+Guess who has an immutable javascript library?
+
+Facebook.
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+layout: false
+count: false
+
+<img src="assets/fry.jpg" style="width: 100%; height: auto;" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+layout: false
+count: true
+class: middle
+
+## 4. Progressive Offline Web Apps
+
+---
+
+layout: true
+
+## 4. Progressive Offline Web Apps
 
 ---
 
@@ -379,8 +936,10 @@ count: false
 		- Making a webapp from scratch?
 		- Making a static site?
 - ES6 / ES2015 + Babel
-
-_Make sure you get whatever the final ES6 slide is for this_
+	- Arrows
+	- Classes
+	- Let + Const
+	- ~~Promises~~ Observables
 
 ]
 
@@ -402,8 +961,10 @@ count: false
 		- Making a static site?
 		- **Making a desktop application?**
 - ES6 / ES2015 + Babel
-
-_Make sure you get whatever the final ES6 slide is for this_
+	- Arrows
+	- Classes
+	- Let + Const
+	- ~~Promises~~ Observables
 
 ]
 
@@ -422,68 +983,32 @@ count: false
 		- **Making a desktop application?**
 		- **Making a native iOS or Android application?**
 - ES6 / ES2015 + Babel
-
-_Make sure you get whatever the final ES6 slide is for this_
-
-]
-
-???
-
-So let's go back to our Common Technologies slide and give React some more props.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----
-
-layout: false
-count: true
-class: middle
-
-## 3. Immutable Data Structures
-
----
-
-layout: true
-
-## 3. Immutable Data Structures
-
-_Insert mind blown image_
-
----
-
-count: false
-
-.right-column[
-
-
+	- Arrows
+	- Classes
+	- Let + Const
+	- ~~Promises~~ Observables
 
 ]
 
-???
 
-Dear Christ people were excited about this.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -517,7 +1042,7 @@ layout: false
 count: true
 class: middle
 
-## 4. The State of Web Security
+## 5. The State of Web Security
 
 ???
 
@@ -527,7 +1052,7 @@ Hint: DISMAL
 
 layout: true
 
-## 4. The State of Web Security
+## 5. The State of Web Security
 
 ---
 
@@ -564,13 +1089,13 @@ layout: false
 count: true
 class: middle
 
-## 5. Other Stuff
+## 6. Other Stuff
 
 ---
 
 layout: true
 
-## 5. Other Stuff
+## 6. Other Stuff
 
 ---
 
@@ -580,11 +1105,10 @@ count: false
 
 - npm commands
 - webpack
-- flatmap
 - VR
 - WebGL
 - Architecture and Dev Ops
 	- How to expand
 	- How to not break shit
-- Falcor
+- Falcor vs GraphQL
 ]
