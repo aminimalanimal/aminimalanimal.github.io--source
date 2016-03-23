@@ -348,6 +348,8 @@ Use:
 
 `ReactDOM.renderToString`
 
+To handle data injection, use [React Resolver](https://github.com/ericclemmons/react-resolver).
+
 ]
 
 ???
@@ -751,22 +753,73 @@ count: false
 
 ]
 
+[jlongster.com/Using-Immutable-Data-Structures-in-JavaScript](http://jlongster.com/Using-Immutable-Data-Structures-in-JavaScript)
+
+[facebook.github.io/immutable-js/](https://facebook.github.io/immutable-js/)
+
 ???
-
-
 
 Guess who has an immutable javascript library?
 
-Facebook.
+Facebook. `immutable.js`
 
 
+---
 
+count: false
 
+- The gist:
+	- Data is immutable. It is never mutated in-place.
+	- Changes to data are encapsulated into operations that take a previous version and return a new one.
+	- History is represented as a list of states, with past on one end, the present on the other, and an index that can back up into ‘undo states’.
+	- Modifying data causes any future states to be thrown away.
 
+???
 
+The data types used in Immutable programming are less computationally intensive to keep around than the native data types we have in JavaScript because they use “structural sharing.”
 
+Think git. Git works in trees—it doesn't clone everything. It just constantly makes references to previous versions and branches out. That's what these data structures do.
 
+They **are** slightly more computationally intensive than our JS objects though, _because_ we're keeping them around. However, they are **Significantly** less expensive than cloning, and supposedly, in practice, having these to reference can actually improve overall performance.
 
+---
+
+count: false
+
+- The gist:
+	- Data is immutable. It is never mutated in-place.
+	- Changes to data are encapsulated into operations that take a previous version and return a new one.
+	- History is represented as a list of states, with past on one end, the present on the other, and an index that can back up into ‘undo states’.
+	- Modifying data causes any future states to be thrown away.
+- The data types:
+	- List, Stack, Map, OrderedMap, Set, OrderedSet and Record
+
+???
+
+If you come from a traditional programming background, or use Java, you probably know what these are. I have very vague interpretations of a few of them. Won't actually get into these right now, though.
+
+---
+
+count: false
+
+- The gist:
+	- Data is immutable. It is never mutated in-place.
+	- Changes to data are encapsulated into operations that take a previous version and return a new one.
+	- History is represented as a list of states, with past on one end, the present on the other, and an index that can back up into ‘undo states’.
+	- Modifying data causes any future states to be thrown away.
+- The data types:
+	- List, Stack, Map, OrderedMap, Set, OrderedSet and Record
+- [Elm (Stamps demo)](http://debug.elm-lang.org/edit/Stamps.elm)
+
+???
+
+But you can do really freaking cool things with them, like rewind moves made in a game.
+
+(Elm, by the way, was also referenced. It's a completely different HTML/CSS/JS-in-one library that solely uses Immutable Data Types. Going to reference a demo written in it now.)
+
+Rewinding your state comes free with Elm. It's apparently a trivial thing to do with JavaScript as well.
+
+More practically, just be able to undo something. Your state is saved.
 
 
 
@@ -1061,11 +1114,394 @@ count: false
 .right-column[
 
 - HOW CRAZY EASY IT IS TO FUCK YO SITE UP
-- npm dependencies
+
+[OWASP - Top 10](https://www.owasp.org/index.php/Top_10_2013-Top_10)
+
+]
+
+???
+
+Let's start with ZOMG Web Security is awful.
+
+So, everytime some big site gets hacked, they're public response is “it was a really sophisticated attack.” Actually, that's pretty inaccurate. The thing is, our defenses just suck.
+
+---
+
+count: false
+
+.right-column[
+
+- HOW CRAZY EASY IT IS TO FUCK YO SITE UP
+	- [CAPTCHA!](http://scraping.pro/8-best-captcha-solving-services-and-tools/)
+		- Automated CAPTCHA Solvers
+		- Paid services to solve CAPTCHAS
+
+]
+
+???
+
+Captchas don't work. See, thing is, if there's money to be gained from hacking your site, there's money to be put into hacking your site.
+
+They _pay_ people to solve Captchas. Work from home! Make up to X money per day!
+
+The “I'm not a robot” is actually the best CAPTCHA. It still doesn't do anything, but it also bothers your users the least.
+
+---
+
+count: false
+
+.right-column[
+
+- HOW CRAZY EASY IT IS TO FUCK YO SITE UP
+	- CAPTCHA!
+		- Automated CAPTCHA Solvers
+		- Paid services to solve CAPTCHAS
+		- Phantom JS, SeleniumHQ, and [Sikuli Script](http://www.sikuli.org/)
+
+]
+
+???
+
+Our favorite testing tools can be used to automate things at an operating system level. Sikuli Script was particularly interesting. You can tell it to WAIT until it sees a certain visual output, and then interact with it.
+
+---
+
+count: false
+
+.right-column[
+
+- HOW CRAZY EASY IT IS TO FUCK YO SITE UP
+	- CAPTCHAs don't work
+	- Single Attackers
+
+]
+
+???
+
+Most hacks are done by a single individual.
+
+
+---
+
+count: false
+
+.right-column[
+
+- HOW CRAZY EASY IT IS TO FUCK YO SITE UP
+	- CAPTCHAs don't work
+	- Single Attackers
+		- block their IP!
+]
+
+???
+
+Usually one machine uses proxies to look like thousands of different users.
+
+
+---
+
+count: false
+
+.right-column[
+
+- HOW CRAZY EASY IT IS TO FUCK YO SITE UP
+	- CAPTCHAs don't work
+	- Single Attackers
+		- ~~block their IP!~~
+		- Detect exact browser dimensions, fonts on the system, or look for spikes coming from one machine
+]
+
+???
+
+Nope. They have tools that specifically vary what browsers, dimensions, fonts... everything you could think of to vary. So we can't even do good predictions.
+
+---
+
+count: false
+
+.right-column[
+
+- HOW CRAZY EASY IT IS TO FUCK YO SITE UP
+	- CAPTCHAs don't work
+	- Single Attackers
+		- ~~block their IP!~~
+		- ~~Detect exact browser dimensions, fonts on the system, or look for spikes coming from one machine~~
+		- Pay a security company
+
+]
+
+???
+
+10 people for a year... you're looking at $1 million, and no real promise you'll block these people off.
+
+---
+
+count: false
+
+.right-column[
+
+- HOW CRAZY EASY IT IS TO FUCK YO SITE UP
+	- CAPTCHAs don't work
+	- Single Attackers
+		- ~~block their IP!~~
+		- ~~Detect exact browser dimensions, fonts on the system, or look for spikes coming from one machine~~
+		- Pay a security company
+		- Just pay them off
+
+]
+
+???
+
+It's been done. They ask for 30k? That's cheap.
+
+---
+
+count: false
+
+.right-column[
+
+- HOW CRAZY EASY IT IS TO FUCK YO SITE UP
+	- CAPTCHAs don't work
+	- Single Attackers are hard to deal with
+	- It's easy to get information to hack stuff
+		- [YouTube](https://www.youtube.com/results?search_query=netflix+sentrymba) (your company name) fullz, sentrymba, carding, tutorial
+
+]
+
+---
+
+count: false
+
+.right-column[
+
+- HOW CRAZY EASY IT IS TO FUCK YO SITE UP
+	- CAPTCHAs don't work
+	- Single Attackers are hard to deal with
+	- It's easy to get information to hack stuff
+		- YouTube fullz, sentrymba, carding, tutorial
+		- Reddit
+		- Forums
+
+]
+
+---
+
+count: false
+
+.right-column[
+
+- HOW CRAZY EASY IT IS TO FUCK YO SITE UP
+	- CAPTCHAs don't work
+	- Single Attackers are hard to deal with
+	- It's easy to get information to hack stuff
+		- YouTube fullz, sentrymba, carding, tutorial
+		- Reddit
+		- Forums
+		- [dumpmon](https://twitter.com/dumpmon?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor)
+
+]
+
+???
+
+A twitter account that just constantly leaks usernames and passwords
+
+---
+
+count: false
+
+.large[
+
+> 92% of traffic for a major fortune 500 company comes from robots.
+
+]
+
+???
+
+Sucks that 90% of your analytics are total crap.
+
+30 million accounts stolen - Ashley Madison
+50 million accounts stolen - Evernote
+70 million accounts stolen - Sony breach
+
+---
+
+count: false
+
+.right-column[
+
+- HOW CRAZY EASY IT IS TO FUCK YO SITE UP
+	- CAPTCHAs don't work
+	- Single Attackers are hard to deal with
+	- It's easy to get information to hack stuff
+- What we _can_ do
+	- Don't make yourself a target
+
+]
+
+---
+
+count: false
+
+.right-column[
+
+- HOW CRAZY EASY IT IS TO FUCK YO SITE UP
+	- CAPTCHAs don't work
+	- Single Attackers are hard to deal with
+	- It's easy to get information to hack stuff
+- What we _can_ do
+	- Don't make yourself a target
+		- Don't store currency
+
+]
+
+---
+
+count: false
+
+.right-column[
+
+- HOW CRAZY EASY IT IS TO FUCK YO SITE UP
+	- CAPTCHAs don't work
+	- Single Attackers are hard to deal with
+	- It's easy to get information to hack stuff
+- What we _can_ do
+	- Don't make yourself a target
+		- Don't store currency
+		- Sell goods
+
+]
+
+---
+
+count: false
+
+.right-column[
+
+- HOW CRAZY EASY IT IS TO FUCK YO SITE UP
+	- CAPTCHAs don't work
+	- Single Attackers are hard to deal with
+	- It's easy to get information to hack stuff
+- What we _can_ do
+	- Don't make yourself a target
+		- Don't store currency
+		- Sell goods
+		- Have user generated content
+
+]
+
+---
+
+count: false
+
+.right-column[
+
+- HOW CRAZY EASY IT IS TO FUCK YO SITE UP
+	- CAPTCHAs don't work
+	- Single Attackers are hard to deal with
+	- It's easy to get information to hack stuff
+- What we _can_ do
+	- Don't make yourself a target
+		- Don't store currency
+		- Sell goods
+		- Have user generated content
+		- Have time sensitive features
+
+]
+
+---
+
+count: false
+
+.right-column[
+
+- HOW CRAZY EASY IT IS TO FUCK YO SITE UP
+	- CAPTCHAs don't work
+	- Single Attackers are hard to deal with
+	- It's easy to get information to hack stuff
+- What we _can_ do
+	- Don't make yourself a target
+		- Don't store currency
+		- Sell goods
+		- Have user generated content
+		- Have time sensitive features
+		- Pay for digitally validated behavior
+
+]
+
+---
+
+count: false
+
+.right-column[
+
+- HOW CRAZY EASY IT IS TO FUCK YO SITE UP
+	- CAPTCHAs don't work
+	- Single Attackers are hard to deal with
+	- It's easy to get information to hack stuff
+- What we _can_ do
+	- Don't make yourself a target
+		- Don't store currency
+		- Sell goods
+		- Have user generated content
+		- Have time sensitive features
+		- Pay for digitally validated behavior
+		- Have unique Personally identifiable information
+
+]
+
+???
+
+I know damn sure that I'll be sticking with Facebook / Google username password authentication at the very least. Let them pay for it.
+
+
+---
+
+count: false
+
+.right-column[
+
+- HOW CRAZY EASY IT IS TO FUCK YO SITE UP
+	- CAPTCHAs don't work
+	- Single Attackers are hard to deal with
+	- It's easy to get information to hack stuff
+- What we _can_ do
+	- ~~Don't make yourself a target~~
+	- Make sure you don't have bad npm dependencies
+		- [Synk](https://snyk.io/)
+
+]
+
+???
+
+Part of a different presentation, Synk's pretty cool. They're an npm package that looks through your dependency lists and compares them to a database they keep of known dependency vulnerabilities. They'll tell you when you need to upgrade, when upgrades will break (via semantic versioning), and sometimes, they'll create their own patches for older versions if the fix is delivered by the author in a breaking version.
+
+These guys showed off some gnarly stuff. They showed how, with an older version of mongoose, they were able to stall the server indefinitely via a `buffer` command.
+
+
+---
+
+count: false
+
+.right-column[
+
+- HOW CRAZY EASY IT IS TO FUCK YO SITE UP
+	- CAPTCHAs don't work
+	- Single Attackers are hard to deal with
+	- It's easy to get information to hack stuff
+- What we _can_ do
+	- ~~Don't make yourself a target~~
+	- Make sure you don't have bad npm dependencies
 - The SEIF Project
 
 ]
 
+???
+
+tldr; Douglas Crockford wants to just reinvent the entire internet to try to address these issues.
+
+He just, you know, needs to get a single browser manufacturer to implement the spec he's written, then get a large company who feels that it's not worth it to do business on the traditional web anymore to implement a version specifically for SEIF to route their customers to it, and then get those customers to use this specific browser.
+
+Including QT to just redo HTML and CSS, 'cause why not while we're at it?
 
 
 
