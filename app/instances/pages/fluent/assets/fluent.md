@@ -667,6 +667,13 @@ count: false
 - Observables
 	- `filter`, `map`, `flatmap`
 
+
+
+???
+
+flatmap transforms the items emitted by an Observable into Observables, then flattens the emissions from those into a single Observable
+
+
 ---
 
 count: false
@@ -1349,8 +1356,8 @@ count: false
 	- Single Attackers are hard to deal with
 	- It's easy to get information to hack stuff
 - What we _can_ do
-	- Don't make yourself a target
-		- Don't store currency
+	- Don't make yourself a target. Don't:
+		- Store currency
 
 ]
 
@@ -1365,8 +1372,8 @@ count: false
 	- Single Attackers are hard to deal with
 	- It's easy to get information to hack stuff
 - What we _can_ do
-	- Don't make yourself a target
-		- Don't store currency
+	- Don't make yourself a target. Don't:
+		- Store currency
 		- Sell goods
 
 ]
@@ -1382,8 +1389,8 @@ count: false
 	- Single Attackers are hard to deal with
 	- It's easy to get information to hack stuff
 - What we _can_ do
-	- Don't make yourself a target
-		- Don't store currency
+	- Don't make yourself a target. Don't:
+		- Store currency
 		- Sell goods
 		- Have user generated content
 
@@ -1400,8 +1407,8 @@ count: false
 	- Single Attackers are hard to deal with
 	- It's easy to get information to hack stuff
 - What we _can_ do
-	- Don't make yourself a target
-		- Don't store currency
+	- Don't make yourself a target. Don't:
+		- Store currency
 		- Sell goods
 		- Have user generated content
 		- Have time sensitive features
@@ -1419,8 +1426,8 @@ count: false
 	- Single Attackers are hard to deal with
 	- It's easy to get information to hack stuff
 - What we _can_ do
-	- Don't make yourself a target
-		- Don't store currency
+	- Don't make yourself a target. Don't:
+		- Store currency
 		- Sell goods
 		- Have user generated content
 		- Have time sensitive features
@@ -1439,8 +1446,8 @@ count: false
 	- Single Attackers are hard to deal with
 	- It's easy to get information to hack stuff
 - What we _can_ do
-	- Don't make yourself a target
-		- Don't store currency
+	- Don't make yourself a target. Don't:
+		- Store currency
 		- Sell goods
 		- Have user generated content
 		- Have time sensitive features
@@ -1505,7 +1512,27 @@ Including QT to just redo HTML and CSS, 'cause why not while we're at it?
 
 
 
+---
 
+count: false
+
+.right-column[
+
+- HOW CRAZY EASY IT IS TO FUCK YO SITE UP
+	- CAPTCHAs don't work
+	- Single Attackers are hard to deal with
+	- It's easy to get information to hack stuff
+- What we _can_ do
+	- ~~Don't make yourself a target~~
+	- Make sure you don't have bad npm dependencies
+- The SEIF Project
+	- [seifnode](https://github.com/paypal/seifnode)
+
+]
+
+???
+
+In the meantime, there's SEIFnode
 
 
 
@@ -1540,11 +1567,207 @@ count: false
 .right-column[
 
 - npm commands
-- webpack
-- VR
-- WebGL
-- Architecture and Dev Ops
-	- How to expand
-	- How to not break shit
-- Falcor vs GraphQL
+	- `npm --install --cache-min 999999`
+
 ]
+
+???
+
+This installs things only if you don't already have it. If you've EVER downloaded a certain dependency, it's already on your computer.
+npm asks the server if there is something new, but if not, it uses your computer's version. This command goes straight for your computer's version.
+
+
+---
+
+count: false
+
+.right-column[
+
+- npm commands
+	- `npm --install --cache-min 999999`
+	- `npm shrinkwrap`
+
+]
+
+???
+
+Lets you pin everything—every dependency—into exactly the version you are currently using.
+
+
+---
+
+count: false
+
+.right-column[
+
+- npm commands
+	- `npm --install --cache-min 999999`
+	- ~~`npm shrinkwrap`~~ npm-shrinkwrap
+
+]
+
+???
+
+`npm-shrinkwrap` is written by Uber, and differs from intrinsic shrinkwrap.
+
+
+
+---
+
+count: false
+
+.right-column[
+
+- npm commands
+	- `npm --install --cache-min 999999`
+	- ~~`npm shrinkwrap`~~ npm-shrinkwrap
+	- `npm prune`
+
+]
+
+???
+
+gets rid of packages not specified in package.json.
+
+
+
+---
+
+count: false
+
+.right-column[
+
+- npm commands
+	- `npm --install --cache-min 999999`
+	- ~~`npm shrinkwrap`~~ npm-shrinkwrap
+	- `npm prune`
+	- `npm dedupe`
+
+]
+
+???
+
+removes duplicates.
+
+
+
+---
+
+count: false
+
+.right-column[
+
+- npm commands
+	- `npm --install --cache-min 999999`
+	- ~~`npm shrinkwrap`~~ npm-shrinkwrap
+	- `npm prune`
+	- `npm dedupe`
+	- `npm outdated`
+
+]
+
+???
+
+ tells you what is currently outdated.
+
+
+
+---
+
+count: false
+
+.right-column[
+
+- npm commands
+	- `npm --install --cache-min 999999`
+	- ~~`npm shrinkwrap`~~ npm-shrinkwrap
+	- `npm prune`
+	- `npm dedupe`
+	- `npm outdated`
+	- `npm update`
+
+]
+
+???
+
+used to be awful. now it only updates top-level dependencies.
+
+
+
+---
+
+count: false
+
+.right-column[
+
+- npm commands
+- webpack
+
+]
+
+???
+
+webpack is apparently a hard beast to tame. Everything that I read highly suggests using it, but it's got a very steep initial learning curve. Dude demoing this ending his presentation like, “it's awesome, but maybe don't use it if you don't need to.”
+
+---
+
+
+
+
+count: false
+
+.right-column[
+
+- npm commands
+- webpack
+- VR & WebGL
+
+]
+
+???
+
+It's on its way. If you're insane, you can try learning three.js to code stuff by hand, but I have a feeling practical users will just be exporting content from Unity and Unreal engines, which already allow web export.
+
+
+---
+
+
+count: false
+
+.right-column[
+
+- npm commands
+- webpack
+- VR & WebGL
+- Falcor vs GraphQL
+
+]
+
+???
+
+Falcor is Netflix's client-database talker thing. It's pretty damn neat. It'll take queries from the client and grab them from the database, then store the results for faster reference on second request.
+
+It's not appropriate for content that changes rapidly, though. Facebook's GraphQL is probably the better tool for that, though it is substantially more complicated apparently.
+
+
+
+---
+
+
+count: false
+
+.right-column[
+
+- npm commands
+- webpack
+- VR & WebGL
+- Falcor vs GraphQL
+- Architecture and Dev Ops
+	- How to expand and not break stuff
+
+]
+
+???
+
+Watched a few talks on this kind of thing, and ultimately, it comes down to “use Web Workers, use Docker, make simple APIs”.
+
